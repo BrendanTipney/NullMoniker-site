@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(New-Item -ItemType Directory -Force -Path \"D:\\\\Code\\\\NullMoniker-site\\\\clips\")",
+      "PowerShell(Copy-Item \"D:\\\\Code\\\\portfolio-site\\\\public\\\\Clips\\\\AR_DemoReel_NoTitle.webm\" \"D:\\\\Code\\\\NullMoniker-site\\\\clips\\\\AR_DemoReel_NoTitle.webm\")",
+      "mcp__Claude_Preview__preview_start",
+      "WebFetch(domain:www.shadertoy.com)",
+      "mcp__Claude_in_Chrome__tabs_context_mcp"
+    ]
+  }
+}
