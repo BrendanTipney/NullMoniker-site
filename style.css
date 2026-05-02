@@ -666,16 +666,33 @@ footer {
     transition:
       width 0.45s cubic-bezier(0.2, 0.7, 0.2, 1),
       margin-left 0.45s cubic-bezier(0.2, 0.7, 0.2, 1),
-      min-height 0.45s cubic-bezier(0.2, 0.7, 0.2, 1);
-    will-change: width, margin-left;
+      min-height 0.45s cubic-bezier(0.2, 0.7, 0.2, 1),
+      grid-template-columns 0.45s cubic-bezier(0.2, 0.7, 0.2, 1);
+    will-change: width, margin-left, grid-template-columns;
     cursor: zoom-in;
+  }
+
+  .work-card[data-hover-expand] .work-card-body {
+    overflow: hidden;
+    transition:
+      opacity 0.25s ease,
+      padding 0.45s cubic-bezier(0.2, 0.7, 0.2, 1);
+    min-width: 0;
   }
 
   .work-card[data-hover-expand]:hover {
     width: 100vw;
     margin-left: calc((100% - 100vw) / 2);
-    min-height: 70vh;
+    min-height: 100vh;
     z-index: 50;
+    grid-template-columns: minmax(0, 1fr) 0fr;
+  }
+
+  .work-card[data-hover-expand]:hover .work-card-body {
+    opacity: 0;
+    padding-left: 0;
+    padding-right: 0;
+    pointer-events: none;
   }
 
   /* Hold image at the same scale as the card grows; video reveal does the work */
