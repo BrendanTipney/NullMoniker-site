@@ -43,6 +43,7 @@
   </a>
   <ul class="nav-links" id="navLinks">
     <li><a href="#work">Work</a></li>
+    <li><a href="#psyphi">PsyPhi</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#links">Links</a></li>
     <li><a href="mailto:brendan.tipney@gmail.com" class="nav-cta">Contact</a></li>
@@ -81,7 +82,7 @@
     <div class="section-rule"></div>
     <div class="work-grid">
 
-      <div class="work-card" data-hover-expand>
+      <div class="work-card" data-expand>
         <div class="work-card-image">
           <video autoplay loop muted playsinline poster="">
             <source src="clips/AR_DemoReel_NoTitle.webm" type="video/webm" />
@@ -102,7 +103,7 @@
         </div>
       </div>
 
-      <div class="work-card" data-hover-expand>
+      <div class="work-card" data-expand>
         <div class="work-card-image work-card-image--video">
           <iframe
             src="https://www.youtube-nocookie.com/embed/f436rC0YxR8?autoplay=1&mute=1&loop=1&playlist=f436rC0YxR8&controls=1&modestbranding=1&playsinline=1&rel=0"
@@ -153,6 +154,94 @@
         </div>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<!-- ── PSYPHI ── -->
+<section id="psyphi">
+  <div class="section-inner">
+    <p class="section-label">Archive</p>
+    <h2 class="section-title">PsyPhi</h2>
+    <div class="section-rule"></div>
+    <div class="psyphi-intro">
+      <p>
+        For about a decade I worked under the alias <strong>PsyPhi</strong> as a VJ, new media artist,
+        and electronics tech. The page is retired now, but the work is too good to leave in a folder:
+        live visuals at festivals across the East Coast, projection-mapped stages, and a long list of
+        interactive installations driven by Kinect, Leap Motion, Vive controllers, and the LookingGlass
+        holographic display.
+      </p>
+      <p>
+        Most of it was built in <strong>TouchDesigner</strong>, <strong>Resolume</strong>, and
+        <strong>Unity</strong>, with a heavy dose of generative geometry, real-time feedback, and
+        whatever sensors I could get my hands on.
+      </p>
+    </div>
+    <div class="psyphi-grid">
+      <figure class="psyphi-tile" data-expand>
+        <div class="psyphi-media">
+          <video autoplay loop muted playsinline preload="metadata">
+            <source src="clips/psyphi/arcturus-lookingglass.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <figcaption>
+          <p class="psyphi-tag">Interactive : Arcturus</p>
+          <h3 class="psyphi-title">LookingGlass + Ultraleap</h3>
+          <p class="psyphi-desc">
+            Hand-tracked holographic display piece for Arcturus. Unity, LookingGlass, Ultraleap,
+            with volumetric video captured by Crescent in Japan.
+          </p>
+        </figcaption>
+      </figure>
+
+      <figure class="psyphi-tile" data-expand>
+        <div class="psyphi-media">
+          <video autoplay loop muted playsinline preload="metadata">
+            <source src="clips/psyphi/lookingglass-holograms.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <figcaption>
+          <p class="psyphi-tag">Generative : Holographic</p>
+          <h3 class="psyphi-title">LookingGlass Holograms</h3>
+          <p class="psyphi-desc">
+            Generative content authored in Blender for the LookingGlass holographic display:
+            fluid sims, abstract geometry, and rendered shorts.
+          </p>
+        </figcaption>
+      </figure>
+
+      <figure class="psyphi-tile" data-expand>
+        <div class="psyphi-media">
+          <video autoplay loop muted playsinline preload="metadata">
+            <source src="clips/psyphi/kollektiv-festival.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <figcaption>
+          <p class="psyphi-tag">VJ : Festival</p>
+          <h3 class="psyphi-title">Kollektiv 2018</h3>
+          <p class="psyphi-desc">
+            Live visuals and projection mapping on a custom-built stage. One of many festival nights
+            spent VJing across Atlantic Canada with a rotating crew.
+          </p>
+        </figcaption>
+      </figure>
+
+      <figure class="psyphi-tile" data-expand>
+        <div class="psyphi-media">
+          <video autoplay loop muted playsinline preload="metadata">
+            <source src="clips/psyphi/kinect-bubbles.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <figcaption>
+          <p class="psyphi-tag">Experiment : Sensor Art</p>
+          <h3 class="psyphi-title">Kinect &amp; Bubbles</h3>
+          <p class="psyphi-desc">
+            Footage captured with the Juggling Bubblers, processed through TouchDesigner with
+            depth-camera feedback for live performance use.
+          </p>
+        </figcaption>
+      </figure>
     </div>
   </div>
 </section>
@@ -246,12 +335,66 @@
   </div>
 </footer>
 
+<div id="videoOverlay" aria-hidden="true"></div>
+
 <script src="shader.js"></script>
 <script>
   const burger = document.getElementById('navBurger');
   const links = document.getElementById('navLinks');
   burger.addEventListener('click', () => links.classList.toggle('open'));
   links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+
+  // Click any [data-expand] card to open its video/iframe in a fullscreen overlay.
+  const overlay = document.getElementById('videoOverlay');
+
+  function closeOverlay() {
+    overlay.classList.remove('active');
+    setTimeout(() => { overlay.innerHTML = ''; }, 250);
+  }
+
+  function openOverlay(innerHTML) {
+    overlay.innerHTML =
+      '<div class="video-stage">' +
+      '<button class="video-close" type="button" aria-label="Close">Close</button>' +
+      innerHTML +
+      '</div>';
+    overlay.classList.add('active');
+    overlay.querySelector('.video-close').addEventListener('click', closeOverlay);
+  }
+
+  document.querySelectorAll('[data-expand]').forEach(card => {
+    card.addEventListener('click', (e) => {
+      if (e.target.closest('a, .btn')) return;
+      const video = card.querySelector('video');
+      const iframe = card.querySelector('iframe');
+      if (video) {
+        const sourceEl = video.querySelector('source');
+        const src = sourceEl ? sourceEl.getAttribute('src') : video.getAttribute('src');
+        const type = sourceEl ? sourceEl.getAttribute('type') : 'video/webm';
+        openOverlay(
+          '<video autoplay loop controls playsinline>' +
+          '<source src="' + src + '" type="' + type + '">' +
+          '</video>'
+        );
+      } else if (iframe) {
+        const src = iframe.getAttribute('src');
+        const title = iframe.getAttribute('title') || 'Video';
+        openOverlay(
+          '<iframe src="' + src + '" title="' + title + '" ' +
+          'allow="autoplay; encrypted-media; picture-in-picture; fullscreen" ' +
+          'allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>'
+        );
+      }
+    });
+  });
+
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) closeOverlay();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && overlay.classList.contains('active')) closeOverlay();
+  });
 </script>
 </body>
 </html>
