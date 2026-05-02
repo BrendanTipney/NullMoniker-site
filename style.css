@@ -302,7 +302,6 @@ section { padding: 6rem 2rem; }
 
 /* ── WORK ── */
 #work {
-  background: var(--bg-2);
   border-bottom: 1px solid var(--border);
 }
 
@@ -340,10 +339,24 @@ section { padding: 6rem 2rem; }
   transition: filter 0.4s, transform 0.6s;
 }
 
+.work-card-image iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  filter: grayscale(100%);
+  transition: filter 0.4s;
+}
+
 .work-card:hover .work-card-image video,
 .work-card:hover .work-card-image img {
   filter: grayscale(1%);
   transform: scale(1.03);
+}
+
+.work-card:hover .work-card-image iframe {
+  filter: grayscale(1%);
 }
 
 .work-card-image--placeholder {
@@ -442,6 +455,7 @@ section { padding: 6rem 2rem; }
 
 /* ── ABOUT ── */
 #about {
+  background: var(--bg-2);
   border-bottom: 1px solid var(--border);
 }
 
@@ -532,7 +546,6 @@ section { padding: 6rem 2rem; }
 
 /* ── LINKS ── */
 #links {
-  background: var(--bg-2);
   border-bottom: 1px solid var(--border);
 }
 
@@ -645,7 +658,34 @@ footer {
   .hero-scroll-hint { display: none; }
 }
 
+/* ── DESKTOP HOVER-EXPAND CARD ── */
+@media (hover: hover) and (min-width: 901px) {
+  .work-card[data-hover-expand] {
+    position: relative;
+    transition:
+      width 0.45s cubic-bezier(0.2, 0.7, 0.2, 1),
+      margin-left 0.45s cubic-bezier(0.2, 0.7, 0.2, 1),
+      min-height 0.45s cubic-bezier(0.2, 0.7, 0.2, 1);
+    will-change: width, margin-left;
+    cursor: zoom-in;
+  }
+
+  .work-card[data-hover-expand]:hover {
+    width: 100vw;
+    margin-left: calc((100% - 100vw) / 2);
+    min-height: 70vh;
+    z-index: 50;
+  }
+
+  /* Hold image at the same scale as the card grows; video reveal does the work */
+  .work-card[data-hover-expand]:hover .work-card-image video,
+  .work-card[data-hover-expand]:hover .work-card-image img {
+    transform: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .hero-scroll-hint::after { animation: none; }
+  .work-card[data-hover-expand] { transition: none; }
 }
