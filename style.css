@@ -454,43 +454,99 @@ section { padding: 6rem 2rem; }
   text-transform: uppercase;
 }
 
-/* ── PSYPHI ── */
-#psyphi {
+/* ── PSYPHI PAGE ── */
+.psyphi-page nav .nav-links a.is-current { color: var(--text); }
+
+#psyphi-hero {
+  padding-top: 9rem;
+  padding-bottom: 3rem;
   border-bottom: 1px solid var(--border);
 }
 
-.psyphi-intro {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2.5rem;
-  margin-bottom: 3rem;
+.psyphi-hero-title {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: clamp(3rem, 9vw, 6rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1;
+  margin-bottom: 1rem;
 }
 
-.psyphi-intro p {
+.psyphi-hero-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.psyphi-hero-body p {
   color: var(--muted);
   font-size: 1rem;
   line-height: 1.8;
+  margin-bottom: 1rem;
 }
 
-.psyphi-intro p strong { color: var(--text); font-weight: 500; }
+.psyphi-hero-body p strong { color: var(--text); font-weight: 500; }
 
-.psyphi-grid {
+.psyphi-project {
+  border-bottom: 1px solid var(--border);
+}
+
+.psyphi-project:nth-of-type(odd) {
+  background: var(--bg-2);
+}
+
+.psyphi-blurb {
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.8;
+  max-width: 720px;
+  margin-bottom: 2.5rem;
+}
+
+.psyphi-gallery {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
   gap: 1px;
   background: var(--border);
   border: 1px solid var(--border);
 }
 
+.psyphi-gallery--2 { grid-template-columns: repeat(2, 1fr); }
+.psyphi-gallery--3 { grid-template-columns: repeat(3, 1fr); }
+.psyphi-gallery--4 { grid-template-columns: repeat(4, 1fr); }
+.psyphi-gallery--5 { grid-template-columns: repeat(5, 1fr); }
+
 .psyphi-tile {
   background: var(--bg-3);
-  display: flex;
-  flex-direction: column;
+  position: relative;
   cursor: zoom-in;
+  display: block;
+  margin: 0;
   transition: background 0.2s;
 }
 
 .psyphi-tile:hover { background: #141414; }
+
+.psyphi-tile figcaption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.75rem 1rem;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text);
+  background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0));
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.psyphi-tile:hover figcaption { opacity: 1; }
 
 .psyphi-media {
   position: relative;
@@ -499,47 +555,38 @@ section { padding: 6rem 2rem; }
   background: #0a0a0a;
 }
 
-.psyphi-media video {
+.psyphi-media--video { aspect-ratio: 4 / 5; }
+
+.psyphi-media video,
+.psyphi-media img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   filter: grayscale(100%);
   transition: filter 0.4s, transform 0.6s;
   pointer-events: none;
+  display: block;
 }
 
-.psyphi-tile:hover .psyphi-media video {
+.psyphi-tile:hover .psyphi-media video,
+.psyphi-tile:hover .psyphi-media img {
   filter: grayscale(1%);
   transform: scale(1.03);
 }
 
-.psyphi-tile figcaption {
-  padding: 1.5rem 1.75rem 1.75rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
+#psyphi-back {
+  padding: 4rem 2rem;
 }
 
-.psyphi-tag {
-  font-family: 'Rajdhani', sans-serif;
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--muted-2);
-}
-
-.psyphi-title {
-  font-size: 1.25rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  margin-bottom: 0.25rem;
-}
-
-.psyphi-desc {
-  color: var(--muted);
-  font-size: 0.9rem;
-  line-height: 1.7;
+#videoOverlay img {
+  display: block;
+  max-width: 96vw;
+  max-height: 92vh;
+  width: auto;
+  height: auto;
+  background: #000;
+  border: 1px solid var(--border-hi);
+  object-fit: contain;
 }
 
 /* ── ABOUT ── */
@@ -726,7 +773,9 @@ footer {
   .work-card-image { aspect-ratio: 16/9; }
   .work-card-body { padding: 2rem; }
   .work-card-title { font-size: 1.7rem; }
-  .psyphi-intro { grid-template-columns: 1fr; gap: 1.2rem; }
+  .psyphi-hero-body { grid-template-columns: 1fr; gap: 1.2rem; }
+  .psyphi-gallery--5 { grid-template-columns: repeat(3, 1fr); }
+  .psyphi-gallery--4 { grid-template-columns: repeat(3, 1fr); }
 }
 
 @media (max-width: 640px) {
@@ -746,7 +795,10 @@ footer {
   section { padding: 4rem 1.25rem; }
   .footer-inner { flex-direction: column; align-items: flex-start; }
   .hero-scroll-hint { display: none; }
-  .psyphi-grid { grid-template-columns: 1fr; }
+  .psyphi-gallery--2,
+  .psyphi-gallery--3,
+  .psyphi-gallery--4,
+  .psyphi-gallery--5 { grid-template-columns: repeat(2, 1fr); }
 }
 
 /* ── CLICK-TO-EXPAND CARD + OVERLAY ── */
