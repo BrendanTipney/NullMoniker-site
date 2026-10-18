@@ -111,6 +111,12 @@
         return vec3(abs(q.z + (q.w - q.y) / (6.0 * d + e)), d / (q.x + e), q.x);
     }
 
+    vec3 hsv2rgb(vec3 c) {
+        vec4 K = vec4(1.0, 2.0 / 3.0, 1.0 / 3.0, 3.0);
+        vec3 p = abs(fract(c.xxx + K.xyz) * 6.0 - K.www);
+        return c.z * mix(K.xxx, clamp(p - K.xxx, 0.0, 1.0), c.y);
+    }
+
     float GetDist(vec3 p) {
         float d = 1.;
 
@@ -232,6 +238,21 @@
         color = hs(color, n.r);
 
         color = hs(color, d.y * DepthHue);
+
+        // Keep the palette on the cool side. The hue rotations above can swing past teal
+        // into green and yellow; anything in that band is pulled back to teal (hue 0.5),
+        // with a soft edge so there is no visible seam.
+        {
+            vec3 c = rgb2hsv(color);
+            if (c.x > 0.1 && c.x < 0.5) {
+                c.x = mix(c.x, 0.5, smoothstep(0.1, 0.2, c.x));
+            }
+            // The teal phase is also where the animation gets brightest and washes out the
+            // hero text, so cap brightness there. Blues and purples are untouched.
+            float tealness = 1.0 - smoothstep(0.06, 0.16, abs(c.x - 0.5));
+            c.z = min(c.z, mix(1.0, 0.5, tealness));
+            color = hsv2rgb(c);
+        }
 
         // Desaturate yellow-to-red hues toward grayscale, with a soft falloff.
         // Band centered on orange (hue ~ 1/12); width spans red..yellow with smooth edges.

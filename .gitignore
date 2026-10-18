@@ -12,3 +12,6 @@ $RECYCLE.BIN/
 *.lnk
 # Source footage, too large for the repo. The site uses the compressed copies.
 xr-media/ARPrototype.mp4
+
+# Local working backups and original footage
+.claude/backup-*/
