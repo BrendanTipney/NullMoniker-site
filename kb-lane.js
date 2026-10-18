@@ -3,6 +3,11 @@
 // scrolls up through the viewport. Any element with [data-kb-model] gets one.
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
+// corne.glb is Draco compressed (geometry) with WebP textures, so the loader needs the decoder.
+const draco = new DRACOLoader().setDecoderPath('https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/libs/draco/gltf/');
+const makeLoader = () => new GLTFLoader().setDRACOLoader(draco);
+
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 
 const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -30,7 +35,7 @@ const EXTRA = { Pexi: 0.03, Foot: -0.014, Leg: -0.014 };
 const SPREAD = 0.02;
 
 let gltfPromise = null;
-const loadModel = (url) => (gltfPromise ||= new Promise((res, rej) => new GLTFLoader().load(url, res, undefined, rej)));
+const loadModel = (url) => (gltfPromise ||= new Promise((res, rej) => makeLoader().load(url, res, undefined, rej)));
 
 function mount(host) {
   const canvas = document.createElement('canvas');

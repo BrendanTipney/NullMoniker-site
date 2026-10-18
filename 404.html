@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page not found : NullMoniker</title>
+  <meta name="robots" content="noindex" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="stylesheet" href="/style.css" />
+  <style>
+    .lost { min-height: 100vh; display: flex; align-items: center; }
+    .lost .lane-page-title { font-size: clamp(6rem, 22vw, 16rem); line-height: 0.85; margin-bottom: 1rem; }
+    .lost .lane-deck { margin-bottom: 2rem; }
+    .lost-links { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+  </style>
+</head>
+<body class="page-xr">
+
+<nav>
+  <a class="nav-logo" href="/" aria-label="NullMoniker home">
+    <span class="nav-logo-mark">N</span>
+    <span class="nav-logo-wordmark">NullMoniker</span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="/xr.html" class="accent-xr" data-accent><span class="nav-num">01</span><span class="nav-text">XR</span></a></li>
+    <li><a href="/games.html" class="accent-games" data-accent><span class="nav-num">02</span><span class="nav-text">Games</span></a></li>
+    <li><a href="/hardware.html" class="accent-hw" data-accent><span class="nav-num">03</span><span class="nav-text">Hardware</span></a></li>
+    <li><a href="/visuals.html" class="accent-vis" data-accent><span class="nav-num">04</span><span class="nav-text">Visuals</span></a></li>
+    <li><a href="/#about"><span class="nav-text">About</span></a></li>
+    <li><a href="mailto:brendan.tipney@gmail.com" class="nav-cta">Contact</a></li>
+  </ul>
+  <button class="nav-burger" id="navBurger" type="button" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<header class="lane-page-hero lost">
+  <canvas id="shaderCanvas" aria-hidden="true"></canvas>
+  <div class="tint" aria-hidden="true"></div>
+  <div class="lane-hero-inner">
+    <p class="crumbs"><a href="/">Home</a><span>/</span><span class="here">Signal lost</span></p>
+    <h1 class="lane-page-title" data-scramble>404</h1>
+    <p class="lane-deck">
+      This page doesn't exist, or it moved when the site was rebuilt. Try one of these instead.
+    </p>
+    <div class="lost-links">
+      <a href="/" class="btn btn-primary">Home</a>
+      <a href="/xr.html" class="btn btn-secondary accent-xr">XR</a>
+      <a href="/games.html" class="btn btn-secondary accent-games">Games</a>
+      <a href="/hardware.html" class="btn btn-secondary accent-hw">Hardware</a>
+      <a href="/visuals.html" class="btn btn-secondary accent-vis">Visuals</a>
+    </div>
+  </div>
+</header>
+
+<script src="/shader.js"></script>
+<script src="/main.js"></script>
+</body>
+</html>

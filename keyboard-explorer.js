@@ -2,6 +2,11 @@
 // laid over the real keycaps. Expects the markup in keyboard.html (#kb-stage).
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
+// corne.glb is Draco compressed (geometry) with WebP textures, so the loader needs the decoder.
+const draco = new DRACOLoader().setDecoderPath('https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/libs/draco/gltf/');
+const makeLoader = () => new GLTFLoader().setDRACOLoader(draco);
+
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 
 const stage = document.getElementById('kb-stage');
@@ -69,7 +74,7 @@ let stemMaterial = null;
 const keycaps = {};   // ZMK position -> { obj, wide, angle, press }
 let modelSize = new THREE.Vector3(0.24, 0.02, 0.09);
 
-new GLTFLoader().load(MODEL_URL, (gltf) => {
+makeLoader().load(MODEL_URL, (gltf) => {
   const root = gltf.scene;
   scene.add(root);
   // black keycaps and housings should stay black, so they take less of the room reflection
