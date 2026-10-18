@@ -10,3 +10,5 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+# Source footage, too large for the repo. The site uses the compressed copies.
+xr-media/ARPrototype.mp4

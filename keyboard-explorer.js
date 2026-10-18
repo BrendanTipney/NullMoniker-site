@@ -50,10 +50,11 @@ const STAGES = [
   { id: 'pcb',    label: 'PCB and standoffs',   lift: 0.018, win: [0.08, 0.55] },
   { id: 'plate',  label: 'Switch plate',        lift: 0.036, win: [0.18, 0.65] },
   { id: 'switch', label: 'Kailh Choc switches', lift: 0.054, win: [0.28, 0.78] },
-  { id: 'cap',    label: 'Keycaps',             lift: 0.078, win: [0.40, 0.97] },
+  { id: 'cap',    label: 'Keycaps and trackpad',             lift: 0.078, win: [0.40, 0.97] },
 ];
 const stageOf = (name) => {
-  if (/^Keycap/.test(name)) return 'cap';
+  if (/^(Keycap|TouchPad$)/.test(name)) return 'cap';
+  if (/^TouchpadHolder/.test(name)) return 'plate';
   if (/^Switch/.test(name)) return 'switch';
   if (/^(KeyPlate|Pexi)/.test(name)) return 'plate';
   if (/^(PCB|Support)/.test(name)) return 'pcb';
@@ -63,6 +64,7 @@ const EXTRA = { Pexi: 0.03, Foot: -0.014, Leg: -0.014 }; // windows float higher
 const SPREAD = 0.02; // halves pulled apart sideways when exploded
 
 const parts = [];     // { obj, home, offset, win }
+let stemMaterial = null;
 const keycaps = {};   // ZMK position -> { obj, wide, angle, press }
 let modelSize = new THREE.Vector3(0.24, 0.02, 0.09);
 
@@ -71,7 +73,10 @@ new GLTFLoader().load(MODEL_URL, (gltf) => {
   scene.add(root);
   // black keycaps and housings should stay black, so they take less of the room reflection
   root.traverse((o) => {
-    if (o.isMesh && /Keycaps|Choc/.test(o.material.name)) o.material.envMapIntensity = 0.45;
+    if (!o.isMesh) return;
+    if (/Keycaps|Choc/.test(o.material.name)) o.material.envMapIntensity = 0.45;
+    // Choc stems sit inside the keycap once assembled; hide them so a hover press can't poke through
+    if (o.material.name === 'Choc stem') stemMaterial = o.material;
   });
   const box = new THREE.Box3().setFromObject(root);
   box.getSize(modelSize);
@@ -183,6 +188,7 @@ function frame(ms) {
     const k = 1 - ease(remap(A, p.win[0], p.win[1]));
     p.obj.position.copy(p.home).addScaledVector(p.offset, k);
   }
+  if (stemMaterial) stemMaterial.visible = A < 0.97;
   for (const pos in keycaps) {
     const kc = keycaps[pos];
     kc.press += ((kc === hovered ? 1 : 0) - kc.press) * 0.35;

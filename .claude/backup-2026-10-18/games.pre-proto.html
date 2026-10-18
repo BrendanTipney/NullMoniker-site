@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Games : Brendan Tipney</title>
+  <meta name="description" content="Games by Brendan Tipney: Cloudbreaker, an inventory management roguelite built in Godot at Ballast Games and released on Steam in September 2026, plus XR game design on Asset 15." />
+  <link rel="canonical" href="https://nullmoniker.ca/games.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="NullMoniker" />
+  <meta property="og:title" content="Games : Brendan Tipney" />
+  <meta property="og:description" content="Games by Brendan Tipney: Cloudbreaker, an inventory management roguelite built in Godot at Ballast Games and released on Steam in September 2026, plus XR game design on Asset 15." />
+  <meta property="og:url" content="https://nullmoniker.ca/games.html" />
+  <meta property="og:image" content="https://i.ytimg.com/vi/Vl_FC4QCh0s/maxresdefault.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="page-games">
+
+<nav>
+  <a class="nav-logo" href="index.html" aria-label="NullMoniker home">
+    <span class="nav-logo-mark">N</span>
+    <span class="nav-logo-wordmark">NullMoniker</span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="xr.html" class="accent-xr" data-accent><span class="nav-num">01</span><span class="nav-text">XR</span></a></li>
+    <li><a href="games.html" class="accent-games is-current" aria-current="page" data-accent><span class="nav-num">02</span><span class="nav-text">Games</span></a></li>
+    <li><a href="hardware.html" class="accent-hw" data-accent><span class="nav-num">03</span><span class="nav-text">Hardware</span></a></li>
+    <li><a href="visuals.html" class="accent-vis" data-accent><span class="nav-num">04</span><span class="nav-text">Visuals</span></a></li>
+    <li><a href="index.html#about"><span class="nav-text">About</span></a></li>
+    <li><a href="mailto:brendan.tipney@gmail.com" class="nav-cta">Contact</a></li>
+  </ul>
+  <button class="nav-burger" id="navBurger" type="button" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<header class="lane-page-hero">
+  <canvas id="shaderCanvas" aria-hidden="true"></canvas>
+  <div class="tint" aria-hidden="true"></div>
+  <div class="lane-hero-inner">
+    <p class="crumbs"><a href="index.html">Home</a><span>/</span><span class="here">02 : Games</span></p>
+    <h1 class="lane-page-title" data-scramble>Games</h1>
+    <p class="lane-deck">
+      In 2025 I co-founded Ballast Games with Anand Friesen. We're a studio of two, which means I write the
+      code, design the systems, run the Steam backend, and handle the business side. Our first game,
+      Cloudbreaker, is out now.
+    </p>
+    <div class="lane-meta">
+      <div><p class="k">Role</p><p class="v">Lead Game Designer and co-founder</p></div>
+      <div><p class="k">Studio</p><p class="v">Ballast Games, two people, remote</p></div>
+      <div><p class="k">Engine</p><p class="v">Godot, GDScript</p></div>
+      <div><p class="k">Released</p><p class="v">September 15, 2026 on Steam</p></div>
+    </div>
+  </div>
+</header>
+
+<div class="jump"><div class="jump-inner">
+  <a href="#cloudbreaker">Cloudbreaker</a>
+  <a href="#asset-15">Asset 15 Redesign</a>
+</div></div>
+
+<section class="projects">
+  <div class="projects-inner">
+
+    <!-- CLOUDBREAKER -->
+    <article class="proj proj--feature" id="cloudbreaker">
+      <div class="proj-media" data-tilt data-youtube-inline="Vl_FC4QCh0s" data-title="Cloudbreaker Launch Trailer" data-cursor="Play" style="aspect-ratio:16/9;">
+        <img src="https://i.ytimg.com/vi/Vl_FC4QCh0s/maxresdefault.jpg" alt="Cloudbreaker launch trailer" loading="lazy" />
+        <span class="play" aria-hidden="true"></span>
+      </div>
+      <div class="proj-feature-head">
+        <div class="proj-body">
+          <p class="proj-kicker">Bullet heaven roguelite : Godot</p>
+          <h2 class="proj-title" data-scramble="hover">Cloudbreaker</h2>
+          <p>
+            An inventory management action roguelite set in the sky. Your build lives in your inventory, so what
+            you carry matters as much as how you dodge.
+          </p>
+          <p>
+            We put a demo on Steam for Next Fest in June 2026 and launched the full game on September 15, 2026.
+          </p>
+          <div class="work-card-tags">
+            <span class="tag">Roguelite</span><span class="tag">Gameplay Code</span>
+            <span class="tag">Systems Design</span><span class="tag">Tools</span>
+          </div>
+          <div class="btn-row">
+            <a href="https://store.steampowered.com/app/3620890/Cloudbreaker/" target="_blank" rel="noopener" class="btn btn-accent">Get it on Steam <span class="arrow">↗</span></a>
+            <a href="https://ballastgames.com/cloudbreaker.html" target="_blank" rel="noopener" class="btn btn-secondary">Project page</a>
+          </div>
+        </div>
+        <div class="proj-body">
+          <ul class="proj-list">
+            <li><strong>Code and design.</strong> Combat, run structure, inventory systems, and the tooling behind them.</li>
+            <li><strong>Steam Deck.</strong> Tuned the controls so the game plays well on Deck.</li>
+            <li><strong>Data.</strong> Player telemetry through Talo, used to steer balance decisions.</li>
+            <li><strong>Studio.</strong> Steam backend, launch planning, working with our PR partner, and business operations.</li>
+          </ul>
+          <iframe class="steam-widget" src="https://store.steampowered.com/widget/3620890/" title="Cloudbreaker on Steam" loading="lazy"></iframe>
+        </div>
+      </div>
+    </article>
+
+    <!-- ASSET 15 -->
+    <article class="proj" id="asset-15">
+      <div class="proj-media" data-tilt data-expand data-caption="Asset 15 : logic gate puzzle">
+        <video muted loop playsinline preload="none" data-autoplay data-src="xr-media/asset15-logic.mp4" poster="xr-media/asset15-logic.jpg"></video>
+      </div>
+      <div class="proj-body">
+        <p class="proj-kicker">XR : Quest 3 and Vision Pro</p>
+        <h2 class="proj-title" data-scramble="hover">Asset 15 Redesign</h2>
+        <p>
+          My game design work isn't only on flat screens. At Arcturus I was the main game designer on Asset 15,
+          rebuilding it from the ground up as a full environment AR puzzle game you play with your hands: a
+          ceiling mounted level menu, a logic gate puzzle, and an assembly puzzle built from volumetric captures.
+        </p>
+        <div class="btn-row">
+          <a href="xr.html#asset-15" class="btn btn-secondary accent-xr">See it on the XR page <span class="arrow">→</span></a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<div class="next-lanes">
+  <a href="xr.html" class="next-lane accent-xr">
+    <p class="dir">← 01 : Previous</p>
+    <p class="name">XR and Technical Design</p>
+  </a>
+  <a href="hardware.html" class="next-lane accent-hw">
+    <p class="dir">Next : 03 →</p>
+    <p class="name">Hardware and Design</p>
+  </a>
+</div>
+
+<section class="footer-cta">
+  <p class="footer-cta-label">Got something to build?</p>
+  <a href="mailto:brendan.tipney@gmail.com" class="footer-cta-big" data-cursor="Email">Let's talk</a>
+  <p class="footer-cta-mail">brendan.tipney@gmail.com</p>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-logo">NullMoniker</span>
+    <ul class="footer-links">
+      <li><a href="xr.html">XR</a></li>
+      <li><a href="games.html">Games</a></li>
+      <li><a href="hardware.html">Hardware</a></li>
+      <li><a href="visuals.html">Visuals</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="mailto:brendan.tipney@gmail.com">Contact</a></li>
+    </ul>
+    <p class="footer-copy">© 2026 Brendan Tipney. All rights reserved.</p>
+  </div>
+</footer>
+
+<div id="videoOverlay" aria-hidden="true"></div>
+
+<script src="shader.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

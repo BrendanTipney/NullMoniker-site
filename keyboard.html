@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Split Keyboard : Brendan Tipney</title>
+  <title>NullKeys : Brendan Tipney</title>
   <meta name="description" content="Designing and building a split ergonomic keyboard with an integrated trackpad: constraints, iterations, printed parts, and firmware. A hardware case study by Brendan Tipney." />
   <meta name="keywords" content="Brendan Tipney, NullMoniker, industrial design, product design, split keyboard, Corne, ZMK, TPS43, trackpad, 3D printing, Fusion 360, ergonomics" />
   <link rel="canonical" href="https://nullmoniker.ca/keyboard.html" />
 
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="NullMoniker" />
-  <meta property="og:title" content="Split Keyboard : Brendan Tipney" />
+  <meta property="og:title" content="NullKeys : Brendan Tipney" />
   <meta property="og:description" content="Designing a split ergonomic keyboard with an integrated trackpad. Constraints, iterations, and what broke." />
   <meta property="og:url" content="https://nullmoniker.ca/keyboard.html" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Split Keyboard : Brendan Tipney" />
+  <meta name="twitter:title" content="NullKeys : Brendan Tipney" />
   <meta name="twitter:description" content="Designing a split ergonomic keyboard with an integrated trackpad." />
 
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
@@ -49,9 +49,9 @@
     <canvas class="kb-canvas" role="img" aria-label="3D model of the split keyboard, exploded into its printed case, PCB, switch plate, switches and keycaps"></canvas>
 
     <div class="kb-hero-copy">
-      <p class="crumbs case-crumbs"><a href="index.html">Home</a><span>/</span><a href="hardware.html">03 : Hardware</a><span>/</span><span class="here">Split Keyboard</span></p>
-      <p class="section-label">Hardware : Input Design</p>
-      <h1 class="kb-hero-title">Split Keyboard</h1>
+      <p class="crumbs case-crumbs"><a href="index.html">Home</a><span>/</span><a href="hardware.html">03 : Hardware</a><span>/</span><span class="here">NullKeys</span></p>
+      <p class="section-label">Split keyboard : Input design</p>
+      <h1 class="kb-hero-title">NullKeys</h1>
       <p class="kb-hero-spec"><span>36 keys</span> / <span>Kailh Choc</span> / <span>ZMK over BLE</span> / <span>TPS43 trackpad</span></p>
     </div>
 
@@ -60,7 +60,7 @@
       <li><span>02</span>PCB and standoffs</li>
       <li><span>03</span>Switch plate</li>
       <li><span>04</span>Kailh Choc switches</li>
-      <li><span>05</span>Keycaps</li>
+      <li><span>05</span>Keycaps and trackpad</li>
     </ol>
 
     <p class="hero-scroll-hint kb-scroll-hint">Scroll to assemble</p>
@@ -174,11 +174,11 @@
       </div>
       <div class="cs-constraint">
         <p class="cs-constraint-num">02</p>
-        <h3>220mm build plate</h3>
+        <h3>Tenting that holds</h3>
         <p>
-          Every part had to print on an Anycubic Kobra Neo in 1.75mm filament. That capped the
-          footprint, forced the case to split into printable pieces, and ruled out overhangs that
-          would need support on a visible surface.
+          The real physical problem was tenting, and keeping the halves steady once tented. The legs
+          fold flat into the printed base, swing out to set the angle, and have to stop the half from
+          rocking while I type on it.
         </p>
       </div>
       <div class="cs-constraint">
@@ -191,10 +191,10 @@
       </div>
       <div class="cs-constraint">
         <p class="cs-constraint-num">04</p>
-        <h3>Thumb reach envelope</h3>
+        <h3>Room for a trackpad</h3>
         <p>
-          The trackpad had to sit inside the arc the thumb already travels for the cluster keys. If
-          it needed a stretch, it would have failed for the same reason a mouse does.
+          The TPS43 had to fit into the right half without taking a key position, wire straight to the
+          controller, and sleep with the keyboard so it does not drain the battery.
         </p>
       </div>
       <div class="cs-constraint">
@@ -234,7 +234,8 @@
       <div class="cs-compare-row">
         <div class="cs-compare-key">Off the shelf ergo</div>
         <div class="cs-compare-val">
-          <span class="cs-todo">Which ones did you look at? Moonlander, Glove80, Kinesis, Advantage, ZSA Voyager? One line each on why it did not fit. Naming real products and rejecting them for real reasons is the single most credible thing on this page.</span>
+          Expensive, and none of them had the form factor I was looking for. They are built to keep you
+          on the keyboard, not to work beside a mouse.
         </div>
       </div>
       <div class="cs-compare-row">
@@ -247,16 +248,16 @@
       <div class="cs-compare-row">
         <div class="cs-compare-key">Larger split, 60 keys plus</div>
         <div class="cs-compare-val">
-          More keys means less layer discipline, but it also means a wider reach envelope and a case
-          too big for the build plate. The constraint that looked most painful turned out to be the
-          one worth keeping.
+          More keys means less layer discipline, but every extra column moves keys away from the home
+          row and grows the footprint, which works against the whole point. Cutting keys turned out
+          to be the constraint worth keeping.
         </div>
       </div>
       <div class="cs-compare-row is-chosen">
         <div class="cs-compare-key">Corne plus TPS43</div>
         <div class="cs-compare-val">
-          A proven Corne skeleton, cut down to 36 keys, with an open firmware target, extended with a trackpad module in
-          the thumb path. Known-good foundation, and the novel part is where the design effort
+          A proven Corne skeleton, cut down to 36 keys, with an open firmware target, extended with a trackpad set into
+          the right half. Known-good foundation, and the novel part is where the design effort
           actually goes.
         </div>
       </div>
@@ -282,86 +283,104 @@
       <!-- STEP 01 -->
       <div class="cs-step" data-expand>
         <div class="cs-step-media">
-          <!-- TODO: swap placeholder for <img src="keyboard-media/01-mockup.jpg" alt="First mockup" loading="lazy"> -->
-          <div class="cs-media-placeholder">01 &nbsp;/&nbsp; Mockup photo</div>
+          <img src="keyboard-media/photos/IMG_3235.jpg" alt="Stock 42 key Corne in a clear case beside a 60 percent keyboard" loading="lazy">
         </div>
         <div class="cs-step-body">
-          <p class="cs-step-num">Iteration 01</p>
-          <h3>Paper and cardboard</h3>
+          <p class="cs-step-num">September 2023</p>
+          <h3>A stock Corne</h3>
           <p>
-            Before any CAD, a flat printout of the key positions to find where the thumb actually
-            lands. Cheap, ugly, and it settles the question CAD cannot: whether the reach is real.
+            The starting point: a standard 42 key Corne in a clear case, sitting in front of my old
+            keyboard. Living with it for a few days showed which keys I never reached for.
           </p>
-          <span class="cs-todo">Did you do a physical mockup first? If you went straight to CAD, say so and cut this step. Do not invent a process you did not run.</span>
-          <p class="cs-verdict">Outcome : <span>TODO</span></p>
+          <span class="cs-todo">Check this matches what you learned from the stock board, and change it if not.</span>
         </div>
       </div>
 
       <!-- STEP 02 -->
       <div class="cs-step" data-expand>
         <div class="cs-step-media">
-          <!-- TODO: <img src="keyboard-media/02-cad.jpg" alt="Fusion 360 case model" loading="lazy"> -->
-          <div class="cs-media-placeholder">02 &nbsp;/&nbsp; CAD screenshot</div>
+          <img src="keyboard-media/photos/IMG_3255.jpg" alt="Left half with its outer column broken off, beside the first printed case parts" loading="lazy">
         </div>
         <div class="cs-step-body">
-          <p class="cs-step-num">Iteration 02</p>
-          <h3>First printed case</h3>
+          <p class="cs-step-num">Four days later</p>
+          <h3>Cutting to 36 and the first printed case</h3>
           <p>
-            Modelled in Fusion 360 around the PCB footprint and switch plate. The first print is
-            never about looks, it is about whether the tolerances you assumed survive contact with a
-            real extruder.
+            The outer columns came off the PCB, the three keys on the left of the photo, and the
+            first case was modelled in Fusion 360 around what was left: a base with standoffs for the
+            PCB and a separate tray underneath.
           </p>
-          <span class="cs-todo">What did the first print get wrong? Wall thickness, switch plate fit, screw bosses, warping, the USB cutout being 1mm off? The specific failure is more useful than the success.</span>
-          <p class="cs-verdict">Outcome : <span>TODO</span></p>
+          <span class="cs-todo">What did the first print get wrong? Wall thickness, switch plate fit, screw bosses, warping, a cutout being off? The specific failure is more useful than the success.</span>
         </div>
       </div>
 
       <!-- STEP 03 -->
       <div class="cs-step" data-expand>
         <div class="cs-step-media">
-          <!-- TODO: <img src="keyboard-media/03-mount.jpg" alt="Trackpad mount revisions" loading="lazy"> -->
-          <div class="cs-media-placeholder">03 &nbsp;/&nbsp; Trackpad mount revisions</div>
+          <img src="keyboard-media/photos/IMG_3297.jpg" alt="Underside of the printed case with a tenting leg swung out" loading="lazy">
         </div>
         <div class="cs-step-body">
-          <p class="cs-step-num">Iteration 03</p>
-          <h3>Placing the trackpad</h3>
+          <p class="cs-step-num">October 2023</p>
+          <h3>Tenting and support</h3>
           <p>
-            The hard part of the whole build. The TPS43 has to sit where the thumb naturally rests
-            without stealing a key position or forcing the wrist to rotate. Angle, height, and
-            distance from the cluster are three variables that only resolve by printing them.
+            The constraint that really shaped the case. Two legs sit flush in recesses on the
+            underside, rubber feet sit at the corners, and the legs swing out to tent the half. The
+            case stays thin enough to hold in one hand with everything folded away.
           </p>
-          <span class="cs-todo">How many mount versions did you print, and what changed between them? If you have the rejected prints, photograph them side by side. A row of failed mounts is the strongest image on this page.</span>
-          <p class="cs-verdict">Outcome : <span>TODO</span></p>
+          <span class="cs-todo">How many leg and hinge versions did it take, and what failed along the way?</span>
         </div>
       </div>
 
       <!-- STEP 04 -->
       <div class="cs-step" data-expand>
         <div class="cs-step-media">
-          <!-- TODO: <img src="keyboard-media/04-wiring.jpg" alt="Wiring and controller" loading="lazy"> -->
-          <div class="cs-media-placeholder">04 &nbsp;/&nbsp; Wiring and controller</div>
+          <img src="keyboard-media/photos/IMG_6674.jpg" alt="Current build from above, with the wood topped trackpad at the inner corner of the right half" loading="lazy">
         </div>
         <div class="cs-step-body">
-          <p class="cs-step-num">Iteration 04</p>
-          <h3>Electronics and firmware</h3>
+          <p class="cs-step-num">Today</p>
+          <h3>Adding the trackpad</h3>
           <p>
-            Switches, diodes, controller, and the trackpad on its own bus. ZMK handles the split link
-            and the keymap; getting a pointing device to behave alongside it is where the
-            configuration work lives.
+            On the right half the TPS43 sits at the inner top corner, where the left half has its
+            controller window, with a wood veneer top. It is mounted sideways, so the firmware turns
+            its left and right into up and down.
           </p>
-          <span class="cs-todo">Which controller? Nice!nano, a clone, something else? What did it take to get the TPS43 recognised in ZMK, and did you have to modify or write any of that config yourself? If you wrote code, that is portfolio evidence, be specific.</span>
-          <p class="cs-verdict">Outcome : <span>TODO</span></p>
+          <span class="cs-todo">How do you use the trackpad day to day, and how many mount versions did you print?</span>
         </div>
       </div>
 
       <!-- STEP 05 -->
       <div class="cs-step" data-expand>
         <div class="cs-step-media">
+          <!-- TODO: <img src="keyboard-media/04-wiring.jpg" alt="Wiring and controller" loading="lazy"> -->
+          <div class="cs-media-placeholder">04 &nbsp;/&nbsp; Wiring and controller</div>
+        </div>
+        <div class="cs-step-body">
+          <p class="cs-step-num">Firmware</p>
+          <h3>Electronics and firmware</h3>
+          <p>
+            Switches, diodes, controller, and the trackpad on its own bus. ZMK handles the split link
+            and the keymap; getting a pointing device to behave alongside it is where the
+            configuration work lives.
+          </p>
+          <p>
+            Each half runs a Nice!Nano v2. The TPS43 is soldered straight to the right Nano's pads on a
+            six wire ribbon and talks over I2C. I moved to a fork of the Azoteq driver that ties the
+            trackpad into ZMK's sleep states, because the original kept the pad awake and drained the
+            right half's battery. A small custom input processor adds laptop style tap and tap to
+            drag.
+          </p>
+          <span class="cs-todo">Anything that took a long time to get working? Worth a sentence if so.</span>
+          <p class="cs-verdict">Outcome : <span>TODO</span></p>
+        </div>
+      </div>
+
+      <!-- STEP 06 -->
+      <div class="cs-step" data-expand>
+        <div class="cs-step-media">
           <!-- TODO: <img src="keyboard-media/05-keymap.jpg" alt="Keymap layers" loading="lazy"> -->
           <div class="cs-media-placeholder">05 &nbsp;/&nbsp; Keymap layers</div>
         </div>
         <div class="cs-step-body">
-          <p class="cs-step-num">Iteration 05</p>
+          <p class="cs-step-num">Layout</p>
           <h3>Designing the layout</h3>
           <p>
             36 keys means every symbol, number, and modifier lives on a layer. This is interface
@@ -394,10 +413,64 @@
   </div>
 </section>
 
+<!-- ── 05 : NULLKEYS OVERLAY ── -->
+<section class="cs-section" id="nullkeys-overlay">
+  <div class="section-inner">
+    <p class="section-label">05 : Software</p>
+    <h2 class="section-title">Learning it with the NullKeys overlay</h2>
+    <div class="section-rule"></div>
+    <div class="cs-body">
+      <p>
+        Fourteen layers and two dozen combos are a lot to hold in your head. The NullKeys overlay is a
+        desktop app I built in Godot that sits on top of everything and shows what the keyboard is
+        doing as I use it: which keys are pressed, which layers are active, and what every key does
+        right now. Hover a key and it explains that key on every layer, plus every combo it belongs to.
+      </p>
+      <p>
+        The hard part is that a computer only ever receives keycodes. Layers, holds and combos never
+        reach it, and holding A for the Num / Sym layer sends nothing at all. So instead of guessing
+        from keystrokes, a small ZMK module streams the physical key positions and the layer state
+        straight from the firmware.
+      </p>
+    </div>
+
+    <div class="cs-constraints">
+      <div class="cs-constraint">
+        <p class="cs-constraint-num">Keyboard</p>
+        <h3>Firmware module</h3>
+        <p>
+          Listens for key position and layer events and sends 32 byte reports over Raw HID. It only
+          streams while the overlay is asking for data, so the radio stays quiet otherwise.
+        </p>
+      </div>
+      <div class="cs-constraint">
+        <p class="cs-constraint-num">Bridge</p>
+        <h3>Python and hidapi</h3>
+        <p>
+          Godot cannot open HID devices, so a small Python process reads the reports and forwards them
+          as JSON over local UDP. The overlay starts and stops it automatically.
+        </p>
+      </div>
+      <div class="cs-constraint">
+        <p class="cs-constraint-num">Overlay</p>
+        <h3>Godot app</h3>
+        <p>
+          Parses corne.keymap directly, so it always matches the firmware, then resolves layers,
+          hold taps and combos and draws the result. Overlay mode draws the keys as outlines for
+          screen recordings.
+        </p>
+      </div>
+    </div>
+    <div class="cs-body" style="margin-top:1.5rem">
+      <span class="cs-todo">Add a screenshot or short clip of the overlay running, and a link to the project if it is public.</span>
+    </div>
+  </div>
+</section>
+
 <!-- ── 05 : DECISIONS ── -->
 <section class="cs-section">
   <div class="section-inner">
-    <p class="section-label">05 : Decisions</p>
+    <p class="section-label">06 : Decisions</p>
     <h2 class="section-title">The calls worth defending</h2>
     <div class="section-rule"></div>
 
@@ -450,7 +523,7 @@
 <!-- ── 06 : WHAT BROKE ── -->
 <section class="cs-section">
   <div class="section-inner">
-    <p class="section-label">06 : Failures</p>
+    <p class="section-label">07 : Failures</p>
     <h2 class="section-title">What broke</h2>
     <div class="section-rule"></div>
     <div class="cs-body">
@@ -480,7 +553,7 @@
 <!-- ── 07 : OUTCOME ── -->
 <section class="cs-section">
   <div class="section-inner">
-    <p class="section-label">07 : Outcome</p>
+    <p class="section-label">08 : Outcome</p>
     <h2 class="section-title">Where it landed</h2>
     <div class="section-rule"></div>
     <div class="cs-body">
@@ -511,31 +584,31 @@
 <!-- ── 08 : GALLERY ── -->
 <section class="cs-section">
   <div class="section-inner">
-    <p class="section-label">08 : Object</p>
+    <p class="section-label">09 : Object</p>
     <h2 class="section-title">The finished build</h2>
     <div class="section-rule"></div>
     <div class="cs-body">
       <p>
-        <span class="cs-todo">Shoot this properly. Plain background, one light source, and the same treatment for every angle: three-quarter hero, top down showing the layout, a close crop of the trackpad in the thumb path, and one shot with hands on it for scale. The site desaturates images until hover, so contrast and form matter more than colour.</span>
+        The current build, and the details that took the longest to get right.
       </p>
     </div>
 
     <div class="cs-gallery cs-gallery--2">
       <figure class="cs-tile" data-expand>
-        <div class="cs-tile-media"><div class="cs-media-placeholder">Hero, three-quarter</div></div>
-        <figcaption>Both halves</figcaption>
+        <div class="cs-tile-media"><img src="keyboard-media/photos/IMG_6674.jpg" alt="Both halves from above" loading="lazy"></div>
+        <figcaption>Both halves, current build</figcaption>
       </figure>
       <figure class="cs-tile" data-expand>
-        <div class="cs-tile-media"><div class="cs-media-placeholder">Top down</div></div>
-        <figcaption>Layout</figcaption>
+        <div class="cs-tile-media"><img src="keyboard-media/photos/IMG_3294.jpg" alt="Left half side profile" loading="lazy"></div>
+        <figcaption>Side profile</figcaption>
       </figure>
       <figure class="cs-tile" data-expand>
-        <div class="cs-tile-media"><div class="cs-media-placeholder">Trackpad detail</div></div>
-        <figcaption>Thumb path</figcaption>
+        <div class="cs-tile-media"><img src="keyboard-media/photos/IMG_3296.jpg" alt="Underside with legs folded flat" loading="lazy"></div>
+        <figcaption>Legs folded flat</figcaption>
       </figure>
       <figure class="cs-tile" data-expand>
-        <div class="cs-tile-media"><div class="cs-media-placeholder">In use</div></div>
-        <figcaption>In use</figcaption>
+        <div class="cs-tile-media"><img src="keyboard-media/photos/IMG_3292.jpg" alt="Inside of the base tray" loading="lazy"></div>
+        <figcaption>Base tray</figcaption>
       </figure>
     </div>
   </div>
@@ -544,7 +617,7 @@
 <!-- ── 09 : SPECS ── -->
 <section class="cs-section">
   <div class="section-inner">
-    <p class="section-label">09 : Build</p>
+    <p class="section-label">10 : Build</p>
     <h2 class="section-title">Specification</h2>
     <div class="section-rule"></div>
 
