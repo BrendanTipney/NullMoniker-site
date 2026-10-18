@@ -1,0 +1,10 @@
+
+/* ── polish pass ── */
+.feature-card .n { text-transform: uppercase; }
+.next-lane .name { -webkit-text-stroke-color: #6a6a6a; }
+.next-lane .dir { color: var(--muted); }
+.footer-cta-big { -webkit-text-stroke-color: #6a6a6a; }
+#archive .next-lane { text-align: left; padding: 3.5rem 2.5rem; }
+#archive .next-lane .name { font-size: clamp(2.4rem, 6vw, 5rem); }
+.loop--wide { margin-top: 0; }
+.lane-bignum { top: auto; bottom: 1.25rem; }

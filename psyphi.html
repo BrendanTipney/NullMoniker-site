@@ -16,28 +16,31 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="stylesheet" href="style.css" />
 </head>
-<body class="psyphi-page">
+<body class="psyphi-page page-vis">
 
 <!-- ── NAV ── -->
 <nav>
-  <a class="nav-logo" href="index.html">
+  <a class="nav-logo" href="index.html" aria-label="NullMoniker home">
+    <span class="nav-logo-mark">N</span>
     <span class="nav-logo-wordmark">NullMoniker</span>
   </a>
   <ul class="nav-links" id="navLinks">
-    <li><a href="index.html#work">Work</a></li>
-    <li><a href="psyphi.html" class="is-current">PsyPhi</a></li>
-    <li><a href="index.html#about">About</a></li>
-    <li><a href="index.html#links">Links</a></li>
+    <li><a href="xr.html" class="accent-xr" data-accent><span class="nav-num">01</span><span class="nav-text">XR</span></a></li>
+    <li><a href="games.html" class="accent-games" data-accent><span class="nav-num">02</span><span class="nav-text">Games</span></a></li>
+    <li><a href="hardware.html" class="accent-hw" data-accent><span class="nav-num">03</span><span class="nav-text">Hardware</span></a></li>
+    <li><a href="visuals.html" class="accent-vis is-current" aria-current="page" data-accent><span class="nav-num">04</span><span class="nav-text">Visuals</span></a></li>
+    <li><a href="index.html#about"><span class="nav-text">About</span></a></li>
     <li><a href="mailto:brendan.tipney@gmail.com" class="nav-cta">Contact</a></li>
   </ul>
-  <div class="nav-burger" id="navBurger" aria-label="Toggle menu">
+  <button class="nav-burger" id="navBurger" type="button" aria-label="Toggle menu" aria-expanded="false">
     <span></span><span></span><span></span>
-  </div>
+  </button>
 </nav>
 
 <!-- ── HEADER ── -->
 <section id="psyphi-hero">
   <div class="section-inner">
+    <p class="crumbs case-crumbs"><a href="index.html">Home</a><span>/</span><a href="visuals.html">04 : Visuals</a><span>/</span><span class="here">PsyPhi Archive</span></p>
     <p class="section-label">Archive : 2017 to 2021</p>
     <h1 class="psyphi-hero-title">PsyPhi</h1>
     <div class="section-rule"></div>
@@ -222,18 +225,28 @@
 <!-- ── BACK LINK ── -->
 <section id="psyphi-back">
   <div class="section-inner" style="text-align:center;">
-    <a href="index.html" class="btn btn-secondary">Back to NullMoniker</a>
+    <a href="visuals.html" class="btn btn-secondary"><span class="arrow">←</span> Back to Live Visuals</a>
+    <a href="index.html" class="btn btn-secondary">Home</a>
   </div>
 </section>
+
+<section class="footer-cta">
+  <p class="footer-cta-label">Got something to build?</p>
+  <a href="mailto:brendan.tipney@gmail.com" class="footer-cta-big" data-cursor="Email">Let's talk</a>
+  <p class="footer-cta-mail">brendan.tipney@gmail.com</p>
+</section>
+
 
 <!-- ── FOOTER ── -->
 <footer>
   <div class="footer-inner">
     <span class="footer-logo">NullMoniker</span>
-    <ul class="footer-links">
-      <li><a href="index.html#work">Work</a></li>
+        <ul class="footer-links">
+      <li><a href="xr.html">XR</a></li>
+      <li><a href="games.html">Games</a></li>
+      <li><a href="hardware.html">Hardware</a></li>
+      <li><a href="visuals.html">Visuals</a></li>
       <li><a href="index.html#about">About</a></li>
-      <li><a href="https://ballastgames.com/" target="_blank" rel="noopener">Ballast Games</a></li>
       <li><a href="mailto:brendan.tipney@gmail.com">Contact</a></li>
     </ul>
     <p class="footer-copy">© 2026 Brendan Tipney. All rights reserved.</p>

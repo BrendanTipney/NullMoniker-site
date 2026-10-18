@@ -1,0 +1,3070 @@
+{
+ "source": "corne.keymap",
+ "layers": [
+  {
+   "id": "default_layer",
+   "name": "Base",
+   "keys": [
+    {
+     "kind": "none",
+     "raw": "&none"
+    },
+    {
+     "kind": "layer-tap",
+     "tap": "Q",
+     "hold": "Bluetooth",
+     "layer": 8,
+     "raw": "&lt 8 Q"
+    },
+    {
+     "kind": "key",
+     "tap": "W",
+     "raw": "&kp W"
+    },
+    {
+     "kind": "key",
+     "tap": "F",
+     "raw": "&kp F"
+    },
+    {
+     "kind": "layer-tap",
+     "tap": "P",
+     "hold": "High Sens",
+     "layer": 12,
+     "raw": "&lt 12 P"
+    },
+    {
+     "kind": "key",
+     "tap": "G",
+     "raw": "&kp G"
+    },
+    {
+     "kind": "key",
+     "tap": "J",
+     "raw": "&kp J"
+    },
+    {
+     "kind": "key",
+     "tap": "L",
+     "raw": "&kp L"
+    },
+    {
+     "kind": "key",
+     "tap": "U",
+     "raw": "&kp U"
+    },
+    {
+     "kind": "key",
+     "tap": "Y",
+     "raw": "&kp Y"
+    },
+    {
+     "kind": "key",
+     "tap": ";",
+     "raw": "&kp SEMICOLON"
+    },
+    {
+     "kind": "none",
+     "raw": "&none"
+    },
+    {
+     "kind": "none",
+     "raw": "&none"
+    },
+    {
+     "kind": "layer-tap",
+     "tap": "A",
+     "hold": "Num / Sym",
+     "layer": 1,
+     "raw": "&lt 1 A"
+    },
+    {
+     "kind": "layer-tap",
+     "tap": "S",
+     "hold": "Media",
+     "layer": 6,
+     "raw": "&lt 6 S"
+    },
+    {
+     "kind": "layer-tap",
+     "tap": "R",
+     "hold": "Hand Swap",
+     "layer": 3,
+     "raw": "&lt 3 R"
+    },
+    {
+     "kind": "layer-tap",
+     "tap": "T",
+     "hold": "Hand Swap",
+     "layer": 3,
+     "raw": "&lt 3 T"
+    },
+    {
+     "kind": "layer-tap",
+     "tap": "D",
+     "hold": "VS Code",
+     "layer": 9,
+     "raw": "&lt 9 D"
+    },
+    {
+     "kind": "key",
+     "tap": "H",
+     "raw": "&kp H"
+    },
+    {
+     "kind": "layer-tap",
+     "tap": "N",
+     "hold": "Hand Swap",
+     "layer": 3,
+     "raw": "&lt 3 N"
+    },
+    {
+     "kind": "layer-tap",
+     "tap": "E",
+     "hold": "Hand Swap",
+     "layer": 3,
+     "raw": "&lt 3 E"
+    },
+    {
+     "kind": "key",
+     "tap": "I",
+     "raw": "&kp I"
+    },
+    {
+     "kind": "key",
+     "tap": "O",
+     "raw": "&kp O"
+    },
+    {
+     "kind": "none",
+     "raw": "&none"
+    },
+    {
+     "kind": "none",
+     "raw": "&none"
+    },
+    {
+     "kind": "layer-tap",
+     "tap": "Z",
+     "hold": "Arrows",
+     "layer": 2,
+     "raw": "&lt 2 Z"
+    },
+    {
+     "kind": "key",
+     "tap": "X",
+     "raw": "&kp X"
+    },
+    {
+     "kind": "key",
+     "tap": "C",
+     "raw": "&kp C"
+    },
+    {
+     "kind": "layer-tap",
+     "tap": "V",
+     "hold": "Low Sens",
+     "layer": 13,
+     "raw": "&lt 13 V"
+    },
+    {
+     "kind": "key",
+     "tap": "B",
+     "raw": "&kp B"
+    },
+    {
+     "kind": "key",
+     "tap": "K",
+     "raw": "&kp K"
+    },
+    {
+     "kind": "key",
+     "tap": "M",
+     "raw": "&kp M"
+    },
+    {
+     "kind": "key",
+     "tap": ",",
+     "raw": "&kp COMMA"
+    },
+    {
+     "kind": "key",
+     "tap": ".",
+     "raw": "&kp DOT"
+    },
+    {
+     "kind": "key",
+     "tap": "/",
+     "raw": "&kp FSLH"
+    },
+    {
+     "kind": "none",
+     "raw": "&none"
+    },
+    {
+     "kind": "tap-dance",
+     "tap": "Alt",
+     "hold": null,
+     "raw": "&StickyWinKey",
+     "note": "Tap once for Alt, twice for a sticky Win key"
+    },
+    {
+     "kind": "mod-tap",
+     "tap": "Space",
+     "hold": "Shift",
+     "raw": "&mt LEFT_SHIFT SPACE"
+    },
+    {
+     "kind": "mod-tap",
+     "tap": "Enter",
+     "hold": "Ctrl",
+     "raw": "&mt LEFT_CONTROL ENTER"
+    },
+    {
+     "kind": "mod-tap",
+     "tap": "Enter",
+     "hold": "Ctrl",
+     "raw": "&mt RCTRL ENTER"
+    },
+    {
+     "kind": "mod-tap",
+     "tap": "Space",
+     "hold": "Shift",
+     "raw": "&mt RIGHT_SHIFT SPACE"
+    },
+    {
+     "kind": "mod-tap",
+     "tap": "Alt",
+     "hold": "Repeat",
+     "raw": "&mt C_REPEAT RIGHT_ALT"
+    }
+   ]
+  },
+  {
+   "id": "NumSym",
+   "name": "Num / Sym",
+   "keys": [
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "none",
+     "raw": "&none"
+    },
+    {
+     "kind": "key",
+     "tap": "7",
+     "raw": "&kp N7"
+    },
+    {
+     "kind": "key",
+     "tap": "8",
+     "raw": "&kp N8"
+    },
+    {
+     "kind": "key",
+     "tap": "9",
+     "raw": "&kp N9"
+    },
+    {
+     "kind": "key",
+     "tap": "/",
+     "raw": "&kp SLASH"
+    },
+    {
+     "kind": "none",
+     "raw": "&none"
+    },
+    {
+     "kind": "key",
+     "tap": "(",
+     "raw": "&kp LEFT_PARENTHESIS"
+    },
+    {
+     "kind": "key",
+     "tap": ")",
+     "raw": "&kp RIGHT_PARENTHESIS"
+    },
+    {
+     "kind": "key",
+     "tap": "\\",
+     "raw": "&kp BACKSLASH"
+    },
+    {
+     "kind": "none",
+     "raw": "&none"
+    },
+    {
+     "kind": "none",
+     "raw": "&none"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "none",
+     "raw": "&none"
+    },
+    {
+     "kind": "key",
+     "tap": "4",
+     "raw": "&kp N4"
+    },
+    {
+     "kind": "key",
+     "tap": "5",
+     "raw": "&kp N5"
+    },
+    {
+     "kind": "key",
+     "tap": "6",
+     "raw": "&kp NUMBER_6"
+    },
+    {
+     "kind": "key",
+     "tap": "-",
+     "raw": "&kp MINUS"
+    },
+    {
+     "kind": "none",
+     "raw": "&none"
+    },
+    {
+     "kind": "key",
+     "tap": "{",
+     "raw": "&kp LEFT_BRACE"
+    },
+    {
+     "kind": "key",
+     "tap": "}",
+     "raw": "&kp RIGHT_BRACE"
+    },
+    {
+     "kind": "key",
+     "tap": "'",
+     "raw": "&kp SINGLE_QUOTE"
+    },
+    {
+     "kind": "none",
+     "raw": "&none"
+    },
+    {
+     "kind": "none",
+     "raw": "&none"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "none",
+     "raw": "&none"
+    },
+    {
+     "kind": "key",
+     "tap": "1",
+     "raw": "&kp N1"
+    },
+    {
+     "kind": "key",
+     "tap": "2",
+     "raw": "&kp N2"
+    },
+    {
+     "kind": "key",
+     "tap": "3",
+     "raw": "&kp N3"
+    },
+    {
+     "kind": "key",
+     "tap": "=",
+     "raw": "&kp EQUAL"
+    },
+    {
+     "kind": "none",
+     "raw": "&none"
+    },
+    {
+     "kind": "key",
+     "tap": "[",
+     "raw": "&kp LEFT_BRACKET"
+    },
+    {
+     "kind": "key",
+     "tap": "]",
+     "raw": "&kp RIGHT_BRACKET"
+    },
+    {
+     "kind": "key",
+     "tap": "~",
+     "raw": "&kp TILDE"
+    },
+    {
+     "kind": "none",
+     "raw": "&none"
+    },
+    {
+     "kind": "none",
+     "raw": "&none"
+    },
+    {
+     "kind": "key",
+     "tap": ".",
+     "raw": "&kp PERIOD"
+    },
+    {
+     "kind": "mod-tap",
+     "tap": "0",
+     "hold": "Shift",
+     "raw": "&mt LEFT_SHIFT N0"
+    },
+    {
+     "kind": "mod-tap",
+     "tap": "Enter",
+     "hold": "Ctrl",
+     "raw": "&mt LCTRL ENTER"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    }
+   ]
+  },
+  {
+   "id": "arrows",
+   "name": "Arrows",
+   "keys": [
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "key",
+     "tap": "Home",
+     "raw": "&kp HOME"
+    },
+    {
+     "kind": "key",
+     "tap": "↑",
+     "raw": "&kp UP"
+    },
+    {
+     "kind": "key",
+     "tap": "End",
+     "raw": "&kp END"
+    },
+    {
+     "kind": "key",
+     "tap": "PgUp",
+     "raw": "&kp PAGE_UP"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "key",
+     "tap": "←",
+     "raw": "&kp LEFT"
+    },
+    {
+     "kind": "key",
+     "tap": "↓",
+     "raw": "&kp DOWN"
+    },
+    {
+     "kind": "key",
+     "tap": "→",
+     "raw": "&kp RIGHT"
+    },
+    {
+     "kind": "key",
+     "tap": "PgDn",
+     "raw": "&kp PAGE_DOWN"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "mod-tap",
+     "tap": "Ctrl+←",
+     "hold": "Home",
+     "raw": "&mt HOME LC(LEFT_ARROW)"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "mod-tap",
+     "tap": "Ctrl+→",
+     "hold": "End",
+     "raw": "&mt END LC(RIGHT_ARROW)"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    }
+   ]
+  },
+  {
+   "id": "Hand_Swap",
+   "name": "Hand Swap",
+   "keys": [
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "key",
+     "tap": ";",
+     "raw": "&kp SEMI"
+    },
+    {
+     "kind": "key",
+     "tap": "Y",
+     "raw": "&kp Y"
+    },
+    {
+     "kind": "key",
+     "tap": "U",
+     "raw": "&kp U"
+    },
+    {
+     "kind": "key",
+     "tap": "L",
+     "raw": "&kp L"
+    },
+    {
+     "kind": "key",
+     "tap": "J",
+     "raw": "&kp J"
+    },
+    {
+     "kind": "key",
+     "tap": "G",
+     "raw": "&kp G"
+    },
+    {
+     "kind": "key",
+     "tap": "P",
+     "raw": "&kp P"
+    },
+    {
+     "kind": "key",
+     "tap": "F",
+     "raw": "&kp F"
+    },
+    {
+     "kind": "key",
+     "tap": "W",
+     "raw": "&kp W"
+    },
+    {
+     "kind": "key",
+     "tap": "Q",
+     "raw": "&kp Q"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "key",
+     "tap": "O",
+     "raw": "&kp O"
+    },
+    {
+     "kind": "key",
+     "tap": "I",
+     "raw": "&kp I"
+    },
+    {
+     "kind": "key",
+     "tap": "E",
+     "raw": "&kp E"
+    },
+    {
+     "kind": "key",
+     "tap": "N",
+     "raw": "&kp N"
+    },
+    {
+     "kind": "key",
+     "tap": "H",
+     "raw": "&kp H"
+    },
+    {
+     "kind": "key",
+     "tap": "D",
+     "raw": "&kp D"
+    },
+    {
+     "kind": "key",
+     "tap": "T",
+     "raw": "&kp T"
+    },
+    {
+     "kind": "key",
+     "tap": "R",
+     "raw": "&kp R"
+    },
+    {
+     "kind": "key",
+     "tap": "S",
+     "raw": "&kp S"
+    },
+    {
+     "kind": "key",
+     "tap": "A",
+     "raw": "&kp A"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "key",
+     "tap": "/",
+     "raw": "&kp FSLH"
+    },
+    {
+     "kind": "key",
+     "tap": ".",
+     "raw": "&kp DOT"
+    },
+    {
+     "kind": "key",
+     "tap": ",",
+     "raw": "&kp COMMA"
+    },
+    {
+     "kind": "key",
+     "tap": "M",
+     "raw": "&kp M"
+    },
+    {
+     "kind": "key",
+     "tap": "K",
+     "raw": "&kp K"
+    },
+    {
+     "kind": "key",
+     "tap": "B",
+     "raw": "&kp B"
+    },
+    {
+     "kind": "key",
+     "tap": "V",
+     "raw": "&kp V"
+    },
+    {
+     "kind": "key",
+     "tap": "C",
+     "raw": "&kp C"
+    },
+    {
+     "kind": "key",
+     "tap": "X",
+     "raw": "&kp X"
+    },
+    {
+     "kind": "key",
+     "tap": "Z",
+     "raw": "&kp Z"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "mod-tap",
+     "tap": "Enter",
+     "hold": "Ctrl",
+     "raw": "&mt RCTRL ENTER"
+    },
+    {
+     "kind": "mod-tap",
+     "tap": "Space",
+     "hold": "Shift",
+     "raw": "&mt RIGHT_SHIFT SPACE"
+    },
+    {
+     "kind": "key",
+     "tap": "Alt",
+     "raw": "&kp RIGHT_ALT"
+    }
+   ]
+  },
+  {
+   "id": "Gaming",
+   "name": "Gaming",
+   "keys": [
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "layer",
+     "tap": "Gaming Num",
+     "hold": null,
+     "layer": 5,
+     "note": "Held",
+     "raw": "&mo 5"
+    },
+    {
+     "kind": "key",
+     "tap": "Q",
+     "raw": "&kp Q"
+    },
+    {
+     "kind": "key",
+     "tap": "W",
+     "raw": "&kp W"
+    },
+    {
+     "kind": "key",
+     "tap": "E",
+     "raw": "&kp E"
+    },
+    {
+     "kind": "key",
+     "tap": "R",
+     "raw": "&kp R"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "key",
+     "tap": "Shift",
+     "raw": "&kp LEFT_SHIFT"
+    },
+    {
+     "kind": "key",
+     "tap": "A",
+     "raw": "&kp A"
+    },
+    {
+     "kind": "key",
+     "tap": "S",
+     "raw": "&kp S"
+    },
+    {
+     "kind": "key",
+     "tap": "D",
+     "raw": "&kp D"
+    },
+    {
+     "kind": "key",
+     "tap": "F",
+     "raw": "&kp F"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "key",
+     "tap": "Ctrl",
+     "raw": "&kp LCTRL"
+    },
+    {
+     "kind": "key",
+     "tap": "Z",
+     "raw": "&kp Z"
+    },
+    {
+     "kind": "key",
+     "tap": "X",
+     "raw": "&kp X"
+    },
+    {
+     "kind": "key",
+     "tap": "C",
+     "raw": "&kp C"
+    },
+    {
+     "kind": "key",
+     "tap": "V",
+     "raw": "&kp V"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "key",
+     "tap": "T",
+     "raw": "&kp T"
+    },
+    {
+     "kind": "key",
+     "tap": "G",
+     "raw": "&kp G"
+    },
+    {
+     "kind": "key",
+     "tap": "Space",
+     "raw": "&kp SPACE"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    }
+   ]
+  },
+  {
+   "id": "GamingNum",
+   "name": "Gaming Num",
+   "keys": [
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "key",
+     "tap": "1",
+     "raw": "&kp N1"
+    },
+    {
+     "kind": "key",
+     "tap": "2",
+     "raw": "&kp N2"
+    },
+    {
+     "kind": "key",
+     "tap": "3",
+     "raw": "&kp N3"
+    },
+    {
+     "kind": "key",
+     "tap": "4",
+     "raw": "&kp N4"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "key",
+     "tap": "5",
+     "raw": "&kp N5"
+    },
+    {
+     "kind": "key",
+     "tap": "6",
+     "raw": "&kp N6"
+    },
+    {
+     "kind": "key",
+     "tap": "7",
+     "raw": "&kp N7"
+    },
+    {
+     "kind": "key",
+     "tap": "8",
+     "raw": "&kp N8"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "key",
+     "tap": "9",
+     "raw": "&kp N9"
+    },
+    {
+     "kind": "key",
+     "tap": "0",
+     "raw": "&kp N0"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    }
+   ]
+  },
+  {
+   "id": "Media",
+   "name": "Media",
+   "keys": [
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "key",
+     "tap": "Vol +",
+     "raw": "&kp C_VOLUME_UP"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "key",
+     "tap": "Vol −",
+     "raw": "&kp C_VOLUME_DOWN"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "key",
+     "tap": "Play",
+     "raw": "&kp C_PLAY_PAUSE"
+    },
+    {
+     "kind": "key",
+     "tap": "Prev",
+     "raw": "&kp C_PREV"
+    },
+    {
+     "kind": "key",
+     "tap": "Next",
+     "raw": "&kp C_NEXT"
+    },
+    {
+     "kind": "key",
+     "tap": "Mute",
+     "raw": "&kp C_MUTE"
+    },
+    {
+     "kind": "key",
+     "tap": "Shift+Win+K",
+     "raw": "&kp LG(LS(K))"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    }
+   ]
+  },
+  {
+   "id": "Function",
+   "name": "Function",
+   "keys": [
+    {
+     "kind": "none",
+     "raw": "&none"
+    },
+    {
+     "kind": "none",
+     "raw": "&none"
+    },
+    {
+     "kind": "key",
+     "tap": "F7",
+     "raw": "&kp F7"
+    },
+    {
+     "kind": "key",
+     "tap": "F8",
+     "raw": "&kp F8"
+    },
+    {
+     "kind": "key",
+     "tap": "F9",
+     "raw": "&kp F9"
+    },
+    {
+     "kind": "key",
+     "tap": "F10",
+     "raw": "&kp F10"
+    },
+    {
+     "kind": "none",
+     "raw": "&none"
+    },
+    {
+     "kind": "none",
+     "raw": "&none"
+    },
+    {
+     "kind": "none",
+     "raw": "&none"
+    },
+    {
+     "kind": "key",
+     "tap": "↑",
+     "raw": "&kp UP"
+    },
+    {
+     "kind": "none",
+     "raw": "&none"
+    },
+    {
+     "kind": "none",
+     "raw": "&none"
+    },
+    {
+     "kind": "none",
+     "raw": "&none"
+    },
+    {
+     "kind": "none",
+     "raw": "&none"
+    },
+    {
+     "kind": "key",
+     "tap": "F4",
+     "raw": "&kp F4"
+    },
+    {
+     "kind": "key",
+     "tap": "F5",
+     "raw": "&kp F5"
+    },
+    {
+     "kind": "key",
+     "tap": "F6",
+     "raw": "&kp F6"
+    },
+    {
+     "kind": "key",
+     "tap": "F11",
+     "raw": "&kp F11"
+    },
+    {
+     "kind": "none",
+     "raw": "&none"
+    },
+    {
+     "kind": "none",
+     "raw": "&none"
+    },
+    {
+     "kind": "key",
+     "tap": "←",
+     "raw": "&kp LEFT"
+    },
+    {
+     "kind": "key",
+     "tap": "↓",
+     "raw": "&kp DOWN"
+    },
+    {
+     "kind": "key",
+     "tap": "→",
+     "raw": "&kp RIGHT"
+    },
+    {
+     "kind": "none",
+     "raw": "&none"
+    },
+    {
+     "kind": "none",
+     "raw": "&none"
+    },
+    {
+     "kind": "none",
+     "raw": "&none"
+    },
+    {
+     "kind": "key",
+     "tap": "F1",
+     "raw": "&kp F1"
+    },
+    {
+     "kind": "key",
+     "tap": "F2",
+     "raw": "&kp F2"
+    },
+    {
+     "kind": "key",
+     "tap": "F3",
+     "raw": "&kp F3"
+    },
+    {
+     "kind": "key",
+     "tap": "F12",
+     "raw": "&kp F12"
+    },
+    {
+     "kind": "none",
+     "raw": "&none"
+    },
+    {
+     "kind": "none",
+     "raw": "&none"
+    },
+    {
+     "kind": "none",
+     "raw": "&none"
+    },
+    {
+     "kind": "none",
+     "raw": "&none"
+    },
+    {
+     "kind": "none",
+     "raw": "&none"
+    },
+    {
+     "kind": "none",
+     "raw": "&none"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    }
+   ]
+  },
+  {
+   "id": "BlueTooth",
+   "name": "Bluetooth",
+   "keys": [
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "system",
+     "tap": "BT 1",
+     "raw": "&bt BT_SEL 0",
+     "note": "Bluetooth profile 1"
+    },
+    {
+     "kind": "system",
+     "tap": "BT 2",
+     "raw": "&bt BT_SEL 1",
+     "note": "Bluetooth profile 2"
+    },
+    {
+     "kind": "system",
+     "tap": "BT 3",
+     "raw": "&bt BT_SEL 2",
+     "note": "Bluetooth profile 3"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "system",
+     "tap": "BT 4",
+     "raw": "&bt BT_SEL 3",
+     "note": "Bluetooth profile 4"
+    },
+    {
+     "kind": "system",
+     "tap": "BT 5",
+     "raw": "&bt BT_SEL 4",
+     "note": "Bluetooth profile 5"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "system",
+     "tap": "BT clear",
+     "raw": "&bt BT_CLR",
+     "note": "Clear the current Bluetooth pairing"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    }
+   ]
+  },
+  {
+   "id": "VSCode",
+   "name": "VS Code",
+   "keys": [
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "key",
+     "tap": "Ctrl+Shift+L",
+     "raw": "&kp LS(LC(L))"
+    },
+    {
+     "kind": "key",
+     "tap": "Shift+Alt+→",
+     "raw": "&kp LS(LA(RIGHT))"
+    },
+    {
+     "kind": "key",
+     "tap": "Alt+↑",
+     "raw": "&kp LA(UP_ARROW)"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "key",
+     "tap": "Ctrl+L",
+     "raw": "&kp LC(L)"
+    },
+    {
+     "kind": "key",
+     "tap": "Shift+Alt+←",
+     "raw": "&kp LS(LA(LEFT))"
+    },
+    {
+     "kind": "key",
+     "tap": "Alt+↓",
+     "raw": "&kp LA(DOWN)"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "key",
+     "tap": "Ctrl+Shift+Alt+S",
+     "raw": "&kp LS(LA(LC(S)))"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    }
+   ]
+  },
+  {
+   "id": "QWERTY",
+   "name": "QWERTY",
+   "keys": [
+    {
+     "kind": "none",
+     "raw": "&none"
+    },
+    {
+     "kind": "layer-tap",
+     "tap": "Q",
+     "hold": "Bluetooth",
+     "layer": 8,
+     "raw": "&lt 8 Q"
+    },
+    {
+     "kind": "key",
+     "tap": "W",
+     "raw": "&kp W"
+    },
+    {
+     "kind": "key",
+     "tap": "E",
+     "raw": "&kp E"
+    },
+    {
+     "kind": "key",
+     "tap": "R",
+     "raw": "&kp R"
+    },
+    {
+     "kind": "key",
+     "tap": "T",
+     "raw": "&kp T"
+    },
+    {
+     "kind": "key",
+     "tap": "Y",
+     "raw": "&kp Y"
+    },
+    {
+     "kind": "key",
+     "tap": "U",
+     "raw": "&kp U"
+    },
+    {
+     "kind": "key",
+     "tap": "I",
+     "raw": "&kp I"
+    },
+    {
+     "kind": "key",
+     "tap": "O",
+     "raw": "&kp O"
+    },
+    {
+     "kind": "key",
+     "tap": "P",
+     "raw": "&kp P"
+    },
+    {
+     "kind": "none",
+     "raw": "&none"
+    },
+    {
+     "kind": "none",
+     "raw": "&none"
+    },
+    {
+     "kind": "layer-tap",
+     "tap": "A",
+     "hold": "Num / Sym",
+     "layer": 1,
+     "raw": "&lt 1 A"
+    },
+    {
+     "kind": "layer-tap",
+     "tap": "S",
+     "hold": "Media",
+     "layer": 6,
+     "raw": "&lt 6 S"
+    },
+    {
+     "kind": "key",
+     "tap": "D",
+     "raw": "&kp D"
+    },
+    {
+     "kind": "key",
+     "tap": "F",
+     "raw": "&kp F"
+    },
+    {
+     "kind": "layer-tap",
+     "tap": "D",
+     "hold": "VS Code",
+     "layer": 9,
+     "raw": "&lt 9 D"
+    },
+    {
+     "kind": "key",
+     "tap": "H",
+     "raw": "&kp H"
+    },
+    {
+     "kind": "key",
+     "tap": "J",
+     "raw": "&kp J"
+    },
+    {
+     "kind": "key",
+     "tap": "K",
+     "raw": "&kp K"
+    },
+    {
+     "kind": "key",
+     "tap": "L",
+     "raw": "&kp L"
+    },
+    {
+     "kind": "key",
+     "tap": ";",
+     "raw": "&kp SEMI"
+    },
+    {
+     "kind": "none",
+     "raw": "&none"
+    },
+    {
+     "kind": "none",
+     "raw": "&none"
+    },
+    {
+     "kind": "layer-tap",
+     "tap": "Z",
+     "hold": "Arrows",
+     "layer": 2,
+     "raw": "&lt 2 Z"
+    },
+    {
+     "kind": "key",
+     "tap": "X",
+     "raw": "&kp X"
+    },
+    {
+     "kind": "key",
+     "tap": "C",
+     "raw": "&kp C"
+    },
+    {
+     "kind": "key",
+     "tap": "V",
+     "raw": "&kp V"
+    },
+    {
+     "kind": "key",
+     "tap": "B",
+     "raw": "&kp B"
+    },
+    {
+     "kind": "key",
+     "tap": "N",
+     "raw": "&kp N"
+    },
+    {
+     "kind": "key",
+     "tap": "M",
+     "raw": "&kp M"
+    },
+    {
+     "kind": "key",
+     "tap": ",",
+     "raw": "&kp COMMA"
+    },
+    {
+     "kind": "key",
+     "tap": ".",
+     "raw": "&kp DOT"
+    },
+    {
+     "kind": "key",
+     "tap": "/",
+     "raw": "&kp FSLH"
+    },
+    {
+     "kind": "none",
+     "raw": "&none"
+    },
+    {
+     "kind": "tap-dance",
+     "tap": "Alt",
+     "hold": null,
+     "raw": "&StickyWinKey",
+     "note": "Tap once for Alt, twice for a sticky Win key"
+    },
+    {
+     "kind": "mod-tap",
+     "tap": "Space",
+     "hold": "Shift",
+     "raw": "&mt LEFT_SHIFT SPACE"
+    },
+    {
+     "kind": "mod-tap",
+     "tap": "Enter",
+     "hold": "Ctrl",
+     "raw": "&mt LEFT_CONTROL ENTER"
+    },
+    {
+     "kind": "mod-tap",
+     "tap": "Enter",
+     "hold": "Ctrl",
+     "raw": "&mt RCTRL ENTER"
+    },
+    {
+     "kind": "mod-tap",
+     "tap": "Space",
+     "hold": "Shift",
+     "raw": "&mt RIGHT_SHIFT SPACE"
+    },
+    {
+     "kind": "key",
+     "tap": "Repeat",
+     "raw": "&key_repeat",
+     "note": "Repeat the last key"
+    }
+   ]
+  },
+  {
+   "id": "Mouse",
+   "name": "Mouse",
+   "keys": [
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "mouse",
+     "tap": "Back",
+     "raw": "&mkp MB4"
+    },
+    {
+     "kind": "mouse",
+     "tap": "Move ↑",
+     "raw": "&mmv MOVE_UP"
+    },
+    {
+     "kind": "mouse",
+     "tap": "Fwd",
+     "raw": "&mkp MB5"
+    },
+    {
+     "kind": "mouse",
+     "tap": "Scroll ↑",
+     "raw": "&msc SCRL_UP"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "mouse",
+     "tap": "Move ←",
+     "raw": "&mmv MOVE_LEFT"
+    },
+    {
+     "kind": "mouse",
+     "tap": "Move ↓",
+     "raw": "&mmv MOVE_DOWN"
+    },
+    {
+     "kind": "mouse",
+     "tap": "Move →",
+     "raw": "&mmv MOVE_RIGHT"
+    },
+    {
+     "kind": "mouse",
+     "tap": "Scroll ↓",
+     "raw": "&msc SCRL_DOWN"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "mouse",
+     "tap": "Scroll ←",
+     "raw": "&msc SCRL_LEFT"
+    },
+    {
+     "kind": "mouse",
+     "tap": "Scroll →",
+     "raw": "&msc SCRL_RIGHT"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "mouse",
+     "tap": "M click",
+     "raw": "&mkp MCLK"
+    },
+    {
+     "kind": "mouse",
+     "tap": "R click",
+     "raw": "&mkp RCLK"
+    },
+    {
+     "kind": "mouse",
+     "tap": "L click",
+     "raw": "&mkp LCLK"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    }
+   ]
+  },
+  {
+   "id": "HighSens",
+   "name": "High Sens",
+   "keys": [
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    }
+   ]
+  },
+  {
+   "id": "LowSens",
+   "name": "Low Sens",
+   "keys": [
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    },
+    {
+     "kind": "trans",
+     "raw": "&trans"
+    }
+   ]
+  }
+ ],
+ "combos": [
+  {
+   "name": "Tab",
+   "positions": [
+    14,
+    16
+   ],
+   "layers": null,
+   "action": {
+    "kind": "key",
+    "tap": "Tab",
+    "raw": "&kp TAB"
+   }
+  },
+  {
+   "name": "Move Window Right",
+   "positions": [
+    3,
+    4,
+    5
+   ],
+   "layers": null,
+   "action": {
+    "kind": "key",
+    "tap": "Win+→",
+    "raw": "&kp LG(RIGHT)"
+   }
+  },
+  {
+   "name": "Move Window Left",
+   "positions": [
+    1,
+    2,
+    3
+   ],
+   "layers": null,
+   "action": {
+    "kind": "key",
+    "tap": "Win+←",
+    "raw": "&kp LG(LEFT)"
+   }
+  },
+  {
+   "name": "Maximize",
+   "positions": [
+    2,
+    3,
+    4
+   ],
+   "layers": null,
+   "action": {
+    "kind": "key",
+    "tap": "Win+↑",
+    "raw": "&kp LG(UP_ARROW)"
+   }
+  },
+  {
+   "name": "Minimize",
+   "positions": [
+    26,
+    27,
+    28
+   ],
+   "layers": null,
+   "action": {
+    "kind": "key",
+    "tap": "Win+↓",
+    "raw": "&kp LG(DOWN)"
+   }
+  },
+  {
+   "name": "App View",
+   "positions": [
+    14,
+    15,
+    16
+   ],
+   "layers": null,
+   "action": {
+    "kind": "key",
+    "tap": "Alt+Tab",
+    "raw": "&kp LA(TAB)"
+   }
+  },
+  {
+   "name": "Open App",
+   "positions": [
+    13,
+    14,
+    15,
+    16
+   ],
+   "layers": null,
+   "action": {
+    "kind": "key",
+    "tap": "Alt+Space",
+    "raw": "&kp LA(SPACE)"
+   }
+  },
+  {
+   "name": "Brace",
+   "positions": [
+    7,
+    8
+   ],
+   "layers": null,
+   "action": {
+    "kind": "key",
+    "tap": "(",
+    "raw": "&kp LEFT_PARENTHESIS"
+   }
+  },
+  {
+   "name": "End Brace",
+   "positions": [
+    8,
+    9
+   ],
+   "layers": null,
+   "action": {
+    "kind": "key",
+    "tap": ")",
+    "raw": "&kp RIGHT_PARENTHESIS"
+   }
+  },
+  {
+   "name": "Curly Brace",
+   "positions": [
+    19,
+    20
+   ],
+   "layers": null,
+   "action": {
+    "kind": "key",
+    "tap": "{",
+    "raw": "&kp LEFT_BRACE"
+   }
+  },
+  {
+   "name": "End Curly Brace",
+   "positions": [
+    20,
+    21
+   ],
+   "layers": null,
+   "action": {
+    "kind": "key",
+    "tap": "}",
+    "raw": "&kp RIGHT_BRACE"
+   }
+  },
+  {
+   "name": "Square Brace",
+   "positions": [
+    31,
+    32
+   ],
+   "layers": null,
+   "action": {
+    "kind": "key",
+    "tap": "[",
+    "raw": "&kp LEFT_BRACKET"
+   }
+  },
+  {
+   "name": "End Square Brace",
+   "positions": [
+    32,
+    33
+   ],
+   "layers": null,
+   "action": {
+    "kind": "key",
+    "tap": "]",
+    "raw": "&kp RIGHT_BRACKET"
+   }
+  },
+  {
+   "name": "Backspace",
+   "positions": [
+    14,
+    15
+   ],
+   "layers": [
+    0,
+    1,
+    2,
+    7
+   ],
+   "action": {
+    "kind": "key",
+    "tap": "Bksp",
+    "raw": "&kp BACKSPACE"
+   }
+  },
+  {
+   "name": "Delete",
+   "positions": [
+    15,
+    16
+   ],
+   "layers": [
+    0,
+    1,
+    2,
+    7,
+    8
+   ],
+   "action": {
+    "kind": "key",
+    "tap": "Del",
+    "raw": "&kp DELETE"
+   }
+  },
+  {
+   "name": "Escape",
+   "positions": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "layers": null,
+   "action": {
+    "kind": "key",
+    "tap": "Esc",
+    "raw": "&kp ESC"
+   }
+  },
+  {
+   "name": "Gaming",
+   "positions": [
+    13,
+    14,
+    16
+   ],
+   "layers": null,
+   "action": {
+    "kind": "layer",
+    "tap": "Gaming",
+    "layer": 4,
+    "note": "Toggle",
+    "raw": "&tog 4"
+   }
+  },
+  {
+   "name": "Right Hand BKSPC",
+   "positions": [
+    9,
+    10
+   ],
+   "layers": null,
+   "action": {
+    "kind": "key",
+    "tap": "Bksp",
+    "raw": "&kp BACKSPACE"
+   }
+  },
+  {
+   "name": "Shut Down",
+   "positions": [
+    1,
+    14,
+    25,
+    27
+   ],
+   "layers": null,
+   "action": {
+    "kind": "macro",
+    "tap": "Shut down",
+    "raw": "&Shut_Down",
+    "note": "Win+X, U, U"
+   }
+  },
+  {
+   "name": "Function",
+   "positions": [
+    13,
+    38
+   ],
+   "layers": [
+    0
+   ],
+   "action": {
+    "kind": "layer",
+    "tap": "Function",
+    "hold": null,
+    "layer": 7,
+    "note": "Held",
+    "raw": "&mo 7"
+   }
+  },
+  {
+   "name": "Less Than",
+   "positions": [
+    31,
+    32,
+    37
+   ],
+   "layers": null,
+   "action": {
+    "kind": "key",
+    "tap": "<",
+    "raw": "&kp LESS_THAN"
+   }
+  },
+  {
+   "name": "More Than",
+   "positions": [
+    32,
+    33,
+    37
+   ],
+   "layers": null,
+   "action": {
+    "kind": "key",
+    "tap": ">",
+    "raw": "&kp GREATER_THAN"
+   }
+  },
+  {
+   "name": "QWERTY",
+   "positions": [
+    14,
+    16,
+    17
+   ],
+   "layers": null,
+   "action": {
+    "kind": "layer",
+    "tap": "QWERTY",
+    "layer": 10,
+    "note": "Toggle",
+    "raw": "&tog 10"
+   }
+  },
+  {
+   "name": "Middle Click",
+   "positions": [
+    16,
+    17
+   ],
+   "layers": [
+    0
+   ],
+   "action": {
+    "kind": "mouse",
+    "tap": "M click",
+    "raw": "&mkp MCLK"
+   }
+  }
+ ]
+}

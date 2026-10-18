@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>XR and Technical Design : Brendan Tipney</title>
+  <meta name="description" content="XR and technical design by Brendan Tipney: Asset 15 for Quest 3 and Apple Vision Pro, hand tracked holograms, web AR with volumetric video, and HoloSuite creator tools at Arcturus." />
+  <link rel="canonical" href="https://nullmoniker.ca/xr.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="NullMoniker" />
+  <meta property="og:title" content="XR and Technical Design : Brendan Tipney" />
+  <meta property="og:description" content="XR and technical design by Brendan Tipney: Asset 15 for Quest 3 and Apple Vision Pro, hand tracked holograms, web AR with volumetric video, and HoloSuite creator tools at Arcturus." />
+  <meta property="og:url" content="https://nullmoniker.ca/xr.html" />
+  <meta property="og:image" content="https://nullmoniker.ca/xr-media/asset15-logic.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="page-xr">
+
+<nav>
+  <a class="nav-logo" href="index.html" aria-label="NullMoniker home">
+    <span class="nav-logo-mark">N</span>
+    <span class="nav-logo-wordmark">NullMoniker</span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="xr.html" class="accent-xr is-current" aria-current="page" data-accent><span class="nav-num">01</span><span class="nav-text">XR</span></a></li>
+    <li><a href="games.html" class="accent-games" data-accent><span class="nav-num">02</span><span class="nav-text">Games</span></a></li>
+    <li><a href="hardware.html" class="accent-hw" data-accent><span class="nav-num">03</span><span class="nav-text">Hardware</span></a></li>
+    <li><a href="visuals.html" class="accent-vis" data-accent><span class="nav-num">04</span><span class="nav-text">Visuals</span></a></li>
+    <li><a href="index.html#about"><span class="nav-text">About</span></a></li>
+    <li><a href="mailto:brendan.tipney@gmail.com" class="nav-cta">Contact</a></li>
+  </ul>
+  <button class="nav-burger" id="navBurger" type="button" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<header class="lane-page-hero">
+  <canvas id="shaderCanvas" aria-hidden="true"></canvas>
+  <div class="tint" aria-hidden="true"></div>
+  <div class="lane-hero-inner">
+    <p class="crumbs"><a href="index.html">Home</a><span>/</span><span class="here">01 : XR</span></p>
+    <h1 class="lane-page-title" data-scramble>XR and Technical Design</h1>
+    <p class="lane-deck">
+      From 2021 to 2024 I worked at Arcturus, a volumetric video company. I started out supporting the
+      creators who used HoloSuite, then moved into technical design, where I designed and built XR games,
+      hand tracked demos, and web AR experiences around volumetric captures of real people.
+    </p>
+    <div class="lane-meta">
+      <div><p class="k">Role</p><p class="v">Technical Designer, after two years as Product Specialist</p></div>
+      <div><p class="k">Studio</p><p class="v">Arcturus, remote, 2021 to 2024</p></div>
+      <div><p class="k">Platforms</p><p class="v">Quest 3, Vision Pro, Looking Glass, Tilt Five, web AR</p></div>
+      <div><p class="k">Tools</p><p class="v">Unity, C#, Shader Graph, 8th Wall, HoloSuite</p></div>
+    </div>
+  </div>
+</header>
+
+<div class="jump"><div class="jump-inner">
+  <a href="#asset-15">Asset 15</a>
+  <a href="#hologram">Touchable Hologram</a>
+  <a href="#ar-cards">AR Cards</a>
+  <a href="#ar-shopping">AR Shopping</a>
+  <a href="#demos">Demos</a>
+  <a href="#holosuite">HoloSuite</a>
+  <a href="#before">Before Arcturus</a>
+</div></div>
+
+<section class="projects">
+  <div class="projects-inner">
+
+    <!-- ASSET 15 -->
+    <article class="proj proj--feature" id="asset-15">
+      <div class="proj-media" data-tilt data-expand data-caption="Asset 15 : logic gate puzzle, hand tracked">
+        <video muted loop playsinline preload="none" data-autoplay data-src="xr-media/asset15-logic.mp4" poster="xr-media/asset15-logic.jpg"></video>
+      </div>
+      <div class="proj-feature-head">
+        <div class="proj-body">
+          <p class="proj-kicker">Quest 3 and Apple Vision Pro : Unity, C#, Shader Graph</p>
+          <h2 class="proj-title" data-scramble="hover">Asset 15</h2>
+          <p>
+            Asset 15 started life as a volumetric video story. For the Quest 3 and Vision Pro version we kept
+            the captures and the story, and almost nothing else. I redesigned it from the ground up as a full
+            environment AR game that plays out in your actual room, controlled entirely with hand tracking and
+            gestures.
+          </p>
+          <div class="work-card-tags">
+            <span class="tag">Mixed Reality</span><span class="tag">Hand Tracking</span>
+            <span class="tag">Game Design</span><span class="tag">Shaders</span>
+          </div>
+        </div>
+        <div class="proj-body">
+          <ul class="proj-list">
+            <li><strong>Role.</strong> Main game designer and technical designer on the project.</li>
+            <li><strong>Code.</strong> Wrote most of the gameplay code in Unity and C#, with one other developer.</li>
+            <li><strong>Shaders.</strong> Built every custom shader in the game with Shader Graph.</li>
+            <li><strong>Team.</strong> Turned designs into plans the team could build from, and helped run the project.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="feature-cards">
+        <div class="feature-card">
+          <p class="n">01 : Menu</p>
+          <h3>Levels on the ceiling</h3>
+          <p>Levels hang from nodes mounted on your ceiling. You reach up and pull one down to play it.</p>
+        </div>
+        <div class="feature-card">
+          <p class="n">02 : Mode one</p>
+          <h3>Logic gate puzzle</h3>
+          <p>Move OR, AND, and NOR nodes around the room in 3D, connecting and breaking links until the circuit works.</p>
+        </div>
+        <div class="feature-card">
+          <p class="n">03 : Mode two</p>
+          <h3>Assembly puzzle</h3>
+          <p>Pieces of a volumetric capture are spread around your space. Find them and put the person back together.</p>
+        </div>
+      </div>
+      <div class="gallery" style="grid-template-columns: repeat(2, 1fr);">
+        <figure>
+          <div class="proj-media" data-tilt data-expand data-try-src="xr-media/asset15-menu.mp4">
+            <div class="media-placeholder"><b>Ceiling menu</b><small>xr-media/asset15-menu.mp4</small></div>
+          </div>
+          <figcaption>Pulling a level down from the ceiling</figcaption>
+        </figure>
+        <figure>
+          <div class="proj-media" data-tilt data-expand data-try-src="xr-media/asset15-assembly.mp4">
+            <div class="media-placeholder"><b>Assembly puzzle</b><small>xr-media/asset15-assembly.mp4</small></div>
+          </div>
+          <figcaption>Rebuilding a volumetric capture</figcaption>
+        </figure>
+      </div>
+    </article>
+
+    <!-- HOLOGRAM -->
+    <article class="proj" id="hologram">
+      <div class="proj-media" data-tilt data-expand data-try-src="xr-media/looking-glass-leap.mp4">
+        <div class="media-placeholder"><b>Touchable hologram</b><small>xr-media/looking-glass-leap.mp4</small></div>
+      </div>
+      <div class="proj-body">
+        <p class="proj-kicker">Looking Glass and Leap Motion : Unity, C#</p>
+        <h2 class="proj-title" data-scramble="hover">Touchable Hologram</h2>
+        <p>
+          A trade show demo that put a volumetric capture inside a Looking Glass holographic display and handed
+          control to whoever walked up. With a Leap Motion under the display, visitors could rotate, zoom, and
+          pan the hologram with their bare hands.
+        </p>
+        <div class="work-card-tags">
+          <span class="tag">Looking Glass</span><span class="tag">Leap Motion</span><span class="tag">Gesture Input</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- AR CARDS -->
+    <article class="proj proj--portrait" id="ar-cards">
+      <div class="proj-media proj-media--portrait" data-tilt data-expand data-caption="AR card : 8th Wall">
+        <video muted loop playsinline preload="none" data-autoplay data-src="xr-media/ar-cards.mp4" poster="xr-media/ar-cards.jpg"></video>
+      </div>
+      <div class="proj-body">
+        <p class="proj-kicker">Web AR : 8th Wall</p>
+        <h2 class="proj-title" data-scramble="hover">AR Cards</h2>
+        <p>
+          Printed cards we handed out at trade shows. Point a phone at one and a volumetric character plays back
+          standing on the card, and stays locked to it as you move the card around. Nothing to install: it runs
+          in the phone's browser.
+        </p>
+        <div class="work-card-tags">
+          <span class="tag">8th Wall</span><span class="tag">Image Tracking</span><span class="tag">Volumetric Video</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- AR SHOPPING -->
+    <article class="proj proj--portrait" id="ar-shopping">
+      <div class="proj-media proj-media--portrait" data-tilt data-expand data-caption="AR shopping prototype">
+        <video muted loop playsinline preload="none" data-autoplay data-src="xr-media/ar-shopping.mp4" poster="xr-media/ar-shopping.jpg"></video>
+      </div>
+      <div class="proj-body">
+        <p class="proj-kicker">Web AR prototype</p>
+        <h2 class="proj-title" data-scramble="hover">AR Shopping</h2>
+        <p>
+          A prototype store page. Click a piece of clothing and a volumetric model wearing it appears in AR,
+          placed and tracked in the shopper's own room, so you see a real person moving in the outfit instead of
+          a flat product photo.
+        </p>
+        <div class="work-card-tags">
+          <span class="tag">Web AR</span><span class="tag">Prototype</span><span class="tag">E-commerce</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- DEMOS -->
+    <article class="proj proj--feature" id="demos">
+      <div class="proj-feature-head">
+        <div class="proj-body">
+          <p class="proj-kicker">Trade shows : about ten shipped</p>
+          <h2 class="proj-title" data-scramble="hover">Demo Reel</h2>
+          <p>
+            Most of my time as a Technical Designer went into demos for trade shows, about ten of them across
+            Tilt Five, Quest 3, Vision Pro, Looking Glass, and phones. Each one had to show off volumetric video
+            to people walking up to a booth.
+          </p>
+        </div>
+        <div class="proj-body" style="align-self:end;">
+          <div class="btn-row">
+            <button type="button" class="btn btn-accent" data-expand data-full="clips/AR_DemoReel_NoTitle.webm" data-caption="XR and AR demo reel">Watch the full reel <span class="arrow">▶</span></button>
+          </div>
+        </div>
+      </div>
+      <div class="gallery">
+        <figure>
+          <div class="proj-media" data-tilt data-expand>
+            <video muted loop playsinline preload="none" data-autoplay data-src="xr-media/spatial-ui.mp4" poster="xr-media/spatial-ui.jpg"></video>
+          </div>
+          <figcaption>Spatial UI with a volumetric presenter</figcaption>
+        </figure>
+        <figure>
+          <div class="proj-media" data-tilt data-expand>
+            <video muted loop playsinline preload="none" data-autoplay data-src="xr-media/volumetric-scene.mp4" poster="xr-media/volumetric-scene.jpg"></video>
+          </div>
+          <figcaption>A capture inside a miniature scene</figcaption>
+        </figure>
+        <figure>
+          <div class="proj-media" data-tilt data-expand>
+            <video muted loop playsinline preload="none" data-autoplay data-src="xr-media/ar-web.mp4" poster="xr-media/ar-web.jpg"></video>
+          </div>
+          <figcaption>Volumetric playback in mobile web AR</figcaption>
+        </figure>
+      </div>
+    </article>
+
+    <!-- HOLOSUITE -->
+    <article class="proj proj--feature" id="holosuite">
+      <div class="proj-feature-head">
+        <div class="proj-body">
+          <p class="proj-kicker">Creator tools : HoloSuite and the Unity HoloSuite Player</p>
+          <h2 class="proj-title" data-scramble="hover">Both Sides of the Tool</h2>
+          <p>
+            HoloSuite is Arcturus's software for editing volumetric video. For two years as Product Specialist
+            I was the person creators called when something didn't work: over <strong>100 customers</strong>,
+            including enterprise accounts, editing captures and deploying them in Unity and Unreal. I wrote the
+            docs and tutorials, ran onboarding and training, and worked the booth at AWE.
+          </p>
+          <p>
+            Later I helped develop HoloSuite and the Unity HoloSuite Player plugin, with a focus on fast,
+            intuitive UI and controls. Hearing exactly where creators get stuck, then getting to fix it, is my
+            favorite loop in this work.
+          </p>
+        </div>
+        <div class="proj-body">
+          <div class="loop">
+            <div class="loop-step"><h4>Listen</h4><p>Hear exactly where a creator got stuck.</p></div>
+            <div class="loop-step"><h4>Own it</h4><p>Take the problem and narrow in fast.</p></div>
+            <div class="loop-step"><h4>Shape</h4><p>Change the UI and controls so it goes away.</p></div>
+            <div class="loop-step"><h4>Teach</h4><p>Write docs that work the first time.</p></div>
+          </div>
+          <div class="work-card-tags">
+            <span class="tag">Tools UX</span><span class="tag">Unity Plugin</span><span class="tag">Documentation</span><span class="tag">Training</span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- BEFORE -->
+    <article class="proj proj--portrait" id="before">
+      <div class="proj-media proj-media--portrait" style="aspect-ratio: 4 / 5;" data-tilt data-expand data-caption="Looking Glass holograms, 2021">
+        <video muted loop playsinline preload="none" data-autoplay data-src="psyphi-media/lookingglass/holograms-2.mp4" poster="media/posters/lookingglass-holograms-2.jpg"></video>
+      </div>
+      <div class="proj-body">
+        <p class="proj-kicker">2021 : Blender to Looking Glass</p>
+        <h2 class="proj-title" data-scramble="hover">Before Arcturus</h2>
+        <p>
+          I was already making holograms before I joined. This was my first round of content for the Looking
+          Glass: fluid simulations and abstract shorts built in Blender, then exported to the display's quilt
+          format for true 3D playback.
+        </p>
+        <div class="btn-row">
+          <a href="psyphi.html" class="btn btn-secondary">From the PsyPhi archive <span class="arrow">→</span></a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<div class="next-lanes">
+  <a href="visuals.html" class="next-lane accent-vis">
+    <p class="dir">← 04 : Previous</p>
+    <p class="name">Live Visuals</p>
+  </a>
+  <a href="games.html" class="next-lane accent-games">
+    <p class="dir">Next : 02 →</p>
+    <p class="name">Games</p>
+  </a>
+</div>
+
+<section class="footer-cta">
+  <p class="footer-cta-label">Got something to build?</p>
+  <a href="mailto:brendan.tipney@gmail.com" class="footer-cta-big" data-cursor="Email">Let's talk</a>
+  <p class="footer-cta-mail">brendan.tipney@gmail.com</p>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-logo">NullMoniker</span>
+    <ul class="footer-links">
+      <li><a href="xr.html">XR</a></li>
+      <li><a href="games.html">Games</a></li>
+      <li><a href="hardware.html">Hardware</a></li>
+      <li><a href="visuals.html">Visuals</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="mailto:brendan.tipney@gmail.com">Contact</a></li>
+    </ul>
+    <p class="footer-copy">© 2026 Brendan Tipney. All rights reserved.</p>
+  </div>
+</footer>
+
+<div id="videoOverlay" aria-hidden="true"></div>
+
+<script src="shader.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

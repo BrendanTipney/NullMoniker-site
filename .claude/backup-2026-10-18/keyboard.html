@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Split Keyboard : Brendan Tipney</title>
+  <meta name="description" content="Designing and building a split ergonomic keyboard with an integrated trackpad: constraints, iterations, printed parts, and firmware. A hardware case study by Brendan Tipney." />
+  <meta name="keywords" content="Brendan Tipney, NullMoniker, industrial design, product design, split keyboard, Corne, ZMK, TPS43, trackpad, 3D printing, Fusion 360, ergonomics" />
+  <link rel="canonical" href="https://nullmoniker.ca/keyboard.html" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="NullMoniker" />
+  <meta property="og:title" content="Split Keyboard : Brendan Tipney" />
+  <meta property="og:description" content="Designing a split ergonomic keyboard with an integrated trackpad. Constraints, iterations, and what broke." />
+  <meta property="og:url" content="https://nullmoniker.ca/keyboard.html" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Split Keyboard : Brendan Tipney" />
+  <meta name="twitter:description" content="Designing a split ergonomic keyboard with an integrated trackpad." />
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="cs-page">
+
+<!-- ── NAV ── -->
+<nav>
+  <a class="nav-logo" href="index.html">
+    <span class="nav-logo-wordmark">NullMoniker</span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html#work">Work</a></li>
+    <li><a href="keyboard.html" class="is-current">Keyboard</a></li>
+    <li><a href="psyphi.html">PsyPhi</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#links">Links</a></li>
+    <li><a href="mailto:brendan.tipney@gmail.com" class="nav-cta">Contact</a></li>
+  </ul>
+  <div class="nav-burger" id="navBurger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section id="cs-hero">
+  <div class="section-inner">
+    <p class="section-label">Hardware : Input Design</p>
+    <h1 class="cs-hero-title">Split Keyboard</h1>
+    <div class="section-rule"></div>
+    <p class="cs-deck">
+      A 42-key split ergonomic keyboard with a trackpad built into the right half, so a pointer is
+      always under the thumb and the hands never leave the keys. Designed, printed, wired, and
+      programmed over <span class="cs-todo">How long did this run, start to daily driver? A rough span is fine: "six weeks", "on and off across a winter".</span>
+    </p>
+
+    <div class="cs-meta-strip">
+      <div class="cs-meta">
+        <p class="cs-meta-label">Role</p>
+        <p class="cs-meta-value">Design, fabrication, firmware. Solo.</p>
+      </div>
+      <div class="cs-meta">
+        <p class="cs-meta-label">Tools</p>
+        <p class="cs-meta-value">Fusion 360, FDM printing, ZMK, soldering</p>
+      </div>
+      <div class="cs-meta">
+        <p class="cs-meta-label">Iterations</p>
+        <p class="cs-meta-value"><span class="cs-todo">How many printed revisions of the case or mount?</span></p>
+      </div>
+      <div class="cs-meta">
+        <p class="cs-meta-label">Status</p>
+        <p class="cs-meta-value">Daily driver</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 01 : THE PROBLEM ── -->
+<section class="cs-section">
+  <div class="section-inner">
+    <p class="section-label">01 : Problem</p>
+    <h2 class="section-title">Why build one at all</h2>
+    <div class="section-rule"></div>
+    <div class="cs-body">
+      <p>
+        I write code and design games for a living, which means a keyboard and a pointing device are
+        the two objects I touch most in a day. Every commercial option asks you to accept its
+        opinions about where your hands go. Building my own meant those opinions became decisions I
+        had to justify.
+      </p>
+      <span class="cs-todo">The real motivation goes here, in your words. What was actually wrong with the setup you had? Discomfort, reach, the constant hand trip to the mouse, plain curiosity? This paragraph is the one a hiring manager reads to decide whether you design for a reason or for fun. Both are valid answers, but say which.</span>
+      <p>
+        The specific target was <strong>a pointer you never have to reach for</strong>. On a
+        conventional desk the hand leaves the home row hundreds of times an hour to find a mouse and
+        come back. That round trip is the problem I set out to remove.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ── 02 : CONSTRAINTS ── -->
+<section class="cs-section">
+  <div class="section-inner">
+    <p class="section-label">02 : Constraints</p>
+    <h2 class="section-title">What the design had to survive</h2>
+    <div class="section-rule"></div>
+    <div class="cs-body">
+      <p>
+        Constraints came from three places: my hands, the manufacturing process available to me, and
+        the firmware. Naming them up front is what turned this from a parts order into a design
+        problem.
+      </p>
+    </div>
+
+    <div class="cs-constraints">
+      <div class="cs-constraint">
+        <p class="cs-constraint-num">01</p>
+        <h3>42 keys, no more</h3>
+        <p>
+          A 3x6 plus 3-key thumb cluster per half. Everything a full keyboard does has to be reached
+          through layers instead of surface area, which makes keymap design the real interface work.
+        </p>
+      </div>
+      <div class="cs-constraint">
+        <p class="cs-constraint-num">02</p>
+        <h3>220mm build plate</h3>
+        <p>
+          Every part had to print on an Anycubic Kobra Neo in 1.75mm filament. That capped the
+          footprint, forced the case to split into printable pieces, and ruled out overhangs that
+          would need support on a visible surface.
+        </p>
+      </div>
+      <div class="cs-constraint">
+        <p class="cs-constraint-num">03</p>
+        <h3>Wireless power budget</h3>
+        <p>
+          ZMK runs the halves over BLE, so every added component is a draw on a small cell. A
+          trackpad polling continuously is a very different battery story from one that sleeps.
+        </p>
+      </div>
+      <div class="cs-constraint">
+        <p class="cs-constraint-num">04</p>
+        <h3>Thumb reach envelope</h3>
+        <p>
+          The trackpad had to sit inside the arc the thumb already travels for the cluster keys. If
+          it needed a stretch, it would have failed for the same reason a mouse does.
+        </p>
+      </div>
+      <div class="cs-constraint">
+        <p class="cs-constraint-num">05</p>
+        <h3>Serviceable, not sealed</h3>
+        <p>
+          Hand-soldered wiring in a printed shell fails eventually. The case had to open without
+          destroying itself and the electronics had to come out as a unit.
+        </p>
+      </div>
+      <div class="cs-constraint">
+        <p class="cs-constraint-num">06</p>
+        <h3>Usable while learning it</h3>
+        <p>
+          A layout I could not type on would get abandoned inside a week. The migration path
+          mattered as much as the end state.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 03 : PRIOR ART ── -->
+<section class="cs-section">
+  <div class="section-inner">
+    <p class="section-label">03 : Prior Art</p>
+    <h2 class="section-title">What I ruled out, and why</h2>
+    <div class="section-rule"></div>
+    <div class="cs-body">
+      <p>
+        Split ergonomic keyboards are a well-explored space. Ruling out the existing answers was
+        faster than designing from nothing, and it forced me to name what I actually wanted.
+      </p>
+    </div>
+
+    <div class="cs-compare">
+      <div class="cs-compare-row">
+        <div class="cs-compare-key">Off the shelf ergo</div>
+        <div class="cs-compare-val">
+          <span class="cs-todo">Which ones did you look at? Moonlander, Glove80, Kinesis, Advantage, ZSA Voyager? One line each on why it did not fit. Naming real products and rejecting them for real reasons is the single most credible thing on this page.</span>
+        </div>
+      </div>
+      <div class="cs-compare-row">
+        <div class="cs-compare-key">Keyboard plus trackball</div>
+        <div class="cs-compare-val">
+          A separate pointing device solves precision but keeps the round trip. It moves the problem
+          a few centimetres closer instead of removing it.
+        </div>
+      </div>
+      <div class="cs-compare-row">
+        <div class="cs-compare-key">Larger split, 60 keys plus</div>
+        <div class="cs-compare-val">
+          More keys means less layer discipline, but it also means a wider reach envelope and a case
+          too big for the build plate. The constraint that looked most painful turned out to be the
+          one worth keeping.
+        </div>
+      </div>
+      <div class="cs-compare-row is-chosen">
+        <div class="cs-compare-key">Corne plus TPS43</div>
+        <div class="cs-compare-val">
+          A proven 42-key skeleton with an open firmware target, extended with a trackpad module in
+          the thumb path. Known-good foundation, and the novel part is where the design effort
+          actually goes.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 04 : PROCESS ── -->
+<section class="cs-section">
+  <div class="section-inner">
+    <p class="section-label">04 : Process</p>
+    <h2 class="section-title">Iterations</h2>
+    <div class="section-rule"></div>
+    <div class="cs-body">
+      <p>
+        Each revision existed to answer one question. The point of printing quickly is that a wrong
+        answer costs an evening instead of a month.
+      </p>
+    </div>
+
+    <div class="cs-steps">
+
+      <!-- STEP 01 -->
+      <div class="cs-step" data-expand>
+        <div class="cs-step-media">
+          <!-- TODO: swap placeholder for <img src="keyboard-media/01-mockup.jpg" alt="First mockup" loading="lazy"> -->
+          <div class="cs-media-placeholder">01 &nbsp;/&nbsp; Mockup photo</div>
+        </div>
+        <div class="cs-step-body">
+          <p class="cs-step-num">Iteration 01</p>
+          <h3>Paper and cardboard</h3>
+          <p>
+            Before any CAD, a flat printout of the key positions to find where the thumb actually
+            lands. Cheap, ugly, and it settles the question CAD cannot: whether the reach is real.
+          </p>
+          <span class="cs-todo">Did you do a physical mockup first? If you went straight to CAD, say so and cut this step. Do not invent a process you did not run.</span>
+          <p class="cs-verdict">Outcome : <span>TODO</span></p>
+        </div>
+      </div>
+
+      <!-- STEP 02 -->
+      <div class="cs-step" data-expand>
+        <div class="cs-step-media">
+          <!-- TODO: <img src="keyboard-media/02-cad.jpg" alt="Fusion 360 case model" loading="lazy"> -->
+          <div class="cs-media-placeholder">02 &nbsp;/&nbsp; CAD screenshot</div>
+        </div>
+        <div class="cs-step-body">
+          <p class="cs-step-num">Iteration 02</p>
+          <h3>First printed case</h3>
+          <p>
+            Modelled in Fusion 360 around the PCB footprint and switch plate. The first print is
+            never about looks, it is about whether the tolerances you assumed survive contact with a
+            real extruder.
+          </p>
+          <span class="cs-todo">What did the first print get wrong? Wall thickness, switch plate fit, screw bosses, warping, the USB cutout being 1mm off? The specific failure is more useful than the success.</span>
+          <p class="cs-verdict">Outcome : <span>TODO</span></p>
+        </div>
+      </div>
+
+      <!-- STEP 03 -->
+      <div class="cs-step" data-expand>
+        <div class="cs-step-media">
+          <!-- TODO: <img src="keyboard-media/03-mount.jpg" alt="Trackpad mount revisions" loading="lazy"> -->
+          <div class="cs-media-placeholder">03 &nbsp;/&nbsp; Trackpad mount revisions</div>
+        </div>
+        <div class="cs-step-body">
+          <p class="cs-step-num">Iteration 03</p>
+          <h3>Placing the trackpad</h3>
+          <p>
+            The hard part of the whole build. The TPS43 has to sit where the thumb naturally rests
+            without stealing a key position or forcing the wrist to rotate. Angle, height, and
+            distance from the cluster are three variables that only resolve by printing them.
+          </p>
+          <span class="cs-todo">How many mount versions did you print, and what changed between them? If you have the rejected prints, photograph them side by side. A row of failed mounts is the strongest image on this page.</span>
+          <p class="cs-verdict">Outcome : <span>TODO</span></p>
+        </div>
+      </div>
+
+      <!-- STEP 04 -->
+      <div class="cs-step" data-expand>
+        <div class="cs-step-media">
+          <!-- TODO: <img src="keyboard-media/04-wiring.jpg" alt="Wiring and controller" loading="lazy"> -->
+          <div class="cs-media-placeholder">04 &nbsp;/&nbsp; Wiring and controller</div>
+        </div>
+        <div class="cs-step-body">
+          <p class="cs-step-num">Iteration 04</p>
+          <h3>Electronics and firmware</h3>
+          <p>
+            Switches, diodes, controller, and the trackpad on its own bus. ZMK handles the split link
+            and the keymap; getting a pointing device to behave alongside it is where the
+            configuration work lives.
+          </p>
+          <span class="cs-todo">Which controller? Nice!nano, a clone, something else? What did it take to get the TPS43 recognised in ZMK, and did you have to modify or write any of that config yourself? If you wrote code, that is portfolio evidence, be specific.</span>
+          <p class="cs-verdict">Outcome : <span>TODO</span></p>
+        </div>
+      </div>
+
+      <!-- STEP 05 -->
+      <div class="cs-step" data-expand>
+        <div class="cs-step-media">
+          <!-- TODO: <img src="keyboard-media/05-keymap.jpg" alt="Keymap layers" loading="lazy"> -->
+          <div class="cs-media-placeholder">05 &nbsp;/&nbsp; Keymap layers</div>
+        </div>
+        <div class="cs-step-body">
+          <p class="cs-step-num">Iteration 05</p>
+          <h3>Designing the layout</h3>
+          <p>
+            42 keys means every symbol, number, and modifier lives on a layer. This is interface
+            design with the same rules as any other: frequency drives placement, and anything you
+            have to think about is in the wrong spot.
+          </p>
+          <span class="cs-todo">Which layer decisions did you make and then reverse after living with them? A keymap you revised because daily use proved you wrong is real user testing with a sample size of one, and it reads that way to a designer.</span>
+          <p class="cs-verdict">Outcome : <span>TODO</span></p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── 05 : DECISIONS ── -->
+<section class="cs-section">
+  <div class="section-inner">
+    <p class="section-label">05 : Decisions</p>
+    <h2 class="section-title">The calls worth defending</h2>
+    <div class="section-rule"></div>
+
+    <div class="cs-decisions">
+
+      <div class="cs-decision">
+        <h3>A trackpad, not a trackball or nub</h3>
+        <p>
+          A trackball is more precise and needs no calibration, a pointing stick takes almost no
+          space. I went with a capacitive pad because it supports gestures and scroll without
+          adding a mechanical part that collects dust and eventually seizes.
+        </p>
+        <p class="cs-tradeoff">
+          Capacitive sensing costs power, needs tuning, and is worse than a ball for fine
+          selection work. <span class="cs-todo">Confirm this reasoning is actually yours, and add whatever the real deciding factor was.</span>
+        </p>
+      </div>
+
+      <div class="cs-decision">
+        <h3>Building on the Corne rather than designing a layout from scratch</h3>
+        <p>
+          A custom matrix would have let me tune every key position to my own hand. Starting from an
+          established 42-key skeleton meant the switch plate, the firmware target, and a decade of
+          other people's keymaps were already solved, so the design effort could go entirely into
+          the part nobody had solved for me.
+        </p>
+        <p class="cs-tradeoff">
+          I inherited someone else's column stagger, which is a compromise for an average hand
+          rather than mine.
+        </p>
+      </div>
+
+      <div class="cs-decision">
+        <h3>Printed in place of machined or laser cut</h3>
+        <p>
+          FDM in the room beats a better process three weeks away. Being able to test a mount in the
+          evening and print the revision the same night is what made five iterations affordable at
+          all.
+        </p>
+        <p class="cs-tradeoff">
+          Layer lines, weaker screw bosses, and a finish that reads as prototype rather than
+          product. <span class="cs-todo">Did you do any post-processing? Sanding, filler, paint, heat-set inserts? Worth saying either way.</span>
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── 06 : WHAT BROKE ── -->
+<section class="cs-section">
+  <div class="section-inner">
+    <p class="section-label">06 : Failures</p>
+    <h2 class="section-title">What broke</h2>
+    <div class="section-rule"></div>
+    <div class="cs-body">
+      <p>
+        The most useful section on this page, and the one most portfolios leave out.
+      </p>
+      <span class="cs-todo">List three or four things that genuinely went wrong. Prints that warped or fit wrong, a solder joint that kept failing, the trackpad ghosting or drifting, battery life you did not expect, a layer decision that made you slower. For each one: what you thought would happen, what happened, what you changed. This is the section that separates a designer from a hobbyist, so give it real material rather than a polite version.</span>
+    </div>
+
+    <div class="cs-gallery cs-gallery--3">
+      <figure class="cs-tile" data-expand>
+        <div class="cs-tile-media"><div class="cs-media-placeholder">Failed print</div></div>
+        <figcaption>Caption</figcaption>
+      </figure>
+      <figure class="cs-tile" data-expand>
+        <div class="cs-tile-media"><div class="cs-media-placeholder">Rejected mount</div></div>
+        <figcaption>Caption</figcaption>
+      </figure>
+      <figure class="cs-tile" data-expand>
+        <div class="cs-tile-media"><div class="cs-media-placeholder">Wiring rework</div></div>
+        <figcaption>Caption</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ── 07 : OUTCOME ── -->
+<section class="cs-section">
+  <div class="section-inner">
+    <p class="section-label">07 : Outcome</p>
+    <h2 class="section-title">Where it landed</h2>
+    <div class="section-rule"></div>
+    <div class="cs-body">
+      <p>
+        It is the keyboard I use every day to build games, which is the only test that was ever
+        going to matter.
+      </p>
+      <span class="cs-todo">Close this out honestly. What is measurably better, what is still worse than a normal keyboard, and what would you change if you started again? A case study that ends with "and it was perfect" is the least believable ending available.</span>
+    </div>
+
+    <div class="cs-stats">
+      <div class="cs-stat">
+        <p class="cs-stat-value">TODO</p>
+        <p class="cs-stat-label">Time to get back to full typing speed</p>
+      </div>
+      <div class="cs-stat">
+        <p class="cs-stat-value">TODO</p>
+        <p class="cs-stat-label">Printed revisions before the final case</p>
+      </div>
+      <div class="cs-stat">
+        <p class="cs-stat-value">TODO</p>
+        <p class="cs-stat-label">Battery life per charge</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 08 : GALLERY ── -->
+<section class="cs-section">
+  <div class="section-inner">
+    <p class="section-label">08 : Object</p>
+    <h2 class="section-title">The finished build</h2>
+    <div class="section-rule"></div>
+    <div class="cs-body">
+      <p>
+        <span class="cs-todo">Shoot this properly. Plain background, one light source, and the same treatment for every angle: three-quarter hero, top down showing the layout, a close crop of the trackpad in the thumb path, and one shot with hands on it for scale. The site desaturates images until hover, so contrast and form matter more than colour.</span>
+      </p>
+    </div>
+
+    <div class="cs-gallery cs-gallery--2">
+      <figure class="cs-tile" data-expand>
+        <div class="cs-tile-media"><div class="cs-media-placeholder">Hero, three-quarter</div></div>
+        <figcaption>Both halves</figcaption>
+      </figure>
+      <figure class="cs-tile" data-expand>
+        <div class="cs-tile-media"><div class="cs-media-placeholder">Top down</div></div>
+        <figcaption>Layout</figcaption>
+      </figure>
+      <figure class="cs-tile" data-expand>
+        <div class="cs-tile-media"><div class="cs-media-placeholder">Trackpad detail</div></div>
+        <figcaption>Thumb path</figcaption>
+      </figure>
+      <figure class="cs-tile" data-expand>
+        <div class="cs-tile-media"><div class="cs-media-placeholder">In use</div></div>
+        <figcaption>In use</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ── 09 : SPECS ── -->
+<section class="cs-section">
+  <div class="section-inner">
+    <p class="section-label">09 : Build</p>
+    <h2 class="section-title">Specification</h2>
+    <div class="section-rule"></div>
+
+    <div class="cs-specs">
+      <div class="cs-spec-row">
+        <div class="cs-spec-key">Layout</div>
+        <div class="cs-spec-val">Corne, 3x6 plus 3-key thumb cluster per half <span class="cs-todo">Confirm: 42-key or the 36-key 3x5 variant?</span></div>
+      </div>
+      <div class="cs-spec-row">
+        <div class="cs-spec-key">Controller</div>
+        <div class="cs-spec-val"><span class="cs-todo">Board and MCU</span></div>
+      </div>
+      <div class="cs-spec-row">
+        <div class="cs-spec-key">Firmware</div>
+        <div class="cs-spec-val">ZMK, wireless split over BLE</div>
+      </div>
+      <div class="cs-spec-row">
+        <div class="cs-spec-key">Pointing</div>
+        <div class="cs-spec-val">TPS43 capacitive trackpad, right half <span class="cs-todo">Interface and driver detail</span></div>
+      </div>
+      <div class="cs-spec-row">
+        <div class="cs-spec-key">Switches</div>
+        <div class="cs-spec-val"><span class="cs-todo">Switch, weight, keycap profile</span></div>
+      </div>
+      <div class="cs-spec-row">
+        <div class="cs-spec-key">Case</div>
+        <div class="cs-spec-val">Self-designed, FDM printed on an Anycubic Kobra Neo <span class="cs-todo">Material and layer height</span></div>
+      </div>
+      <div class="cs-spec-row">
+        <div class="cs-spec-key">CAD</div>
+        <div class="cs-spec-val">Fusion 360</div>
+      </div>
+      <div class="cs-spec-row">
+        <div class="cs-spec-key">Files</div>
+        <div class="cs-spec-val"><span class="cs-todo">Link the ZMK config repo and the STLs. Public files are proof, not decoration.</span></div>
+      </div>
+    </div>
+
+    <div class="btn-row" style="justify-content:flex-start; margin-top:2.5rem;">
+      <!-- TODO: real URLs -->
+      <a href="#" class="btn btn-secondary">ZMK Config</a>
+      <a href="#" class="btn btn-secondary">Printed Parts</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOT NAV ── -->
+<section id="cs-foot">
+  <div class="section-inner" style="text-align:center;">
+    <a href="index.html" class="btn btn-secondary">Back to NullMoniker</a>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-inner">
+    <span class="footer-logo">NullMoniker</span>
+    <ul class="footer-links">
+      <li><a href="index.html#work">Work</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="https://ballastgames.com/" target="_blank" rel="noopener">Ballast Games</a></li>
+      <li><a href="mailto:brendan.tipney@gmail.com">Contact</a></li>
+    </ul>
+    <p class="footer-copy">© 2026 Brendan Tipney. All rights reserved.</p>
+  </div>
+</footer>
+
+<div id="videoOverlay" aria-hidden="true"></div>
+
+<script src="main.js"></script>
+</body>
+</html>

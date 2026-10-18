@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hardware and Design : Brendan Tipney</title>
+  <meta name="description" content="Hardware and industrial design by Brendan Tipney: a split keyboard with an integrated trackpad, a CNC cut LED stage centerpiece, eight years of broadcast electronics at Nautel, and a workbench of FPV and printing projects." />
+  <link rel="canonical" href="https://nullmoniker.ca/hardware.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="NullMoniker" />
+  <meta property="og:title" content="Hardware and Design : Brendan Tipney" />
+  <meta property="og:description" content="Hardware and industrial design by Brendan Tipney: a split keyboard with an integrated trackpad, a CNC cut LED stage centerpiece, eight years of broadcast electronics at Nautel, and a workbench of FPV and printing projects." />
+  <meta property="og:url" content="https://nullmoniker.ca/hardware.html" />
+  <meta property="og:image" content="https://nullmoniker.ca/media/posters/future-forest-06.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="page-hw">
+
+<nav>
+  <a class="nav-logo" href="index.html" aria-label="NullMoniker home">
+    <span class="nav-logo-mark">N</span>
+    <span class="nav-logo-wordmark">NullMoniker</span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="xr.html" class="accent-xr" data-accent><span class="nav-num">01</span><span class="nav-text">XR</span></a></li>
+    <li><a href="games.html" class="accent-games" data-accent><span class="nav-num">02</span><span class="nav-text">Games</span></a></li>
+    <li><a href="hardware.html" class="accent-hw is-current" aria-current="page" data-accent><span class="nav-num">03</span><span class="nav-text">Hardware</span></a></li>
+    <li><a href="visuals.html" class="accent-vis" data-accent><span class="nav-num">04</span><span class="nav-text">Visuals</span></a></li>
+    <li><a href="index.html#about"><span class="nav-text">About</span></a></li>
+    <li><a href="mailto:brendan.tipney@gmail.com" class="nav-cta">Contact</a></li>
+  </ul>
+  <button class="nav-burger" id="navBurger" type="button" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<header class="lane-page-hero">
+  <canvas id="shaderCanvas" aria-hidden="true"></canvas>
+  <div class="tint" aria-hidden="true"></div>
+  <div class="lane-hero-inner">
+    <p class="crumbs"><a href="index.html">Home</a><span>/</span><span class="here">03 : Hardware</span></p>
+    <h1 class="lane-page-title" data-scramble>Hardware and Design</h1>
+    <p class="lane-deck">
+      Before games and XR, I worked with my hands. I have a degree in electronics, spent eight years testing,
+      repairing, and supporting broadcast transmitters, and I still spend a lot of my spare time designing,
+      printing, and wiring things.
+    </p>
+    <div class="lane-meta">
+      <div><p class="k">Background</p><p class="v">Electronics degree, eight years at Nautel</p></div>
+      <div><p class="k">CAD</p><p class="v">Fusion 360</p></div>
+      <div><p class="k">Fabrication</p><p class="v">3D printing, CNC, soldering</p></div>
+      <div><p class="k">Firmware</p><p class="v">ZMK, Arduino, Betaflight</p></div>
+    </div>
+  </div>
+</header>
+
+<div class="jump"><div class="jump-inner">
+  <a href="#keyboard">Split Keyboard</a>
+  <a href="#future-forest">Future Forest</a>
+  <a href="#nautel">Broadcast Electronics</a>
+  <a href="#workbench">Workbench</a>
+</div></div>
+
+<section class="projects">
+  <div class="projects-inner">
+
+    <!-- KEYBOARD -->
+    <article class="proj" id="keyboard">
+      <a href="keyboard.html" class="proj-media" data-tilt data-cursor="Read" data-try-src="keyboard-media/hero.jpg" data-alt="Split keyboard with integrated trackpad" style="cursor:pointer;">
+        <div class="media-placeholder"><b>Split keyboard</b><small>keyboard-media/hero.jpg</small></div>
+      </a>
+      <div class="proj-body">
+        <p class="proj-kicker">Industrial design : Fusion 360, printing, ZMK</p>
+        <h2 class="proj-title" data-scramble="hover">Split Keyboard</h2>
+        <p>
+          A split ergonomic keyboard with a trackpad built into the right half, so the pointer sits under my
+          thumb and my hands never leave the keys. Designed in Fusion 360, printed, wired, and running custom
+          ZMK firmware. The case study walks through the constraints, the iterations, and what broke.
+        </p>
+        <div class="work-card-tags">
+          <span class="tag">Industrial Design</span><span class="tag">CAD</span>
+          <span class="tag">3D Printing</span><span class="tag">Firmware</span>
+        </div>
+        <div class="btn-row">
+          <a href="keyboard.html" class="btn btn-accent">Read the case study <span class="arrow">→</span></a>
+        </div>
+      </div>
+    </article>
+
+    <!-- FUTURE FOREST -->
+    <article class="proj" id="future-forest">
+      <div class="proj-stack">
+        <div class="proj-media proj-media--square" data-tilt data-expand data-caption="Future Forest centerpiece">
+          <video muted loop playsinline preload="none" data-autoplay data-src="psyphi-media/future-forest/06.mp4" poster="media/posters/future-forest-06.jpg"></video>
+        </div>
+        <div class="proj-media proj-media--square" data-tilt data-expand data-caption="Future Forest centerpiece">
+          <video muted loop playsinline preload="none" data-autoplay data-src="psyphi-media/future-forest/05.mp4" poster="media/posters/future-forest-05.jpg"></video>
+        </div>
+      </div>
+      <div class="proj-body">
+        <p class="proj-kicker">2019 : Stage centerpiece</p>
+        <h2 class="proj-title" data-scramble="hover">Future Forest</h2>
+        <p>
+          A custom centerpiece for the Future Forest stage, cut from plywood on a <strong>Maslow CNC</strong> and
+          lined with addressable <strong>WS2812 LEDs</strong>. The whole thing ran from Resolume over Art-Net,
+          so the lights and the projected visuals moved together with the music.
+        </p>
+        <div class="work-card-tags">
+          <span class="tag">CNC</span><span class="tag">LEDs</span><span class="tag">Art-Net</span><span class="tag">Stage Design</span>
+        </div>
+        <div class="btn-row">
+          <a href="visuals.html#future-forest" class="btn btn-secondary accent-vis">See it in Live Visuals <span class="arrow">→</span></a>
+        </div>
+      </div>
+    </article>
+
+    <!-- NAUTEL -->
+    <article class="proj proj--feature" id="nautel">
+      <div class="proj-feature-head">
+        <div class="proj-body">
+          <p class="proj-kicker">2013 to 2021 : Nautel</p>
+          <h2 class="proj-title" data-scramble="hover">Broadcast Electronics</h2>
+          <p>
+            Eight years at Nautel working on AM and FM broadcast transmitters and navigation beacons: testing,
+            installs, repair, and international support, plus building training for technicians around the world.
+            Before that I was a fiber optic technician with Bell Aliant.
+          </p>
+          <p>
+            Some of those customers had to charter a helicopter just to reach their site. When your instructions
+            are the only help someone has out there, they have to work the first time. I still write every doc
+            and tutorial that way.
+          </p>
+        </div>
+        <div class="proj-body">
+          <div class="mini-stats">
+            <div class="stat"><p class="stat-value" data-count="8">8</p><p class="stat-label">Years at Nautel</p></div>
+            <div class="stat"><p class="stat-value">AM/FM</p><p class="stat-label">Transmitters and nav beacons</p></div>
+            <div class="stat"><p class="stat-value">Global</p><p class="stat-label">Customers and technicians trained</p></div>
+          </div>
+          <div class="work-card-tags">
+            <span class="tag">RF</span><span class="tag">Repair</span><span class="tag">Field Support</span><span class="tag">Training</span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- WORKBENCH -->
+    <article class="proj proj--feature" id="workbench">
+      <div class="proj-body">
+        <p class="proj-kicker">Always something on the bench</p>
+        <h2 class="proj-title" data-scramble="hover">Workbench</h2>
+      </div>
+      <div class="bench">
+        <div class="bench-card">
+          <p class="k">FPV</p>
+          <h3>Drones</h3>
+          <p>Building and tuning quads. Betaflight and ELRS on a SpeedyBee F7, DJI O4 video, and tiny whoops.</p>
+        </div>
+        <div class="bench-card">
+          <p class="k">Fabrication</p>
+          <h3>3D Printing</h3>
+          <p>An Anycubic Kobra Neo that prints my enclosures, mounts, and test parts, and that I keep tuned myself.</p>
+        </div>
+        <div class="bench-card">
+          <p class="k">Fabrication</p>
+          <h3>CNC</h3>
+          <p>A Maslow CNC for big plywood work like the Future Forest centerpiece.</p>
+        </div>
+        <div class="bench-card">
+          <p class="k">Electronics</p>
+          <h3>Circuits</h3>
+          <p>Soldering, repair, RF, Arduino, and microcontroller projects. The degree never really wore off.</p>
+        </div>
+        <div class="bench-card">
+          <p class="k">Input</p>
+          <h3>Keyboards</h3>
+          <p>Wireless split boards running ZMK, including trackpad support on the Corne.</p>
+        </div>
+        <div class="bench-card">
+          <p class="k">Machines</p>
+          <h3>PC Builds</h3>
+          <p>Speccing and building the machines I use for games, video, and generative work.</p>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<div class="next-lanes">
+  <a href="games.html" class="next-lane accent-games">
+    <p class="dir">← 02 : Previous</p>
+    <p class="name">Games</p>
+  </a>
+  <a href="visuals.html" class="next-lane accent-vis">
+    <p class="dir">Next : 04 →</p>
+    <p class="name">Live Visuals</p>
+  </a>
+</div>
+
+<section class="footer-cta">
+  <p class="footer-cta-label">Got something to build?</p>
+  <a href="mailto:brendan.tipney@gmail.com" class="footer-cta-big" data-cursor="Email">Let's talk</a>
+  <p class="footer-cta-mail">brendan.tipney@gmail.com</p>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-logo">NullMoniker</span>
+    <ul class="footer-links">
+      <li><a href="xr.html">XR</a></li>
+      <li><a href="games.html">Games</a></li>
+      <li><a href="hardware.html">Hardware</a></li>
+      <li><a href="visuals.html">Visuals</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="mailto:brendan.tipney@gmail.com">Contact</a></li>
+    </ul>
+    <p class="footer-copy">© 2026 Brendan Tipney. All rights reserved.</p>
+  </div>
+</footer>
+
+<div id="videoOverlay" aria-hidden="true"></div>
+
+<script src="shader.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

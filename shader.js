@@ -308,7 +308,7 @@
   window.addEventListener('resize', resize, { passive: true });
 
   // Scroll plumbing
-  const hero = document.getElementById('hero');
+  const hero = document.getElementById('hero') || canvas.parentElement;
   let scrollNorm = 0;          // eased 0..1 across hero height
   let scrollFlow = 0;          // smoothed signed velocity, in "hero-heights / frame"
   let lastScrollY = window.scrollY;
