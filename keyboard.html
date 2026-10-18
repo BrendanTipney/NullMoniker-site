@@ -57,10 +57,10 @@
 
     <ol class="kb-build" aria-label="Assembly order">
       <li><span>01</span>Printed case</li>
-      <li><span>02</span>PCB and standoffs</li>
-      <li><span>03</span>Switch plate</li>
-      <li><span>04</span>Kailh Choc switches</li>
-      <li><span>05</span>Keycaps and trackpad</li>
+      <li><span>02</span>PCB, nice!nano and standoffs</li>
+      <li><span>03</span>Switch plate and trackpad</li>
+      <li><span>04</span>Choc switches and M2 screws</li>
+      <li><span>05</span>Keycaps and walnut veneer</li>
     </ol>
 
     <p class="hero-scroll-hint kb-scroll-hint">Scroll to assemble</p>
@@ -107,7 +107,7 @@
       </div>
       <div class="cs-meta">
         <p class="cs-meta-label">Iterations</p>
-        <p class="cs-meta-value"><span class="cs-todo">How many printed revisions of the case or mount?</span></p>
+        <p class="cs-meta-value">Five case versions, three trackpad mounts</p>
       </div>
       <div class="cs-meta">
         <p class="cs-meta-label">Status</p>
@@ -283,16 +283,17 @@
       <!-- STEP 01 -->
       <div class="cs-step" data-expand>
         <div class="cs-step-media">
-          <img src="keyboard-media/photos/IMG_3235.jpg" alt="Stock 42 key Corne in a clear case beside a 60 percent keyboard" loading="lazy">
+          <img src="keyboard-media/photos/IMG_3235.jpg" alt="First printed test case holding all 42 keys, beside my old keyboard" loading="lazy">
         </div>
         <div class="cs-step-body">
           <p class="cs-step-num">September 2023</p>
-          <h3>A stock Corne</h3>
+          <h3>A first test case, all 42 keys</h3>
           <p>
-            The starting point: a standard 42 key Corne in a clear case, sitting in front of my old
-            keyboard. Living with it for a few days showed which keys I never reached for.
+            Iteration one was a case I printed as a test, still holding every key of the full Corne.
+            It needed printed supports for the component leads under the PCB, plus standoffs and
+            retaining C rings to hold it together. Living with it for a few days convinced me I could
+            go even smaller.
           </p>
-          <span class="cs-todo">Check this matches what you learned from the stock board, and change it if not.</span>
         </div>
       </div>
 
@@ -303,13 +304,12 @@
         </div>
         <div class="cs-step-body">
           <p class="cs-step-num">Four days later</p>
-          <h3>Cutting to 36 and the first printed case</h3>
+          <h3>Cutting to 36</h3>
           <p>
-            The outer columns came off the PCB, the three keys on the left of the photo, and the
-            first case was modelled in Fusion 360 around what was left: a base with standoffs for the
-            PCB and a separate tray underneath.
+            The outer columns came off the PCB, the three keys on the left of the
+            photo, and the next case was modelled in Fusion 360 around what was left: a base with
+            standoffs for the PCB and a separate tray underneath.
           </p>
-          <span class="cs-todo">What did the first print get wrong? Wall thickness, switch plate fit, screw bosses, warping, a cutout being off? The specific failure is more useful than the success.</span>
         </div>
       </div>
 
@@ -323,10 +323,13 @@
           <h3>Tenting and support</h3>
           <p>
             The constraint that really shaped the case. Two legs sit flush in recesses on the
-            underside, rubber feet sit at the corners, and the legs swing out to tent the half. The
-            case stays thin enough to hold in one hand with everything folded away.
+            underside and swing out to tent the half. The case stays thin enough to hold in one hand
+            with everything folded away.
           </p>
-          <span class="cs-todo">How many leg and hinge versions did it take, and what failed along the way?</span>
+          <p>
+            The first underside used a printed TPU foot across the whole base. It did not give
+            enough grip, so it was replaced with rubber feet at the corners.
+          </p>
         </div>
       </div>
 
@@ -340,10 +343,14 @@
           <h3>Adding the trackpad</h3>
           <p>
             On the right half the TPS43 sits at the inner top corner, where the left half has its
-            controller window, with a wood veneer top. It is mounted sideways, so the firmware turns
-            its left and right into up and down.
+            controller window, under a walnut veneer that sits flush with the edges of its holder. It
+            took about three mounts to get right, and it is still a work in progress.
           </p>
-          <span class="cs-todo">How do you use the trackpad day to day, and how many mount versions did you print?</span>
+          <p>
+            I wanted the trackpad to be removable at first. After a few attempts at stripping a six
+            pin ribbon cable I gave up and soldered it straight to the pads on the trackpad. Since
+            then the work has been on tracking performance and battery drain.
+          </p>
         </div>
       </div>
 
@@ -368,8 +375,6 @@
             right half's battery. A small custom input processor adds laptop style tap and tap to
             drag.
           </p>
-          <span class="cs-todo">Anything that took a long time to get working? Worth a sentence if so.</span>
-          <p class="cs-verdict">Outcome : <span>TODO</span></p>
         </div>
       </div>
 
@@ -404,8 +409,12 @@
             mouse the left can still type any letter. The thumbs carry Shift, Ctrl, Alt and Win, which
             covers every modifier combination from the same hand.
           </p>
-          <span class="cs-todo">Which layer decisions did you make and then reverse after living with them? A keymap you revised because daily use proved you wrong is real user testing with a sample size of one, and it reads that way to a designer.</span>
-          <p class="cs-verdict">Outcome : <span>TODO</span></p>
+          <p>
+            Gaming needed its own answer. A home row built for typing puts WASD in the wrong place,
+            so two layers can be switched on for games. Pressing A, S and T together toggles a layer that puts
+            the keys back in their QWERTY spots shifted one column in, with WASD under the fingers and
+            Shift and Ctrl under the pinky. Holding Q on that layer brings up the numbers.
+          </p>
         </div>
       </div>
 
@@ -490,6 +499,32 @@
       </div>
 
       <div class="cs-decision">
+        <h3>Modifiers that share keys with typing</h3>
+        <p>
+          Getting every modifier and the F keys onto 36 keys took the most fiddling of anything on
+          the board. The first thumb key is a tap dance: hold it and it is Alt, tap it twice and it
+          becomes a sticky Win key. Alt has to stay holdable for things like Alt+Tab, so Win could
+          not simply take its place.
+        </p>
+        <p>
+          The other two thumbs carry <strong>Shift under Space</strong> and <strong>Ctrl under
+          Enter</strong>. Getting those mod taps to live together, so fast typing never fires a
+          modifier and a held modifier never types a space, took a lot of tuning. The F keys sit on
+          their own layer, reached by holding A and the Ctrl and Enter thumb together.
+        </p>
+      </div>
+
+      <div class="cs-decision">
+        <h3>Magnets</h3>
+        <p>
+          Three magnets are mounted in the case. The two halves snap together into one block, and
+          the same magnets attach the keyboard to accessories, like a pocket mount that clips into
+          a pocket so the halves can hang off my pants for portable use. They also stick to any
+          metal surface for storage.
+        </p>
+      </div>
+
+      <div class="cs-decision">
         <h3>Building on the Corne rather than designing a layout from scratch</h3>
         <p>
           A custom matrix would have let me tune every key position to my own hand. Starting from an
@@ -528,15 +563,25 @@
     <div class="section-rule"></div>
     <div class="cs-body">
       <p>
-        The most useful section on this page, and the one most portfolios leave out.
+        <strong>The TPU foot.</strong> The first underside was a single printed TPU foot. I expected
+        the soft print to grip a desk, and it slid instead. Rubber feet at the corners replaced it.
       </p>
-      <span class="cs-todo">List three or four things that genuinely went wrong. Prints that warped or fit wrong, a solder joint that kept failing, the trackpad ghosting or drifting, battery life you did not expect, a layer decision that made you slower. For each one: what you thought would happen, what happened, what you changed. This is the section that separates a designer from a hobbyist, so give it real material rather than a polite version.</span>
+      <p>
+        <strong>A removable trackpad.</strong> The plan was a trackpad that could unplug from the
+        case. Stripping a six pin ribbon cable cleanly enough to connect kept failing, so I soldered
+        it straight to the trackpad's pads and dropped the connector.
+      </p>
+      <p>
+        <strong>Battery drain on the right half.</strong> The original trackpad driver never let the
+        pad sleep, so the right half emptied faster than the left. Moving to a driver fork that
+        follows ZMK's sleep states fixed the worst of it, and tuning continues.
+      </p>
     </div>
 
     <div class="cs-gallery cs-gallery--3">
       <figure class="cs-tile" data-expand>
-        <div class="cs-tile-media"><div class="cs-media-placeholder">Failed print</div></div>
-        <figcaption>Caption</figcaption>
+        <div class="cs-tile-media"><img src="keyboard-media/photos/IMG_3292.jpg" alt="First underside with a full printed TPU foot" loading="lazy"></div>
+        <figcaption>The TPU foot that slid</figcaption>
       </figure>
       <figure class="cs-tile" data-expand>
         <div class="cs-tile-media"><div class="cs-media-placeholder">Rejected mount</div></div>
@@ -570,8 +615,8 @@
         <p class="cs-stat-label">Time to get back to full typing speed</p>
       </div>
       <div class="cs-stat">
-        <p class="cs-stat-value">TODO</p>
-        <p class="cs-stat-label">Printed revisions before the final case</p>
+        <p class="cs-stat-value">5</p>
+        <p class="cs-stat-label">Case versions printed so far</p>
       </div>
       <div class="cs-stat">
         <p class="cs-stat-value">TODO</p>
@@ -607,8 +652,8 @@
         <figcaption>Legs folded flat</figcaption>
       </figure>
       <figure class="cs-tile" data-expand>
-        <div class="cs-tile-media"><img src="keyboard-media/photos/IMG_3292.jpg" alt="Inside of the base tray" loading="lazy"></div>
-        <figcaption>Base tray</figcaption>
+        <div class="cs-tile-media"><img src="keyboard-media/photos/IMG_3290.jpg" alt="Left half held in one hand" loading="lazy"></div>
+        <figcaption>One half in hand</figcaption>
       </figure>
     </div>
   </div>
@@ -647,12 +692,16 @@
         <div class="cs-spec-val">Self-designed, FDM printed on an Anycubic Kobra Neo <span class="cs-todo">Material and layer height</span></div>
       </div>
       <div class="cs-spec-row">
+        <div class="cs-spec-key">Hardware</div>
+        <div class="cs-spec-val">M2 screws through the plate, three magnets in the case, walnut veneer over the trackpad</div>
+      </div>
+      <div class="cs-spec-row">
         <div class="cs-spec-key">CAD</div>
         <div class="cs-spec-val">Fusion 360</div>
       </div>
       <div class="cs-spec-row">
         <div class="cs-spec-key">Files</div>
-        <div class="cs-spec-val"><span class="cs-todo">Link the ZMK config repo and the STLs. Public files are proof, not decoration.</span></div>
+        <div class="cs-spec-val"><a href="https://github.com/BrendanTipney/zmk-config" target="_blank" rel="noopener">github.com/BrendanTipney/zmk-config</a> <span class="cs-todo">Link the STLs too, if you publish them</span></div>
       </div>
     </div>
 

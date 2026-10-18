@@ -293,11 +293,27 @@
   const uTime       = gl.getUniformLocation(prog, 'iTime');
   const uMouse      = gl.getUniformLocation(prog, 'iMouse');
 
-  // Cap DPR aggressively: this is a raymarching shader, fragment cost is high.
-  const dpr = Math.min(window.devicePixelRatio || 1, 1.25);
+  // Performance. This is a raymarching shader (up to 50 steps x 20 fractal steps per pixel),
+  // and the canvas is heavily blurred in CSS, so rendering it at a fraction of screen
+  // resolution looks the same and costs a lot less. The scale adapts to how fast the
+  // device actually is, phones run at 30fps, and low power setups get one still frame.
+  const coarse = window.matchMedia('(pointer: coarse)').matches;
+  const stillOnly =
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches ||
+    (navigator.connection && navigator.connection.saveData) ||
+    (navigator.deviceMemory && navigator.deviceMemory <= 2);
+  const MIN_SCALE = 0.18;
+  let scale = coarse ? 0.3 : 0.45;   // fraction of CSS pixels actually rendered
+  let frameBudget = coarse ? 1000 / 30 : 0; // 0 = uncapped (display rate)
+  // The shader reads iMouse in pixels, so the camera offset depends on resolution.
+  // Feed it pixel values at the original full render size so the look is identical
+  // whatever scale we actually draw at.
+  const refDpr = Math.min(window.devicePixelRatio || 1, 1.25);
+  const refW = () => canvas.clientWidth * refDpr;
+  const refH = () => canvas.clientHeight * refDpr;
   function resize() {
-    const w = Math.max(1, Math.floor(canvas.clientWidth  * dpr));
-    const h = Math.max(1, Math.floor(canvas.clientHeight * dpr));
+    const w = Math.max(1, Math.floor(canvas.clientWidth  * scale));
+    const h = Math.max(1, Math.floor(canvas.clientHeight * scale));
     if (canvas.width !== w || canvas.height !== h) {
       canvas.width  = w;
       canvas.height = h;
@@ -338,11 +354,31 @@
   let shaderTime = 0;
   let lastFrameTime = performance.now();
 
-  function frame(now) {
-    const dt = Math.min(0.05, (now - lastFrameTime) * 0.001); // clamp big gaps
-    lastFrameTime = now;
+  // Watch real frame times for a couple of seconds at a time. If the device can't
+  // keep up, drop the resolution, and if it is already at the floor, drop to 30fps.
+  let sampleStart = 0, sampleFrames = 0, lastDraw = 0, lastAdapt = 0;
+  function adapt(now) {
+    // a long gap means the hero was off screen or the tab was hidden: start over
+    if (!sampleStart || now - lastAdapt > 250) { sampleStart = now; sampleFrames = 0; lastAdapt = now; return; }
+    lastAdapt = now;
+    sampleFrames++;
+    const span = now - sampleStart;
+    if (span < 1500) return;
+    const avg = span / sampleFrames;
+    const target = (frameBudget || 1000 / 60) * 1.35;
+    if (avg > target) {
+      if (scale > MIN_SCALE) { scale = Math.max(MIN_SCALE, scale * 0.75); resize(); }
+      else if (!frameBudget) { frameBudget = 1000 / 30; }
+    }
+    sampleStart = now; sampleFrames = 0;
+  }
 
-    if (heroVisible) {
+  function frame(now) {
+    if (heroVisible && (!frameBudget || now - lastDraw >= frameBudget - 2)) {
+      const dt = Math.min(0.05, (now - lastFrameTime) * 0.001); // clamp big gaps
+      lastFrameTime = now;
+      lastDraw = now;
+      adapt(now);
       resize();
       updateScroll();
 
@@ -351,8 +387,8 @@
       shaderTime += dt * rate;
 
       // iMouse: x ≈ canvas center with slight scrub from velocity, y driven by scroll progress.
-      const mx = canvas.width  * (0.5 + scrollFlow * 1.5);
-      const my = canvas.height * scrollNorm;
+      const mx = refW() * (0.5 + scrollFlow * 1.5);
+      const my = refH() * scrollNorm;
 
       gl.uniform3f(uResolution, canvas.width, canvas.height, canvas.width / canvas.height);
       gl.uniform1f(uTime, shaderTime);
@@ -361,5 +397,18 @@
     }
     requestAnimationFrame(frame);
   }
-  requestAnimationFrame(frame);
+  if (stillOnly) {
+    resize();
+    gl.uniform3f(uResolution, canvas.width, canvas.height, canvas.width / canvas.height);
+    gl.uniform1f(uTime, 12.0);
+    gl.uniform4f(uMouse, refW() * 0.5, 0.0, 0.0, 0.0);
+    gl.drawArrays(gl.TRIANGLES, 0, 3);
+    window.addEventListener('resize', () => {
+      resize();
+      gl.uniform3f(uResolution, canvas.width, canvas.height, canvas.width / canvas.height);
+      gl.drawArrays(gl.TRIANGLES, 0, 3);
+    }, { passive: true });
+  } else {
+    requestAnimationFrame(frame);
+  }
 })();

@@ -46,21 +46,22 @@ const camera = new THREE.PerspectiveCamera(24, 1, 0.01, 10);
 // Real assembly order, bottom up. Each part slides home inside its window of the
 // assembly progress, so the stack lands in the order you would build it.
 const STAGES = [
-  { id: 'case',   label: 'Printed case',        lift: 0.000, win: [0.00, 0.45] },
-  { id: 'pcb',    label: 'PCB and standoffs',   lift: 0.018, win: [0.08, 0.55] },
-  { id: 'plate',  label: 'Switch plate',        lift: 0.036, win: [0.18, 0.65] },
-  { id: 'switch', label: 'Kailh Choc switches', lift: 0.054, win: [0.28, 0.78] },
-  { id: 'cap',    label: 'Keycaps and trackpad',             lift: 0.078, win: [0.40, 0.97] },
+  { id: 'case',   label: 'Printed case',                lift: 0.000, win: [0.00, 0.45] },
+  { id: 'pcb',    label: 'PCB, nice!nano and standoffs', lift: 0.018, win: [0.08, 0.55] },
+  { id: 'plate',  label: 'Switch plate and trackpad',   lift: 0.036, win: [0.18, 0.65] },
+  { id: 'switch', label: 'Choc switches and M2 screws', lift: 0.054, win: [0.28, 0.78] },
+  { id: 'cap',    label: 'Keycaps and walnut veneer',   lift: 0.078, win: [0.40, 0.97] },
 ];
 const stageOf = (name) => {
-  if (/^(Keycap|TouchPad$)/.test(name)) return 'cap';
-  if (/^TouchpadHolder/.test(name)) return 'plate';
-  if (/^Switch/.test(name)) return 'switch';
-  if (/^(KeyPlate|Pexi)/.test(name)) return 'plate';
-  if (/^(PCB|Support)/.test(name)) return 'pcb';
+  if (/^(Keycap|Veneer)/.test(name)) return 'cap';
+  if (/^(Switch|M2_screws)/.test(name)) return 'switch';
+  if (/^(KeyPlate|Pexi|Touchpad|TouchPad)/.test(name)) return 'plate';
+  if (/^(PCB|Support|NiceNano|Header)/.test(name)) return 'pcb';
   return 'case';
 };
-const EXTRA = { Pexi: 0.03, Foot: -0.014, Leg: -0.014 }; // windows float higher, feet drop below
+// a few parts float clear of their layer so the stack reads: windows and the veneer
+// higher, the nice!nano above its PCB, inserts above the case floor, feet and legs below
+const EXTRA = { Pexi: 0.03, Veneer: 0.03, TouchPad: 0.012, NiceNano: 0.012, Header: 0.006, M2_inserts: 0.01, Foot: -0.014, Leg: -0.014 };
 const SPREAD = 0.02; // halves pulled apart sideways when exploded
 
 const parts = [];     // { obj, home, offset, win }
@@ -74,7 +75,7 @@ new GLTFLoader().load(MODEL_URL, (gltf) => {
   // black keycaps and housings should stay black, so they take less of the room reflection
   root.traverse((o) => {
     if (!o.isMesh) return;
-    if (/Keycaps|Choc/.test(o.material.name)) o.material.envMapIntensity = 0.45;
+    if (/Keycaps|Choc|Walnut/.test(o.material.name)) o.material.envMapIntensity = 0.35;
     // Choc stems sit inside the keycap once assembled; hide them so a hover press can't poke through
     if (o.material.name === 'Choc stem') stemMaterial = o.material;
   });
@@ -223,7 +224,8 @@ const NOTES = {
   HighSens: 'Trackpad runs at 1.8x while P is held. Every key passes through to Base.',
   LowSens: 'Trackpad drops to 0.45x for fine work while V is held. Every key passes through to Base.',
   Mouse: 'Pointer keys and clicks. Nothing in the current keymap switches to this layer.',
-  Gaming: 'Toggled on, so the left hand stays on WASD with Space under the thumb.',
+  Gaming: 'Toggled by pressing A, S and T together. QWERTY shifted one column in, so WASD sits under the fingers with Shift and Ctrl on the pinky.',
+  GamingNum: 'Hold Q while Gaming is on for the number row.',
 };
 
 fetch(KEYMAP_URL).then((r) => r.json()).then((data) => {
