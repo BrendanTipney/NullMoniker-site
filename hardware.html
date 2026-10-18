@@ -70,8 +70,11 @@
 
     <!-- KEYBOARD -->
     <article class="proj" id="keyboard">
-      <a href="keyboard.html" class="proj-media" data-tilt data-cursor="Read" data-try-src="keyboard-media/hero.jpg" data-alt="Split keyboard with integrated trackpad" style="cursor:pointer;">
-        <div class="media-placeholder"><b>Split keyboard</b><small>keyboard-media/hero.jpg</small></div>
+      <a href="keyboard.html" class="proj-media proj-media--model" data-cursor="Open" data-kb-model="keyboard-media/corne.glb" aria-label="Split keyboard case study">
+          <ol class="kb-lane-steps" aria-hidden="true">
+            <li><span>01</span>Case</li><li><span>02</span>PCB</li><li><span>03</span>Plate</li><li><span>04</span>Switches</li><li><span>05</span>Keycaps</li>
+          </ol>
+          <p class="kb-lane-fallback-text">Split Keyboard</p>
       </a>
       <div class="proj-body">
         <p class="proj-kicker">Industrial design : Fusion 360, printing, ZMK</p>
@@ -227,5 +230,14 @@
 
 <script src="shader.js"></script>
 <script src="main.js"></script>
+<script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+    }
+  }
+</script>
+<script type="module" src="kb-lane.js"></script>
 </body>
 </html>

@@ -97,7 +97,8 @@
     '.section-label', '.section-title', '.section-rule', '.lane', '.proj', '.feature-card',
     '.stat', '.index-tile', '.link-item', '.about-text > *', '.about-aside',
     '.lane-hero-inner > *', '.next-lane', '.loop-step', '.bench-card', '.cs-section .section-inner > *',
-    '.psyphi-project .section-inner > *', '.psyphi-hero-body', '.cs-meta-strip', '.cs-deck', '.footer-cta > *'
+    '.psyphi-project .section-inner > *', '.psyphi-hero-body', '.cs-meta-strip', '.cs-deck', '.footer-cta > *',
+    '.clients-intro', '.client-step', '.clients-quote-row', '.clients-timeline li'
   ].join(',');
   $$(autoReveal).forEach(el => { if (!el.hasAttribute('data-reveal')) el.setAttribute('data-reveal', ''); });
   // Stagger siblings
@@ -216,7 +217,7 @@
 
   /* ── SPOTLIGHT : a soft light that follows the cursor across cards ── */
   if (finePointer && !reduceMotion) {
-    $$('.lane, .proj, .link-item, .index-tile, .feature-card, .bench-card, .stat, .next-lane, .about-aside').forEach(el => {
+    $$('.lane, .proj, .link-item, .index-tile, .feature-card, .bench-card, .stat, .next-lane, .about-aside, .client-step').forEach(el => {
       el.classList.add('has-spot');
       el.addEventListener('pointermove', e => {
         const r = el.getBoundingClientRect();

@@ -213,6 +213,7 @@ const combosEl = stage.querySelector('.kb-combos');
 const countEl = stage.querySelector('.kb-count');
 
 const NOTES = {
+  Hand_Swap: 'Hold R or T and the right half mirrors onto the left hand, so the right hand can stay on the mouse.',
   HighSens: 'Trackpad runs at 1.8x while P is held. Every key passes through to Base.',
   LowSens: 'Trackpad drops to 0.45x for fine work while V is held. Every key passes through to Base.',
   Mouse: 'Pointer keys and clicks. Nothing in the current keymap switches to this layer.',
@@ -291,7 +292,7 @@ function setLayer(ix) {
   reachEl.appendChild(h);
   const how = document.createElement('p');
   how.className = 'kb-reach-how';
-  how.textContent = ix === 0 ? 'Always on. Colemak-DH with home row layer keys.'
+  how.textContent = ix === 0 ? 'Always on. Colemak, adjusted so Z, X, C, V and S sit where QWERTY hotkeys expect them.'
     : reach.length ? reach.map((r) => r.text).join(' · ') : 'No key switches to this layer.';
   reachEl.appendChild(how);
   if (NOTES[L.id]) {

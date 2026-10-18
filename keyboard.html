@@ -22,25 +22,24 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="keyboard-explorer.css" />
 </head>
-<body class="cs-page page-hw">
+<body class="cs-page">
 
 <!-- ── NAV ── -->
 <nav>
-  <a class="nav-logo" href="index.html" aria-label="NullMoniker home">
-    <span class="nav-logo-mark">N</span>
+  <a class="nav-logo" href="index.html">
     <span class="nav-logo-wordmark">NullMoniker</span>
   </a>
   <ul class="nav-links" id="navLinks">
-    <li><a href="xr.html" class="accent-xr" data-accent><span class="nav-num">01</span><span class="nav-text">XR</span></a></li>
-    <li><a href="games.html" class="accent-games" data-accent><span class="nav-num">02</span><span class="nav-text">Games</span></a></li>
-    <li><a href="hardware.html" class="accent-hw is-current" aria-current="page" data-accent><span class="nav-num">03</span><span class="nav-text">Hardware</span></a></li>
-    <li><a href="visuals.html" class="accent-vis" data-accent><span class="nav-num">04</span><span class="nav-text">Visuals</span></a></li>
-    <li><a href="index.html#about"><span class="nav-text">About</span></a></li>
+    <li><a href="index.html#work">Work</a></li>
+    <li><a href="keyboard.html" class="is-current">Keyboard</a></li>
+    <li><a href="psyphi.html">PsyPhi</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#links">Links</a></li>
     <li><a href="mailto:brendan.tipney@gmail.com" class="nav-cta">Contact</a></li>
   </ul>
-  <button class="nav-burger" id="navBurger" type="button" aria-label="Toggle menu" aria-expanded="false">
+  <div class="nav-burger" id="navBurger" aria-label="Toggle menu">
     <span></span><span></span><span></span>
-  </button>
+  </div>
 </nav>
 
 <!-- ── HERO : exploded model assembles on scroll, then the layout explorer ── -->
@@ -49,8 +48,7 @@
     <canvas class="kb-canvas" role="img" aria-label="3D model of the split keyboard, exploded into its printed case, PCB, switch plate, switches and keycaps"></canvas>
 
     <div class="kb-hero-copy">
-      <p class="crumbs case-crumbs"><a href="index.html">Home</a><span>/</span><a href="hardware.html">03 : Hardware</a><span>/</span><span class="here">Split Keyboard</span></p>
-    <p class="section-label">Hardware : Input Design</p>
+      <p class="section-label">Hardware : Input Design</p>
       <h1 class="kb-hero-title">Split Keyboard</h1>
       <p class="kb-hero-spec"><span>36 keys</span> / <span>Kailh Choc</span> / <span>ZMK over BLE</span> / <span>TPS43 trackpad</span></p>
     </div>
@@ -568,28 +566,18 @@
 <!-- ── FOOT NAV ── -->
 <section id="cs-foot">
   <div class="section-inner" style="text-align:center;">
-    <a href="hardware.html" class="btn btn-secondary"><span class="arrow">←</span> Back to Hardware</a>
-    <a href="index.html" class="btn btn-secondary">Home</a>
+    <a href="index.html" class="btn btn-secondary">Back to NullMoniker</a>
   </div>
 </section>
-
-<section class="footer-cta">
-  <p class="footer-cta-label">Got something to build?</p>
-  <a href="mailto:brendan.tipney@gmail.com" class="footer-cta-big" data-cursor="Email">Let's talk</a>
-  <p class="footer-cta-mail">brendan.tipney@gmail.com</p>
-</section>
-
 
 <!-- ── FOOTER ── -->
 <footer>
   <div class="footer-inner">
     <span class="footer-logo">NullMoniker</span>
-        <ul class="footer-links">
-      <li><a href="xr.html">XR</a></li>
-      <li><a href="games.html">Games</a></li>
-      <li><a href="hardware.html">Hardware</a></li>
-      <li><a href="visuals.html">Visuals</a></li>
+    <ul class="footer-links">
+      <li><a href="index.html#work">Work</a></li>
       <li><a href="index.html#about">About</a></li>
+      <li><a href="https://ballastgames.com/" target="_blank" rel="noopener">Ballast Games</a></li>
       <li><a href="mailto:brendan.tipney@gmail.com">Contact</a></li>
     </ul>
     <p class="footer-copy">© 2026 Brendan Tipney. All rights reserved.</p>
