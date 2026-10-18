@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NullMoniker : Brendan Tipney</title>
+  <meta name="description" content="Brendan Tipney (NullMoniker): technical designer and creative technologist in Nova Scotia, Canada. XR and volumetric video, games, hardware and industrial design, and live visuals." />
+  <meta name="keywords" content="Brendan Tipney, NullMoniker, technical designer, creative technologist, XR, AR, Apple Vision Pro, Quest 3, volumetric video, Unity, Godot, Cloudbreaker, industrial design, VJ, Nova Scotia, Ballast Games" />
+  <link rel="canonical" href="https://nullmoniker.ca/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="NullMoniker" />
+  <meta property="og:title" content="NullMoniker : Brendan Tipney" />
+  <meta property="og:description" content="Technical designer and creative technologist. XR, games, hardware, and live visuals." />
+  <meta property="og:url" content="https://nullmoniker.ca/" />
+  <meta property="og:image" content="https://nullmoniker.ca/xr-media/asset15-logic.jpg" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="NullMoniker : Brendan Tipney" />
+  <meta name="twitter:description" content="Technical designer and creative technologist. XR, games, hardware, and live visuals." />
+  <meta name="twitter:image" content="https://nullmoniker.ca/xr-media/asset15-logic.jpg" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Brendan Tipney",
+    "alternateName": "NullMoniker",
+    "url": "https://nullmoniker.ca/",
+    "jobTitle": "Technical Designer",
+    "description": "Technical designer and creative technologist based in Nova Scotia, Canada. XR, games, hardware, and live visuals.",
+    "homeLocation": { "@type": "Place", "name": "Nova Scotia, Canada" },
+    "email": "brendan.tipney@gmail.com",
+    "sameAs": [
+      "https://www.linkedin.com/in/brendan-tipney/",
+      "https://github.com/BrendanTipney",
+      "https://ballastgames.com/"
+    ]
+  }
+  </script>
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <a class="nav-logo" href="index.html" aria-label="NullMoniker home">
+    <span class="nav-logo-mark">N</span>
+    <span class="nav-logo-wordmark">NullMoniker</span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="xr.html" class="accent-xr" data-accent data-lane="xr"><span class="nav-num">01</span><span class="nav-text">XR</span></a></li>
+    <li><a href="games.html" class="accent-games" data-accent data-lane="games"><span class="nav-num">02</span><span class="nav-text">Games</span></a></li>
+    <li><a href="hardware.html" class="accent-hw" data-accent data-lane="hardware"><span class="nav-num">03</span><span class="nav-text">Hardware</span></a></li>
+    <li><a href="visuals.html" class="accent-vis" data-accent data-lane="visuals"><span class="nav-num">04</span><span class="nav-text">Visuals</span></a></li>
+    <li><a href="#about"><span class="nav-text">About</span></a></li>
+    <li><a href="mailto:brendan.tipney@gmail.com" class="nav-cta">Contact</a></li>
+  </ul>
+  <button class="nav-burger" id="navBurger" type="button" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ── HERO ── -->
+<section id="hero">
+  <canvas id="shaderCanvas" aria-hidden="true"></canvas>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1 class="hero-title" data-scramble>NullMoniker</h1>
+    <p class="hero-name">Brendan Tipney</p>
+    <p class="hero-role">
+      <a href="#xr" class="accent-xr">XR</a><span class="sep">/</span>
+      <a href="#games" class="accent-games">Games</a><span class="sep">/</span>
+      <a href="#hardware" class="accent-hw">Hardware</a><span class="sep">/</span>
+      <a href="#visuals" class="accent-vis">Visuals</a>
+    </p>
+    <p class="hero-tagline">
+      Technical designer and creative technologist in Nova Scotia, Canada.
+      I build XR experiences, games, hardware, and live visuals, plus the tools that help other people make them.
+    </p>
+    <div class="btn-row">
+      <a href="#work" class="btn btn-primary">See the work <span class="arrow">↓</span></a>
+      <a href="resume.pdf" class="btn btn-secondary" data-resume hidden target="_blank" rel="noopener">Resume</a>
+      <a href="mailto:brendan.tipney@gmail.com" class="btn btn-secondary">Get in touch</a>
+    </div>
+  </div>
+  <div class="hero-scroll-hint" aria-hidden="true">
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- ── TOOLS MARQUEE ── -->
+<div class="marquee" aria-label="Tools and platforms">
+  <div class="marquee-track">
+    <span>Unity</span><span class="dot">◇</span><span>Godot</span><span class="dot">◇</span><span>C#</span><span class="dot">◇</span><span>Shader Graph</span><span class="dot">◇</span><span>GLSL</span><span class="dot">◇</span><span>Quest 3</span><span class="dot">◇</span><span>Apple Vision Pro</span><span class="dot">◇</span><span>Hand Tracking</span><span class="dot">◇</span><span>8th Wall</span><span class="dot">◇</span><span>Volumetric Video</span><span class="dot">◇</span><span>Looking Glass</span><span class="dot">◇</span><span>TouchDesigner</span><span class="dot">◇</span><span>Resolume</span><span class="dot">◇</span><span>Fusion 360</span><span class="dot">◇</span><span>3D Printing</span><span class="dot">◇</span><span>CNC</span><span class="dot">◇</span><span>ZMK</span><span class="dot">◇</span><span>Electronics</span><span class="dot">◇</span><span>DaVinci Resolve</span><span class="dot">◇</span>
+    <span aria-hidden="true">Unity</span><span class="dot" aria-hidden="true">◇</span><span aria-hidden="true">Godot</span><span class="dot" aria-hidden="true">◇</span><span aria-hidden="true">C#</span><span class="dot" aria-hidden="true">◇</span><span aria-hidden="true">Shader Graph</span><span class="dot" aria-hidden="true">◇</span><span aria-hidden="true">GLSL</span><span class="dot" aria-hidden="true">◇</span><span aria-hidden="true">Quest 3</span><span class="dot" aria-hidden="true">◇</span><span aria-hidden="true">Apple Vision Pro</span><span class="dot" aria-hidden="true">◇</span><span aria-hidden="true">Hand Tracking</span><span class="dot" aria-hidden="true">◇</span><span aria-hidden="true">8th Wall</span><span class="dot" aria-hidden="true">◇</span><span aria-hidden="true">Volumetric Video</span><span class="dot" aria-hidden="true">◇</span><span aria-hidden="true">Looking Glass</span><span class="dot" aria-hidden="true">◇</span><span aria-hidden="true">TouchDesigner</span><span class="dot" aria-hidden="true">◇</span><span aria-hidden="true">Resolume</span><span class="dot" aria-hidden="true">◇</span><span aria-hidden="true">Fusion 360</span><span class="dot" aria-hidden="true">◇</span><span aria-hidden="true">3D Printing</span><span class="dot" aria-hidden="true">◇</span><span aria-hidden="true">CNC</span><span class="dot" aria-hidden="true">◇</span><span aria-hidden="true">ZMK</span><span class="dot" aria-hidden="true">◇</span><span aria-hidden="true">Electronics</span><span class="dot" aria-hidden="true">◇</span><span aria-hidden="true">DaVinci Resolve</span><span class="dot" aria-hidden="true">◇</span>
+  </div>
+</div>
+
+<!-- ── WORK INTRO + INDEX ── -->
+<section id="work">
+  <div class="section-inner">
+    <div class="work-intro">
+      <div>
+        <p class="section-label">Work</p>
+        <h2 class="section-title">Four kinds of building</h2>
+        <div class="section-rule"></div>
+      </div>
+      <p>
+        I'm a generalist on purpose. My work thrives at the intersection of disciplines and falls
+        into four core areas. Pick one, or keep scrolling for the short version.
+      </p>
+    </div>
+
+    <div class="lane-index">
+      <a href="#xr" class="index-tile accent-xr">
+        <span class="index-num">01</span>
+        <span class="index-name">XR and Technical Design</span>
+        <span class="index-sub">Quest 3, Vision Pro, volumetric video, creator tools</span>
+      </a>
+      <a href="#games" class="index-tile accent-games">
+        <span class="index-num">02</span>
+        <span class="index-name">Games</span>
+        <span class="index-sub">Cloudbreaker, out now on Steam</span>
+      </a>
+      <a href="#hardware" class="index-tile accent-hw">
+        <span class="index-num">03</span>
+        <span class="index-name">Hardware and Design</span>
+        <span class="index-sub">CAD, printing, CNC, electronics</span>
+      </a>
+      <a href="#visuals" class="index-tile accent-vis">
+        <span class="index-num">04</span>
+        <span class="index-name">Live Visuals</span>
+        <span class="index-sub">VJ sets, projection mapping, installations</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── LANES ── -->
+<section class="lanes" aria-label="Work by discipline">
+
+  <!-- 01 XR -->
+  <article class="lane lane--xr" id="xr">
+    <div class="lane-grid">
+      <div class="lane-media" data-tilt data-expand data-full="clips/AR_DemoReel_NoTitle.webm" data-caption="XR and AR demo reel" data-cursor="Reel">
+        <div class="lane-media-inner">
+          <video muted loop playsinline preload="none" data-autoplay data-src="xr-media/asset15-logic.mp4" poster="xr-media/asset15-logic.jpg"></video>
+        </div>
+        <span class="lane-media-tag">Asset 15 : Quest 3 and Vision Pro</span>
+      </div>
+      <div class="lane-body">
+        <span class="lane-bignum" aria-hidden="true">01</span>
+        <p class="lane-kicker">01 : XR and Technical Design</p>
+        <h3 class="lane-title" data-scramble="hover">XR and Technical Design</h3>
+        <p class="lane-pitch">
+          Virtual puzzles you can touch with your hands, reactive holograms, and volumetric performances
+          in your room.
+          Three years at Arcturus designing and building with volumetric video on Quest 3, Apple Vision Pro,
+          Looking Glass, and phones.
+        </p>
+        <ul class="lane-projects">
+          <li><a href="xr.html#asset-15">Asset 15 <span>Quest 3 / Vision Pro</span></a></li>
+          <li><a href="xr.html#hologram">Touchable Hologram <span>Looking Glass</span></a></li>
+          <li><a href="xr.html#ar-cards">AR Cards <span>8th Wall</span></a></li>
+          <li><a href="xr.html#holosuite">HoloSuite <span>Creator tools</span></a></li>
+        </ul>
+        <div class="btn-row">
+          <a href="xr.html" class="btn btn-accent">Explore XR <span class="arrow">→</span></a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- 02 GAMES -->
+  <article class="lane lane--games" id="games">
+    <div class="lane-grid">
+      <div class="lane-media" data-tilt data-expand data-youtube="Vl_FC4QCh0s" data-title="Cloudbreaker Launch Trailer" data-cursor="Play">
+        <div class="lane-media-inner">
+          <img src="https://i.ytimg.com/vi/Vl_FC4QCh0s/maxresdefault.jpg" alt="Cloudbreaker launch trailer" loading="lazy" />
+        </div>
+        <span class="lane-media-tag">Cloudbreaker : Launch trailer</span>
+      </div>
+      <div class="lane-body">
+        <span class="lane-bignum" aria-hidden="true">02</span>
+        <p class="lane-kicker">02 : Games</p>
+        <h3 class="lane-title" data-scramble="hover">Games</h3>
+        <p class="lane-pitch">
+          Cloudbreaker is out now on Steam. It's a bullet heaven roguelite where managing your inventory is
+          half the fight, built in Godot by a studio of two. I lead the project, the code, and the gameplay design.
+        </p>
+        <ul class="lane-projects">
+          <li><a href="games.html#cloudbreaker">Cloudbreaker <span>Steam, 2026</span></a></li>
+          <li><a href="games.html#asset-15">Asset 15 Redesign <span>XR game design</span></a></li>
+        </ul>
+        <div class="btn-row">
+          <a href="games.html" class="btn btn-accent">Explore Games <span class="arrow">→</span></a>
+          <a href="https://store.steampowered.com/app/3620890/Cloudbreaker/" target="_blank" rel="noopener" class="btn btn-secondary">Steam</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- 03 HARDWARE -->
+  <article class="lane lane--hw" id="hardware">
+    <div class="lane-grid">
+      <a class="lane-media lane-media--model" href="keyboard.html" data-cursor="Open" data-kb-model="keyboard-media/corne.glb" aria-label="Split keyboard case study">
+          <ol class="kb-lane-steps" aria-hidden="true">
+            <li><span>01</span>Case</li><li><span>02</span>PCB</li><li><span>03</span>Plate</li><li><span>04</span>Switches</li><li><span>05</span>Keycaps</li>
+          </ol>
+          <p class="kb-lane-fallback-text">Split Keyboard</p>
+        <span class="lane-media-tag">Split Keyboard : scroll to assemble</span>
+      </a>
+      <div class="lane-body">
+        <span class="lane-bignum" aria-hidden="true">03</span>
+        <p class="lane-kicker">03 : Hardware and Design</p>
+        <h3 class="lane-title" data-scramble="hover">Hardware and Design</h3>
+        <p class="lane-pitch">
+          Eight years as an electronics tech on broadcast transmitters, and I never stopped building.
+          I design in Fusion 360, then make it real with a 3D printer, a CNC, or a soldering iron.
+        </p>
+        <ul class="lane-projects">
+          <li><a href="keyboard.html">Split Keyboard <span>Case study</span></a></li>
+          <li><a href="hardware.html#future-forest">Future Forest <span>CNC and LEDs</span></a></li>
+          <li><a href="hardware.html#nautel">Broadcast Electronics <span>Nautel</span></a></li>
+          <li><a href="hardware.html#workbench">Workbench <span>FPV, printing</span></a></li>
+        </ul>
+        <div class="btn-row">
+          <a href="hardware.html" class="btn btn-accent">Explore Hardware <span class="arrow">→</span></a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- 04 VISUALS -->
+  <article class="lane lane--vis" id="visuals">
+    <div class="lane-grid">
+      <div class="lane-media" data-tilt data-expand data-caption="Kollektiv 14 live set" data-cursor="Play">
+        <div class="lane-media-inner">
+          <video muted loop playsinline preload="none" data-autoplay data-src="psyphi-media/kollektiv/01.mp4" poster="media/posters/kollektiv-01.jpg"></video>
+        </div>
+        <span class="lane-media-tag">Kollektiv 14 : Live set</span>
+      </div>
+      <div class="lane-body">
+        <span class="lane-bignum" aria-hidden="true">04</span>
+        <p class="lane-kicker">04 : Live Visuals</p>
+        <h3 class="lane-title" data-scramble="hover">Live Visuals</h3>
+        <p class="lane-pitch">
+          As PsyPhi I played visuals at festivals across Atlantic Canada, mapped stages, and built
+          interactive installations people could play with. TouchDesigner, Resolume, and whatever
+          cutting edge tech I could get my hands on.
+        </p>
+        <ul class="lane-projects">
+          <li><a href="visuals.html#kollektiv">Kollektiv 14 <span>Live VJ</span></a></li>
+          <li><a href="visuals.html#hex">Hex <span>Interactive install</span></a></li>
+          <li><a href="visuals.html#cover-art">Cover Art <span>HomeBass FM</span></a></li>
+          <li><a href="psyphi.html">PsyPhi Archive <span>Everything</span></a></li>
+        </ul>
+        <div class="btn-row">
+          <a href="visuals.html" class="btn btn-accent">Explore Visuals <span class="arrow">→</span></a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+</section>
+
+<!-- ── NUMBERS ── -->
+<section id="numbers" aria-label="By the numbers">
+  <div class="section-inner">
+    <div class="stats">
+      <div class="stat">
+        <p class="stat-value" data-count="18" data-suffix="+">18+</p>
+        <p class="stat-label">Years working directly with customers, enterprise since 2013</p>
+      </div>
+      <div class="stat">
+        <p class="stat-value" data-count="10" data-prefix="~">~10</p>
+        <p class="stat-label">Volumetric XR demos shipped for trade shows</p>
+      </div>
+      <div class="stat">
+        <p class="stat-value" data-count="100" data-suffix="+">100+</p>
+        <p class="stat-label">HoloSuite customers supported, enterprise accounts included</p>
+      </div>
+      <div class="stat">
+        <p class="stat-value" data-count="1">1</p>
+        <p class="stat-label">Game shipped on Steam, with a studio of two</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CLIENTS ── -->
+<section id="clients">
+  <div class="section-inner">
+    <div class="clients-head">
+      <div>
+        <p class="section-label">Clients</p>
+        <h2 class="section-title">The part that isn't in the tech stack</h2>
+        <div class="section-rule"></div>
+      </div>
+      <div class="clients-intro">
+        <p>
+          I've worked directly with customers since <strong>2008</strong>, and with enterprise customers since
+          <strong>2013</strong>. Plenty of people have my technical skills. Where I stand out is the human side:
+          connecting with clients, making them feel heard, and owning their problem until it's solved.
+        </p>
+      </div>
+    </div>
+
+    <div class="clients-steps">
+      <div class="client-step">
+        <p class="n">01</p>
+        <h3>Listen</h3>
+        <p>People need to feel heard first. I listen for the real problem, not just the first symptom they describe.</p>
+      </div>
+      <div class="client-step">
+        <p class="n">02</p>
+        <h3>Own it</h3>
+        <p>I take personal ownership of the issue and make that clear, so the client knows it's under control and someone is on it until it's fixed.</p>
+      </div>
+      <div class="client-step">
+        <p class="n">03</p>
+        <h3>Narrow in</h3>
+        <p>I gather exactly the information needed to troubleshoot, then fix the problem as efficiently as possible.</p>
+      </div>
+      <div class="client-step">
+        <p class="n">04</p>
+        <h3>Make it foolproof</h3>
+        <p>Docs, tutorials, and live troubleshooting steps written so they can't be followed incorrectly.</p>
+      </div>
+    </div>
+
+    <div class="clients-quote-row">
+      <blockquote class="clients-quote">
+        <p>If a customer follows my instructions wrong, <span>that's my fault.</span></p>
+      </blockquote>
+      <div class="clients-note">
+        <p>
+          Some of my Nautel customers had to charter a helicopter to reach a transmitter site and report back.
+          Instructions that only work most of the time aren't good enough out there, and I've written every doc
+          and tutorial since with that in mind.
+        </p>
+        <p>
+          Around all of it is the project side: keeping clients updated, setting clear expectations, and managing
+          the back and forth until the job is done.
+        </p>
+      </div>
+    </div>
+
+    <ol class="clients-timeline">
+      <li><span class="y">2008</span><span class="w">Technical support</span><span class="d">OLS, then Teletech</span></li>
+      <li><span class="y">2013</span><span class="w">Enterprise and international</span><span class="d">Broadcasters worldwide at Nautel</span></li>
+      <li><span class="y">2021</span><span class="w">Creator tools</span><span class="d">100+ HoloSuite customers at Arcturus</span></li>
+      <li><span class="y">2025</span><span class="w">Running a studio</span><span class="d">Partners, PR, and launch at Ballast Games</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ── ABOUT ── -->
+<section id="about">
+  <div class="section-inner">
+    <p class="section-label">About</p>
+    <h2 class="section-title">About</h2>
+    <div class="section-rule"></div>
+
+    <div class="about-grid">
+      <div class="about-text">
+        <p>
+          I'm <strong>Brendan Tipney</strong>, a technical designer and creative technologist in Nova Scotia,
+          Canada. I like the space where code, real time graphics, and physical things meet, and I like
+          building the tools that let other people work there too.
+        </p>
+        <p>
+          I'm one half of <a href="https://ballastgames.com/" target="_blank" rel="noopener"><strong>Ballast Games</strong></a>,
+          where we shipped <em>Cloudbreaker</em> on Steam in September 2026. Before that I spent three years at
+          <strong>Arcturus</strong>, first supporting the creators who used HoloSuite, then as a Technical Designer
+          building XR games and demos with volumetric video.
+        </p>
+        <p>
+          Before that, eight years at <strong>Nautel</strong> as an electronics tech, testing, repairing, and supporting
+          broadcast transmitters for customers all over the world. That job taught me to write instructions that
+          work the first time.
+        </p>
+        <p>
+          I care about tight feedback loops: tools you can poke at, systems you can read, and visuals that respond
+          to whatever you give them.
+        </p>
+        <div class="about-disciplines">
+          <div class="discipline">Technical Design <span>: XR, gameplay, interaction</span></div>
+          <div class="discipline">Creator Tools <span>: Editor UI, plugins, docs</span></div>
+          <div class="discipline">Tech Art <span>: Shaders, VFX, real time</span></div>
+          <div class="discipline">Hardware <span>: CAD, fabrication, electronics</span></div>
+          <div class="discipline">Clients <span>: Support, training, project management</span></div>
+        </div>
+      </div>
+      <div class="about-aside">
+        <div class="about-meta">
+          <p class="meta-label">Based in</p>
+          <p class="meta-value">Nova Scotia, Canada. Working remote.</p>
+        </div>
+        <div class="about-meta">
+          <p class="meta-label">Studio</p>
+          <p class="meta-value"><a href="https://ballastgames.com/" target="_blank" rel="noopener">Ballast Games</a></p>
+        </div>
+        <div class="about-meta">
+          <p class="meta-label">Tools</p>
+          <p class="meta-value">Unity, Godot, C#, GDScript, Shader Graph, GLSL, TouchDesigner, Fusion 360</p>
+        </div>
+        <div class="about-meta">
+          <p class="meta-label">Open to</p>
+          <p class="meta-value">Remote roles in technical design, creator tools, and XR. Friendly emails always.</p>
+        </div>
+        <div class="btn-row" style="justify-content:flex-start;">
+          <a href="resume.pdf" class="btn btn-secondary" data-resume hidden target="_blank" rel="noopener">Resume</a>
+          <a href="https://www.linkedin.com/in/brendan-tipney/" class="btn btn-secondary" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── LINKS ── -->
+<section id="links">
+  <div class="section-inner">
+    <p class="section-label">Links</p>
+    <h2 class="section-title">Find Me</h2>
+    <div class="section-rule"></div>
+    <div class="links-grid">
+      <a href="mailto:brendan.tipney@gmail.com" class="link-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        Email <span class="link-arrow">↗</span>
+      </a>
+      <a href="https://www.linkedin.com/in/brendan-tipney/" target="_blank" rel="noopener" class="link-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+        LinkedIn <span class="link-arrow">↗</span>
+      </a>
+      <a href="https://github.com/BrendanTipney" target="_blank" rel="noopener" class="link-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.4 3-.405 1.02.005 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        GitHub <span class="link-arrow">↗</span>
+      </a>
+      <a href="https://ballastgames.com/" target="_blank" rel="noopener" class="link-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        Ballast Games <span class="link-arrow">↗</span>
+      </a>
+      <a href="https://store.steampowered.com/app/3620890/Cloudbreaker/" target="_blank" rel="noopener" class="link-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0a12 12 0 0 0-11.95 11.04l6.42 2.65a3.4 3.4 0 0 1 1.92-.59h.19l2.86-4.14v-.06a4.52 4.52 0 1 1 4.52 4.52h-.1l-4.07 2.91v.16a3.39 3.39 0 0 1-6.72.68L.47 15.36A12 12 0 1 0 12 0zM7.54 18.21l-1.47-.61a2.54 2.54 0 1 0 1.39-3.5l1.52.63a1.87 1.87 0 1 1-1.44 3.48zm11.42-9.3a3.01 3.01 0 1 0-3.01 3.01 3.01 3.01 0 0 0 3.01-3.01zm-5.27 0a2.26 2.26 0 1 1 2.26 2.26 2.26 2.26 0 0 1-2.26-2.26z"/></svg>
+        Cloudbreaker <span class="link-arrow">↗</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="footer-cta">
+  <p class="footer-cta-label">Got something to build?</p>
+  <a href="mailto:brendan.tipney@gmail.com" class="footer-cta-big" data-cursor="Email">Let's talk</a>
+  <p class="footer-cta-mail">brendan.tipney@gmail.com</p>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-inner">
+    <span class="footer-logo">NullMoniker</span>
+    <ul class="footer-links">
+      <li><a href="xr.html">XR</a></li>
+      <li><a href="games.html">Games</a></li>
+      <li><a href="hardware.html">Hardware</a></li>
+      <li><a href="visuals.html">Visuals</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="mailto:brendan.tipney@gmail.com">Contact</a></li>
+    </ul>
+    <p class="footer-copy">© 2026 Brendan Tipney. All rights reserved.</p>
+  </div>
+</footer>
+
+<div id="videoOverlay" aria-hidden="true"></div>
+
+<script src="shader.js"></script>
+<script src="main.js"></script>
+<script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+    }
+  }
+</script>
+<script type="module" src="kb-lane.js"></script>
+</body>
+</html>

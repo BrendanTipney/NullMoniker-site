@@ -22,24 +22,25 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="keyboard-explorer.css" />
 </head>
-<body class="cs-page">
+<body class="cs-page page-hw">
 
 <!-- ── NAV ── -->
 <nav>
-  <a class="nav-logo" href="index.html">
+  <a class="nav-logo" href="index.html" aria-label="NullMoniker home">
+    <span class="nav-logo-mark">N</span>
     <span class="nav-logo-wordmark">NullMoniker</span>
   </a>
   <ul class="nav-links" id="navLinks">
-    <li><a href="index.html#work">Work</a></li>
-    <li><a href="keyboard.html" class="is-current">Keyboard</a></li>
-    <li><a href="psyphi.html">PsyPhi</a></li>
-    <li><a href="index.html#about">About</a></li>
-    <li><a href="index.html#links">Links</a></li>
+    <li><a href="xr.html" class="accent-xr" data-accent><span class="nav-num">01</span><span class="nav-text">XR</span></a></li>
+    <li><a href="games.html" class="accent-games" data-accent><span class="nav-num">02</span><span class="nav-text">Games</span></a></li>
+    <li><a href="hardware.html" class="accent-hw is-current" aria-current="page" data-accent><span class="nav-num">03</span><span class="nav-text">Hardware</span></a></li>
+    <li><a href="visuals.html" class="accent-vis" data-accent><span class="nav-num">04</span><span class="nav-text">Visuals</span></a></li>
+    <li><a href="index.html#about"><span class="nav-text">About</span></a></li>
     <li><a href="mailto:brendan.tipney@gmail.com" class="nav-cta">Contact</a></li>
   </ul>
-  <div class="nav-burger" id="navBurger" aria-label="Toggle menu">
+  <button class="nav-burger" id="navBurger" type="button" aria-label="Toggle menu" aria-expanded="false">
     <span></span><span></span><span></span>
-  </div>
+  </button>
 </nav>
 
 <!-- ── HERO : exploded model assembles on scroll, then the layout explorer ── -->
@@ -48,6 +49,7 @@
     <canvas class="kb-canvas" role="img" aria-label="3D model of the split keyboard, exploded into its printed case, PCB, switch plate, switches and keycaps"></canvas>
 
     <div class="kb-hero-copy">
+      <p class="crumbs case-crumbs"><a href="index.html">Home</a><span>/</span><a href="hardware.html">03 : Hardware</a><span>/</span><span class="here">Split Keyboard</span></p>
       <p class="section-label">Hardware : Input Design</p>
       <h1 class="kb-hero-title">Split Keyboard</h1>
       <p class="kb-hero-spec"><span>36 keys</span> / <span>Kailh Choc</span> / <span>ZMK over BLE</span> / <span>TPS43 trackpad</span></p>
@@ -89,9 +91,9 @@
 <section id="cs-hero">
   <div class="section-inner">
     <p class="cs-deck">
-      A 42-key split ergonomic keyboard with a trackpad built into the right half, so a pointer is
-      always under the thumb and the hands never leave the keys. Designed, printed, wired, and
-      programmed over <span class="cs-todo">How long did this run, start to daily driver? A rough span is fine: "six weeks", "on and off across a winter".</span>
+      A split keyboard with 36 keys and a trackpad in the right half, built around one idea: every
+      letter and every hotkey within reach of one hand, so the other can stay on the mouse. The first
+      build took six months of spare time in fall 2023, and I have been refining the design ever since.
     </p>
 
     <div class="cs-meta-strip">
@@ -123,16 +125,25 @@
     <div class="section-rule"></div>
     <div class="cs-body">
       <p>
-        I write code and design games for a living, which means a keyboard and a pointing device are
-        the two objects I touch most in a day. Every commercial option asks you to accept its
-        opinions about where your hands go. Building my own meant those opinions became decisions I
-        had to justify.
+        I love the puzzle of control interfaces, and the standard keyboard is a poor answer to it. Its
+        layout is stuck in time. I wanted to challenge myself to come up with the best layout I could,
+        in the smallest footprint possible.
       </p>
-      <span class="cs-todo">The real motivation goes here, in your words. What was actually wrong with the setup you had? Discomfort, reach, the constant hand trip to the mouse, plain curiosity? This paragraph is the one a hiring manager reads to decide whether you design for a reason or for fun. Both are valid answers, but say which.</span>
       <p>
-        The specific target was <strong>a pointer you never have to reach for</strong>. On a
-        conventional desk the hand leaves the home row hundreds of times an hour to find a mouse and
-        come back. That round trip is the problem I set out to remove.
+        The biggest slowdown on a computer is the trip between mouse and keyboard. Most ergonomic
+        keyboards try to solve that by keeping you on the keyboard. That works for coding. It falls
+        apart in CAD, video editing, and any workflow that jumps between programs, where the mouse is
+        doing half the work.
+      </p>
+      <p>
+        In that kind of work you are rarely typing a whole word. You type the first few letters of a
+        command, or a hotkey. So I flipped the goal: <strong>keep one hand on the mouse, and put the
+        whole keyboard under the other one.</strong>
+      </p>
+      <p>
+        That set the requirements. Every key has to be pressable without shifting the hand. Common
+        tasks live on the home row. Every letter can be typed with one hand. And every hotkey has to
+        work from that same hand, whether it is Shift plus a key or Ctrl plus Shift plus a key.
       </p>
     </div>
   </div>
@@ -155,9 +166,9 @@
     <div class="cs-constraints">
       <div class="cs-constraint">
         <p class="cs-constraint-num">01</p>
-        <h3>42 keys, no more</h3>
+        <h3>36 keys, no more</h3>
         <p>
-          A 3x6 plus 3-key thumb cluster per half. Everything a full keyboard does has to be reached
+          Five columns and three thumb keys per half. I broke the outer columns off the Corne PCB. Everything a full keyboard does has to be reached
           through layers instead of surface area, which makes keymap design the real interface work.
         </p>
       </div>
@@ -244,7 +255,7 @@
       <div class="cs-compare-row is-chosen">
         <div class="cs-compare-key">Corne plus TPS43</div>
         <div class="cs-compare-val">
-          A proven 42-key skeleton with an open firmware target, extended with a trackpad module in
+          A proven Corne skeleton, cut down to 36 keys, with an open firmware target, extended with a trackpad module in
           the thumb path. Known-good foundation, and the novel part is where the design effort
           actually goes.
         </div>
@@ -353,9 +364,26 @@
           <p class="cs-step-num">Iteration 05</p>
           <h3>Designing the layout</h3>
           <p>
-            42 keys means every symbol, number, and modifier lives on a layer. This is interface
+            36 keys means every symbol, number, and modifier lives on a layer. This is interface
             design with the same rules as any other: frequency drives placement, and anything you
             have to think about is in the wrong spot.
+          </p>
+          <p>
+            The letters start from Colemak, then I moved a few of them. Before moving any letter I
+            checked why Colemak put it there, so a change would not undo something it was doing well.
+            The moves put the most important hotkeys back where QWERTY has them. Z, X, C and V sit
+            exactly where every program expects undo, cut, copy and paste, and S is back under the ring
+            finger for save.
+          </p>
+          <p>
+            Common edits are home row combos. <strong>S and R together is Backspace</strong>, R and T
+            is Delete, and S and T is Tab, so fixing a typo never means reaching. The S and R backspace
+            is one of the best ideas in the whole layout.
+          </p>
+          <p>
+            Holding R or T mirrors the right half onto the left hand, so with the right hand on the
+            mouse the left can still type any letter. The thumbs carry Shift, Ctrl, Alt and Win, which
+            covers every modifier combination from the same hand.
           </p>
           <span class="cs-todo">Which layer decisions did you make and then reverse after living with them? A keymap you revised because daily use proved you wrong is real user testing with a sample size of one, and it reads that way to a designer.</span>
           <p class="cs-verdict">Outcome : <span>TODO</span></p>
@@ -392,7 +420,7 @@
         <h3>Building on the Corne rather than designing a layout from scratch</h3>
         <p>
           A custom matrix would have let me tune every key position to my own hand. Starting from an
-          established 42-key skeleton meant the switch plate, the firmware target, and a decade of
+          established Corne skeleton meant the switch plate, the firmware target, and a decade of
           other people's keymaps were already solved, so the design effort could go entirely into
           the part nobody had solved for me.
         </p>
@@ -523,11 +551,11 @@
     <div class="cs-specs">
       <div class="cs-spec-row">
         <div class="cs-spec-key">Layout</div>
-        <div class="cs-spec-val">Corne, 3x6 plus 3-key thumb cluster per half <span class="cs-todo">Confirm: 42-key or the 36-key 3x5 variant?</span></div>
+        <div class="cs-spec-val">Corne cut down to 36 keys: five columns and three thumb keys per half, outer columns broken off</div>
       </div>
       <div class="cs-spec-row">
         <div class="cs-spec-key">Controller</div>
-        <div class="cs-spec-val"><span class="cs-todo">Board and MCU</span></div>
+        <div class="cs-spec-val">Typeractive Corne Wireless PCB, two Nice!Nano v2 (nRF52840)</div>
       </div>
       <div class="cs-spec-row">
         <div class="cs-spec-key">Firmware</div>
@@ -535,11 +563,11 @@
       </div>
       <div class="cs-spec-row">
         <div class="cs-spec-key">Pointing</div>
-        <div class="cs-spec-val">TPS43 capacitive trackpad, right half <span class="cs-todo">Interface and driver detail</span></div>
+        <div class="cs-spec-val">Azoteq TPS43 capacitive trackpad on the right half, over I2C, using the essenceotd zmk_driver_azoteq fork for sleep with the keyboard</div>
       </div>
       <div class="cs-spec-row">
         <div class="cs-spec-key">Switches</div>
-        <div class="cs-spec-val"><span class="cs-todo">Switch, weight, keycap profile</span></div>
+        <div class="cs-spec-val">Kailh Choc low profile, black low profile keycaps <span class="cs-todo">Switch weight and keycap profile</span></div>
       </div>
       <div class="cs-spec-row">
         <div class="cs-spec-key">Case</div>
@@ -557,7 +585,7 @@
 
     <div class="btn-row" style="justify-content:flex-start; margin-top:2.5rem;">
       <!-- TODO: real URLs -->
-      <a href="#" class="btn btn-secondary">ZMK Config</a>
+      <a href="https://github.com/BrendanTipney/zmk-config" class="btn btn-secondary" target="_blank" rel="noopener">ZMK Config</a>
       <a href="#" class="btn btn-secondary">Printed Parts</a>
     </div>
   </div>
@@ -566,18 +594,28 @@
 <!-- ── FOOT NAV ── -->
 <section id="cs-foot">
   <div class="section-inner" style="text-align:center;">
-    <a href="index.html" class="btn btn-secondary">Back to NullMoniker</a>
+    <a href="hardware.html" class="btn btn-secondary"><span class="arrow">←</span> Back to Hardware</a>
+    <a href="index.html" class="btn btn-secondary">Home</a>
   </div>
 </section>
+
+<section class="footer-cta">
+  <p class="footer-cta-label">Got something to build?</p>
+  <a href="mailto:brendan.tipney@gmail.com" class="footer-cta-big" data-cursor="Email">Let's talk</a>
+  <p class="footer-cta-mail">brendan.tipney@gmail.com</p>
+</section>
+
 
 <!-- ── FOOTER ── -->
 <footer>
   <div class="footer-inner">
     <span class="footer-logo">NullMoniker</span>
-    <ul class="footer-links">
-      <li><a href="index.html#work">Work</a></li>
+        <ul class="footer-links">
+      <li><a href="xr.html">XR</a></li>
+      <li><a href="games.html">Games</a></li>
+      <li><a href="hardware.html">Hardware</a></li>
+      <li><a href="visuals.html">Visuals</a></li>
       <li><a href="index.html#about">About</a></li>
-      <li><a href="https://ballastgames.com/" target="_blank" rel="noopener">Ballast Games</a></li>
       <li><a href="mailto:brendan.tipney@gmail.com">Contact</a></li>
     </ul>
     <p class="footer-copy">© 2026 Brendan Tipney. All rights reserved.</p>
@@ -596,5 +634,14 @@
   }
 </script>
 <script type="module" src="keyboard-explorer.js"></script>
+<script>
+  // Browsers block module scripts and model loading on pages opened straight from disk.
+  if (location.protocol === 'file:') {
+    var kbStage = document.getElementById('kb-stage');
+    kbStage.classList.add('kb-no-webgl');
+    kbStage.querySelector('.kb-fallback').textContent =
+      'The 3D model only loads when the page is served over http. In the site folder, run "npx serve" and open the address it prints.';
+  }
+</script>
 </body>
 </html>

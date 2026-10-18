@@ -2674,3 +2674,6 @@ body:has(nav:not(.is-hidden)) .jump { top: 60px; }
   .clients-steps { grid-template-columns: 1fr; }
   .clients-quote-row { margin: 3rem 0; }
 }
+
+/* square cover art on the PsyPhi archive */
+.psyphi-gallery--square .psyphi-media { aspect-ratio: 1 / 1; }
