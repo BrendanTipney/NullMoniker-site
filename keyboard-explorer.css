@@ -411,3 +411,45 @@
 
 /* the case study intro follows the stage instead of opening the page */
 #kb-stage + #cs-hero { padding-top: 5rem; }
+
+/* ── diagrams in the process steps (wiring, keymap layers) ── */
+.cs-step-media.cs-step-media--diagram {
+  aspect-ratio: auto;
+  cursor: default;
+  background: #0a0a0a;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.cs-step-media--diagram svg { display: block; width: 100%; height: auto; }
+.kbw-board { font: 700 20px 'Rajdhani', sans-serif; letter-spacing: 0.12em; fill: #ffffff; text-transform: uppercase; }
+.kbw-sub   { font: 600 11px 'Rajdhani', sans-serif; letter-spacing: 0.22em; fill: #7d8187; text-transform: uppercase; }
+.kbw-tiny  { font: 600 8px 'Rajdhani', sans-serif; letter-spacing: 0.18em; fill: #7d8187; }
+.kbw-pin   { font: 500 11px ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace; fill: #5d6167; }
+.kbw-pin-on{ font: 700 12px ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace; fill: #ffffff; }
+.kbw-map   { font: 500 12px ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace; fill: #9aa0a6; }
+.kbw-map-a { fill: #ffffff; font-weight: 700; }
+.kbw-note  { font: 600 11px 'Rajdhani', sans-serif; letter-spacing: 0.14em; fill: #6b6f75; text-transform: uppercase; }
+.kbw-chain { font: 600 12.5px 'Rajdhani', sans-serif; letter-spacing: 0.08em; fill: #c9ccd0; }
+
+.kb-layers { display: flex; flex-direction: column; gap: 1.6rem; padding: 1.6rem 1.4rem; }
+.kb-layer-fig { margin: 0; display: flex; flex-direction: column; gap: 0.55rem; }
+.kb-layer-fig figcaption {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  line-height: 1.45;
+}
+.kb-layer-fig figcaption span {
+  display: block;
+  color: var(--text);
+  font-size: 0.95rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.kbl-tap  { font-family: 'Rajdhani', sans-serif; font-weight: 700; fill: #ffffff; }
+.kbl-hold { font-family: 'Rajdhani', sans-serif; font-weight: 600; letter-spacing: 0.08em; fill: #8a8e94; }
+.kbl-dim  { font-family: 'Rajdhani', sans-serif; font-weight: 600; fill: #4a4d52; }
+.kbl-act  { font-family: 'Rajdhani', sans-serif; font-weight: 700; letter-spacing: 0.2em; fill: #a6ff6a; }

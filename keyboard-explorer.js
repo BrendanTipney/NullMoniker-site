@@ -75,7 +75,7 @@ new GLTFLoader().load(MODEL_URL, (gltf) => {
   // black keycaps and housings should stay black, so they take less of the room reflection
   root.traverse((o) => {
     if (!o.isMesh) return;
-    if (/Keycaps|Choc|Walnut/.test(o.material.name)) o.material.envMapIntensity = 0.35;
+    if (/Keycaps|Choc|Walnut|TPS43/.test(o.material.name)) o.material.envMapIntensity = 0.35;
     // Choc stems sit inside the keycap once assembled; hide them so a hover press can't poke through
     if (o.material.name === 'Choc stem') stemMaterial = o.material;
   });
@@ -99,7 +99,7 @@ new GLTFLoader().load(MODEL_URL, (gltf) => {
       win = [win[0] + d, Math.min(1, win[1] + d * 0.4)];
       if (st.id === 'cap') keycaps[pos] = { obj: o, wide: !!o.userData.wide, angle: o.userData.angle || 0, press: 0 };
     }
-    parts.push({ obj: o, home: o.position.clone(), offset: new THREE.Vector3(side * SPREAD, lift, 0), win });
+    parts.push({ obj: o, home: o.position.clone(), side, lift, win });
   });
   stage.classList.add('kb-ready');
   resize();
@@ -185,9 +185,14 @@ function frame(ms) {
   const C = ease(remap(progress, 0.12, 0.70));   // camera to top-down
   const L = remap(progress, 0.70, 0.80);         // layout overlay
 
+  const spreadK = 1 - ease(remap(A, 0.0, 0.6));
   for (const p of parts) {
     const k = 1 - ease(remap(A, p.win[0], p.win[1]));
-    p.obj.position.copy(p.home).addScaledVector(p.offset, k);
+    // lift follows each part's own window; the sideways spread moves a whole half at once,
+    // so screws drop straight through holes that are already lined up under them
+    p.obj.position.copy(p.home);
+    p.obj.position.y += p.lift * k;
+    p.obj.position.x += p.side * SPREAD * spreadK;
   }
   if (stemMaterial) stemMaterial.visible = A < 0.97;
   for (const pos in keycaps) {

@@ -355,10 +355,113 @@
       </div>
 
       <!-- STEP 05 -->
-      <div class="cs-step" data-expand>
-        <div class="cs-step-media">
-          <!-- TODO: <img src="keyboard-media/04-wiring.jpg" alt="Wiring and controller" loading="lazy"> -->
-          <div class="cs-media-placeholder">04 &nbsp;/&nbsp; Wiring and controller</div>
+      <div class="cs-step">
+        <div class="cs-step-media cs-step-media--diagram">
+<svg class="kb-wiring" viewBox="0 0 800 604" role="img" aria-labelledby="kbw-t kbw-d" xmlns="http://www.w3.org/2000/svg">
+<title id="kbw-t">TPS43 to nice!nano v2 wiring</title>
+<desc id="kbw-d">Six wire ribbon from the TPS43 to the right nice!nano. SDA to P0.06, SCL to P0.08, RST to P0.17 and RDY to P0.20 drop straight down the right edge; 3V3 and GND arc over the top to the 3.3V and GND pads on the other side.</desc>
+<defs><pattern id="kbw-grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="#ffffff" stroke-opacity="0.04" stroke-width="1"/></pattern><filter id="kbw-glow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="2.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+<rect width="800" height="604" fill="#0a0a0a"/><rect width="800" height="604" fill="url(#kbw-grid)"/>
+<rect x="120" y="78" width="230" height="430" rx="10" fill="#111214" stroke="#3a3d42" stroke-width="1.5"/>
+<rect x="199.0" y="64" width="72" height="30" rx="7" fill="#1b1d20" stroke="#5a5f66" stroke-width="1.2"/>
+<text x="235.0" y="82" class="kbw-tiny" text-anchor="middle">USB-C</text>
+<g transform="translate(235.0 333.0) rotate(-90)"><text x="0" y="-6" class="kbw-board" text-anchor="middle">nice!nano v2</text><text x="0" y="14" class="kbw-sub" text-anchor="middle">right half, components down</text></g>
+<path d="M556,194 H488 C470,194 470,112.60660660660659 452,112.60660660660659 H328" fill="none" stroke="#000" stroke-opacity="0.6" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M556,194 H488 C470,194 470,112.60660660660659 452,112.60660660660659 H328" fill="none" stroke="#5ef2ff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#kbw-glow)"/>
+<path d="M556,224 H474 C456,224 456,145.4054054054054 438,145.4054054054054 H328" fill="none" stroke="#000" stroke-opacity="0.6" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M556,224 H474 C456,224 456,145.4054054054054 438,145.4054054054054 H328" fill="none" stroke="#5ef2ff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#kbw-glow)"/>
+<path d="M556,314 H460 C442,314 442,243.8018018018018 424,243.8018018018018 H328" fill="none" stroke="#000" stroke-opacity="0.6" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M556,314 H460 C442,314 442,243.8018018018018 424,243.8018018018018 H328" fill="none" stroke="#ffb547" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#kbw-glow)"/>
+<path d="M556,344 H446 C428,344 428,276.6006006006006 410,276.6006006006006 H328" fill="none" stroke="#000" stroke-opacity="0.6" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M556,344 H446 C428,344 428,276.6006006006006 410,276.6006006006006 H328" fill="none" stroke="#ffb547" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#kbw-glow)"/>
+<path d="M556,254 H516 Q538,254 538,232 V56 Q538,34 516,34 H106 Q84,34 84,56 V193.003003003003 Q84,211.003003003003 102,211.003003003003 H142" fill="none" stroke="#000" stroke-opacity="0.6" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M556,254 H516 Q538,254 538,232 V56 Q538,34 516,34 H106 Q84,34 84,56 V193.003003003003 Q84,211.003003003003 102,211.003003003003 H142" fill="none" stroke="#ff5ad9" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#kbw-glow)"/>
+<path d="M556,284 H500 Q522,284 522,262 V72 Q522,50 500,50 H122 Q100,50 100,72 V127.40540540540539 Q100,145.4054054054054 118,145.4054054054054 H142" fill="none" stroke="#000" stroke-opacity="0.6" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M556,284 H500 Q522,284 522,262 V72 Q522,50 500,50 H122 Q100,50 100,72 V127.40540540540539 Q100,145.4054054054054 118,145.4054054054054 H142" fill="none" stroke="#9aa0a6" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#kbw-glow)"/>
+<circle cx="142" cy="112.60660660660659" r="6" fill="none" stroke="#b8963c" stroke-width="2"/><circle cx="142" cy="112.60660660660659" r="2.6" fill="#050505"/>
+<text x="156" y="116.60660660660659" class="kbw-pin" text-anchor="start">B+</text>
+<circle cx="142" cy="145.4054054054054" r="7.5" fill="#9aa0a6"/><circle cx="142" cy="145.4054054054054" r="3" fill="#111214"/>
+<text x="156" y="149.4054054054054" class="kbw-pin-on" text-anchor="start">GND</text>
+<circle cx="142" cy="178.2042042042042" r="6" fill="none" stroke="#b8963c" stroke-width="2"/><circle cx="142" cy="178.2042042042042" r="2.6" fill="#050505"/>
+<text x="156" y="182.2042042042042" class="kbw-pin" text-anchor="start">RST</text>
+<circle cx="142" cy="211.003003003003" r="7.5" fill="#ff5ad9"/><circle cx="142" cy="211.003003003003" r="3" fill="#111214"/>
+<text x="156" y="215.003003003003" class="kbw-pin-on" text-anchor="start">3.3V</text>
+<circle cx="142" cy="243.8018018018018" r="6" fill="none" stroke="#b8963c" stroke-width="2"/><circle cx="142" cy="243.8018018018018" r="2.6" fill="#050505"/>
+<text x="156" y="247.8018018018018" class="kbw-pin" text-anchor="start">031</text>
+<circle cx="142" cy="276.6006006006006" r="6" fill="none" stroke="#b8963c" stroke-width="2"/><circle cx="142" cy="276.6006006006006" r="2.6" fill="#050505"/>
+<text x="156" y="280.6006006006006" class="kbw-pin" text-anchor="start">029</text>
+<circle cx="142" cy="309.3993993993994" r="6" fill="none" stroke="#b8963c" stroke-width="2"/><circle cx="142" cy="309.3993993993994" r="2.6" fill="#050505"/>
+<text x="156" y="313.3993993993994" class="kbw-pin" text-anchor="start">002</text>
+<circle cx="142" cy="342.19819819819816" r="6" fill="none" stroke="#b8963c" stroke-width="2"/><circle cx="142" cy="342.19819819819816" r="2.6" fill="#050505"/>
+<text x="156" y="346.19819819819816" class="kbw-pin" text-anchor="start">115</text>
+<circle cx="142" cy="374.996996996997" r="6" fill="none" stroke="#b8963c" stroke-width="2"/><circle cx="142" cy="374.996996996997" r="2.6" fill="#050505"/>
+<text x="156" y="378.996996996997" class="kbw-pin" text-anchor="start">113</text>
+<circle cx="142" cy="407.79579579579575" r="6" fill="none" stroke="#b8963c" stroke-width="2"/><circle cx="142" cy="407.79579579579575" r="2.6" fill="#050505"/>
+<text x="156" y="411.79579579579575" class="kbw-pin" text-anchor="start">111</text>
+<circle cx="142" cy="440.5945945945946" r="6" fill="none" stroke="#b8963c" stroke-width="2"/><circle cx="142" cy="440.5945945945946" r="2.6" fill="#050505"/>
+<text x="156" y="444.5945945945946" class="kbw-pin" text-anchor="start">010</text>
+<circle cx="142" cy="473.3933933933934" r="6" fill="none" stroke="#b8963c" stroke-width="2"/><circle cx="142" cy="473.3933933933934" r="2.6" fill="#050505"/>
+<text x="156" y="477.3933933933934" class="kbw-pin" text-anchor="start">009</text>
+<circle cx="328" cy="112.60660660660659" r="7.5" fill="#5ef2ff"/><circle cx="328" cy="112.60660660660659" r="3" fill="#111214"/>
+<text x="314" y="116.60660660660659" class="kbw-pin-on" text-anchor="end">006</text>
+<circle cx="328" cy="145.4054054054054" r="7.5" fill="#5ef2ff"/><circle cx="328" cy="145.4054054054054" r="3" fill="#111214"/>
+<text x="314" y="149.4054054054054" class="kbw-pin-on" text-anchor="end">008</text>
+<circle cx="328" cy="178.2042042042042" r="6" fill="none" stroke="#b8963c" stroke-width="2"/><circle cx="328" cy="178.2042042042042" r="2.6" fill="#050505"/>
+<text x="314" y="182.2042042042042" class="kbw-pin" text-anchor="end">GND</text>
+<circle cx="328" cy="211.003003003003" r="6" fill="none" stroke="#b8963c" stroke-width="2"/><circle cx="328" cy="211.003003003003" r="2.6" fill="#050505"/>
+<text x="314" y="215.003003003003" class="kbw-pin" text-anchor="end">GND</text>
+<circle cx="328" cy="243.8018018018018" r="7.5" fill="#ffb547"/><circle cx="328" cy="243.8018018018018" r="3" fill="#111214"/>
+<text x="314" y="247.8018018018018" class="kbw-pin-on" text-anchor="end">017</text>
+<circle cx="328" cy="276.6006006006006" r="7.5" fill="#ffb547"/><circle cx="328" cy="276.6006006006006" r="3" fill="#111214"/>
+<text x="314" y="280.6006006006006" class="kbw-pin-on" text-anchor="end">020</text>
+<circle cx="328" cy="309.3993993993994" r="6" fill="none" stroke="#b8963c" stroke-width="2"/><circle cx="328" cy="309.3993993993994" r="2.6" fill="#050505"/>
+<text x="314" y="313.3993993993994" class="kbw-pin" text-anchor="end">022</text>
+<circle cx="328" cy="342.19819819819816" r="6" fill="none" stroke="#b8963c" stroke-width="2"/><circle cx="328" cy="342.19819819819816" r="2.6" fill="#050505"/>
+<text x="314" y="346.19819819819816" class="kbw-pin" text-anchor="end">024</text>
+<circle cx="328" cy="374.996996996997" r="6" fill="none" stroke="#b8963c" stroke-width="2"/><circle cx="328" cy="374.996996996997" r="2.6" fill="#050505"/>
+<text x="314" y="378.996996996997" class="kbw-pin" text-anchor="end">100</text>
+<circle cx="328" cy="407.79579579579575" r="6" fill="none" stroke="#b8963c" stroke-width="2"/><circle cx="328" cy="407.79579579579575" r="2.6" fill="#050505"/>
+<text x="314" y="411.79579579579575" class="kbw-pin" text-anchor="end">011</text>
+<circle cx="328" cy="440.5945945945946" r="6" fill="none" stroke="#b8963c" stroke-width="2"/><circle cx="328" cy="440.5945945945946" r="2.6" fill="#050505"/>
+<text x="314" y="444.5945945945946" class="kbw-pin" text-anchor="end">104</text>
+<circle cx="328" cy="473.3933933933934" r="6" fill="none" stroke="#b8963c" stroke-width="2"/><circle cx="328" cy="473.3933933933934" r="2.6" fill="#050505"/>
+<text x="314" y="477.3933933933934" class="kbw-pin" text-anchor="end">106</text>
+<rect x="548" y="150" width="210" height="236" rx="12" fill="#0d2318" stroke="#2f6b47" stroke-width="1.5"/>
+<rect x="618" y="190" width="118" height="156" rx="6" fill="none" stroke="#2f6b47" stroke-dasharray="4 5"/>
+<text x="677.0" y="264.0" class="kbw-board" text-anchor="middle">TPS43</text>
+<text x="677.0" y="284.0" class="kbw-sub" text-anchor="middle">Azoteq IQS550</text>
+<text x="677.0" y="302.0" class="kbw-sub" text-anchor="middle">I2C 0x74</text>
+<rect x="544" y="178" width="58" height="182" rx="4" fill="#1a1a1a" stroke="#4a4d52"/>
+<rect x="552" y="188" width="12" height="12" rx="2" fill="#5ef2ff"/>
+<text x="572" y="198" class="kbw-pin-on">SDA</text>
+<rect x="552" y="218" width="12" height="12" rx="2" fill="#5ef2ff"/>
+<text x="572" y="228" class="kbw-pin-on">SCL</text>
+<rect x="552" y="248" width="12" height="12" rx="2" fill="#ff5ad9"/>
+<text x="572" y="258" class="kbw-pin-on">3V3</text>
+<rect x="552" y="278" width="12" height="12" rx="2" fill="#9aa0a6"/>
+<text x="572" y="288" class="kbw-pin-on">GND</text>
+<rect x="552" y="308" width="12" height="12" rx="2" fill="#ffb547"/>
+<text x="572" y="318" class="kbw-pin-on">RST</text>
+<rect x="552" y="338" width="12" height="12" rx="2" fill="#ffb547"/>
+<text x="572" y="348" class="kbw-pin-on">RDY</text>
+<text x="572" y="408" class="kbw-sub" text-anchor="middle">FPC</text>
+<line x1="420" y1="448" x2="438" y2="448" stroke="#5ef2ff" stroke-width="3.2" stroke-linecap="round"/>
+<text x="446" y="452" class="kbw-map"><tspan class="kbw-map-a">SDA</tspan> to P0.06</text>
+<line x1="538" y1="448" x2="556" y2="448" stroke="#5ef2ff" stroke-width="3.2" stroke-linecap="round"/>
+<text x="564" y="452" class="kbw-map"><tspan class="kbw-map-a">SCL</tspan> to P0.08</text>
+<line x1="656" y1="448" x2="674" y2="448" stroke="#ffb547" stroke-width="3.2" stroke-linecap="round"/>
+<text x="682" y="452" class="kbw-map"><tspan class="kbw-map-a">RST</tspan> to P0.17</text>
+<line x1="420" y1="476" x2="438" y2="476" stroke="#ffb547" stroke-width="3.2" stroke-linecap="round"/>
+<text x="446" y="480" class="kbw-map"><tspan class="kbw-map-a">RDY</tspan> to P0.20</text>
+<line x1="538" y1="476" x2="556" y2="476" stroke="#ff5ad9" stroke-width="3.2" stroke-linecap="round"/>
+<text x="564" y="480" class="kbw-map"><tspan class="kbw-map-a">3V3</tspan> to 3.3V</text>
+<line x1="656" y1="476" x2="674" y2="476" stroke="#9aa0a6" stroke-width="3.2" stroke-linecap="round"/>
+<text x="682" y="480" class="kbw-map"><tspan class="kbw-map-a">GND</tspan> to GND</text>
+<text x="420" y="526" class="kbw-note">Six conductor ribbon, soldered at both ends</text>
+<line x1="40" y1="548" x2="760" y2="548" stroke="#ffffff" stroke-opacity="0.08"/>
+<text x="400.0" y="570" class="kbw-chain" text-anchor="middle">TPS43  →  I2C, 400 kHz  →  right nice!nano: driver, tap and drag, Y invert, 0.9x</text>
+<text x="400.0" y="590" class="kbw-chain" text-anchor="middle">→  Bluetooth split link  →  left nice!nano: sensitivity layers  →  computer</text>
+</svg>
         </div>
         <div class="cs-step-body">
           <p class="cs-step-num">Firmware</p>
@@ -379,11 +482,465 @@
       </div>
 
       <!-- STEP 06 -->
-      <div class="cs-step" data-expand>
-        <div class="cs-step-media">
-          <!-- TODO: <img src="keyboard-media/05-keymap.jpg" alt="Keymap layers" loading="lazy"> -->
-          <div class="cs-media-placeholder">05 &nbsp;/&nbsp; Keymap layers</div>
-        </div>
+      <div class="cs-step">
+        <div class="cs-step-media cs-step-media--diagram"><div class="kb-layers">
+<figure class="kb-layer-fig"><figcaption><span>Num / Sym</span>Hold A. Numbers as a numpad under the left hand, brackets under the right.</figcaption><svg class="kb-layer-svg" viewBox="0 0 839 295" role="img" aria-label="Num / Sym layer: 7 8 9, 4 5 6, 1 2 3 on the left with period and zero on the thumbs; brackets and symbols on the right" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(159.4 99.2) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#1c1d1f" stroke="#3a3c40" stroke-width="1.2"/>
+<text y="5" class="kbl-tap" font-size="15" text-anchor="middle">5</text>
+</g>
+<g transform="translate(273.9 60.2) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#1c1d1f" stroke="#3a3c40" stroke-width="1.2"/>
+<text y="5" class="kbl-tap" font-size="15" text-anchor="middle">/</text>
+</g>
+<g transform="translate(159.4 44.8) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#1c1d1f" stroke="#3a3c40" stroke-width="1.2"/>
+<text y="5" class="kbl-tap" font-size="15" text-anchor="middle">8</text>
+</g>
+<g transform="translate(102.1 52.2) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#1c1d1f" stroke="#3a3c40" stroke-width="1.2"/>
+<text y="5" class="kbl-tap" font-size="15" text-anchor="middle">7</text>
+</g>
+<g transform="translate(250.2 225.8) rotate(15.23)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#1c1d1f" stroke="#3a3c40" stroke-width="1.2"/>
+<text y="-4" class="kbl-tap" font-size="15" text-anchor="middle">0</text>
+<text y="14" class="kbl-hold" font-size="7.5" text-anchor="middle">SHIFT</text>
+</g>
+<g transform="translate(102.1 106.6) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#1c1d1f" stroke="#3a3c40" stroke-width="1.2"/>
+<text y="5" class="kbl-tap" font-size="15" text-anchor="middle">4</text>
+</g>
+<g transform="translate(159.4 153.6) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#1c1d1f" stroke="#3a3c40" stroke-width="1.2"/>
+<text y="5" class="kbl-tap" font-size="15" text-anchor="middle">2</text>
+</g>
+<g transform="translate(216.6 106.6) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#1c1d1f" stroke="#3a3c40" stroke-width="1.2"/>
+<text y="5" class="kbl-tap" font-size="15" text-anchor="middle">6</text>
+</g>
+<g transform="translate(216.6 52.2) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#1c1d1f" stroke="#3a3c40" stroke-width="1.2"/>
+<text y="5" class="kbl-tap" font-size="15" text-anchor="middle">9</text>
+</g>
+<g transform="translate(273.9 169.0) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#1c1d1f" stroke="#3a3c40" stroke-width="1.2"/>
+<text y="5" class="kbl-tap" font-size="15" text-anchor="middle">=</text>
+</g>
+<g transform="translate(216.6 161.0) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#1c1d1f" stroke="#3a3c40" stroke-width="1.2"/>
+<text y="5" class="kbl-tap" font-size="15" text-anchor="middle">3</text>
+</g>
+<g transform="translate(44.8 121.6) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#1c1d1f" stroke="#a6ff6a" stroke-width="2.2"/>
+<text y="-4" class="kbl-tap" font-size="15" text-anchor="middle">A</text>
+<text y="14" class="kbl-hold" font-size="7.5" text-anchor="middle">NUM / SYM</text>
+<text y="-17" class="kbl-act" font-size="7" text-anchor="middle">HOLD</text>
+</g>
+<g transform="translate(315.0 237.4) rotate(30.20)">
+<rect x="-26.4" y="-42.4" width="52.8" height="84.8" rx="7.0" fill="#1c1d1f" stroke="#3a3c40" stroke-width="1.2"/>
+<text y="-4" class="kbl-tap" font-size="11" text-anchor="middle">Enter</text>
+<text y="14" class="kbl-hold" font-size="7.5" text-anchor="middle">CTRL</text>
+</g>
+<g transform="translate(187.4 217.4) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#1c1d1f" stroke="#3a3c40" stroke-width="1.2"/>
+<text y="5" class="kbl-tap" font-size="15" text-anchor="middle">.</text>
+</g>
+<g transform="translate(44.8 67.2) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#0f0f0f" stroke="#3a3c40" stroke-width="1.2"/>
+</g>
+<g transform="translate(273.9 114.6) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#1c1d1f" stroke="#3a3c40" stroke-width="1.2"/>
+<text y="5" class="kbl-tap" font-size="15" text-anchor="middle">-</text>
+</g>
+<g transform="translate(44.8 176.0) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#0f0f0f" stroke="#3a3c40" stroke-width="1.2"/>
+</g>
+<g transform="translate(102.1 161.0) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#1c1d1f" stroke="#3a3c40" stroke-width="1.2"/>
+<text y="5" class="kbl-tap" font-size="15" text-anchor="middle">1</text>
+</g>
+<g transform="translate(679.4 99.2) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#1c1d1f" stroke="#3a3c40" stroke-width="1.2"/>
+<text y="5" class="kbl-tap" font-size="15" text-anchor="middle">}</text>
+</g>
+<g transform="translate(564.9 60.2) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#0f0f0f" stroke="#3a3c40" stroke-width="1.2"/>
+</g>
+<g transform="translate(679.4 44.8) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#1c1d1f" stroke="#3a3c40" stroke-width="1.2"/>
+<text y="5" class="kbl-tap" font-size="15" text-anchor="middle">)</text>
+</g>
+<g transform="translate(736.7 52.2) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#1c1d1f" stroke="#3a3c40" stroke-width="1.2"/>
+<text y="5" class="kbl-tap" font-size="15" text-anchor="middle">\</text>
+</g>
+<g transform="translate(588.6 225.8) rotate(-15.23)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#121212" stroke="#232323" stroke-width="1.2"/>
+<text y="-4" class="kbl-dim" font-size="11" text-anchor="middle">Space</text>
+<text y="14" class="kbl-dim" font-size="7.5" text-anchor="middle">SHIFT</text>
+</g>
+<g transform="translate(736.7 106.6) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#1c1d1f" stroke="#3a3c40" stroke-width="1.2"/>
+<text y="5" class="kbl-tap" font-size="15" text-anchor="middle">&#x27;</text>
+</g>
+<g transform="translate(679.4 153.6) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#1c1d1f" stroke="#3a3c40" stroke-width="1.2"/>
+<text y="5" class="kbl-tap" font-size="15" text-anchor="middle">]</text>
+</g>
+<g transform="translate(622.2 106.6) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#1c1d1f" stroke="#3a3c40" stroke-width="1.2"/>
+<text y="5" class="kbl-tap" font-size="15" text-anchor="middle">{</text>
+</g>
+<g transform="translate(622.2 52.2) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#1c1d1f" stroke="#3a3c40" stroke-width="1.2"/>
+<text y="5" class="kbl-tap" font-size="15" text-anchor="middle">(</text>
+</g>
+<g transform="translate(564.9 169.0) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#0f0f0f" stroke="#3a3c40" stroke-width="1.2"/>
+</g>
+<g transform="translate(622.2 161.0) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#1c1d1f" stroke="#3a3c40" stroke-width="1.2"/>
+<text y="5" class="kbl-tap" font-size="15" text-anchor="middle">[</text>
+</g>
+<g transform="translate(794.0 121.6) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#0f0f0f" stroke="#3a3c40" stroke-width="1.2"/>
+</g>
+<g transform="translate(523.8 237.4) rotate(-30.20)">
+<rect x="-26.4" y="-42.4" width="52.8" height="84.8" rx="7.0" fill="#121212" stroke="#232323" stroke-width="1.2"/>
+<text y="-4" class="kbl-dim" font-size="11" text-anchor="middle">Enter</text>
+<text y="14" class="kbl-dim" font-size="7.5" text-anchor="middle">CTRL</text>
+</g>
+<g transform="translate(651.4 217.4) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#121212" stroke="#232323" stroke-width="1.2"/>
+<text y="-4" class="kbl-dim" font-size="11" text-anchor="middle">Alt</text>
+<text y="14" class="kbl-dim" font-size="7.5" text-anchor="middle">REPEAT</text>
+</g>
+<g transform="translate(794.0 67.2) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#0f0f0f" stroke="#3a3c40" stroke-width="1.2"/>
+</g>
+<g transform="translate(564.9 114.6) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#0f0f0f" stroke="#3a3c40" stroke-width="1.2"/>
+</g>
+<g transform="translate(794.0 176.0) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#0f0f0f" stroke="#3a3c40" stroke-width="1.2"/>
+</g>
+<g transform="translate(736.7 161.0) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#1c1d1f" stroke="#3a3c40" stroke-width="1.2"/>
+<text y="5" class="kbl-tap" font-size="15" text-anchor="middle">~</text>
+</g>
+</svg></figure>
+<figure class="kb-layer-fig"><figcaption><span>Arrows</span>Hold Z. Arrows in an inverted T, with Home, End and page keys around them.</figcaption><svg class="kb-layer-svg" viewBox="0 0 839 295" role="img" aria-label="Arrows layer: up, left, down, right on W F P and R S T positions with Home, End, Page Up and Page Down" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(159.4 99.2) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#1c1d1f" stroke="#3a3c40" stroke-width="1.2"/>
+<text y="5" class="kbl-tap" font-size="15" text-anchor="middle">↓</text>
+</g>
+<g transform="translate(273.9 60.2) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#1c1d1f" stroke="#3a3c40" stroke-width="1.2"/>
+<text y="5" class="kbl-tap" font-size="11" text-anchor="middle">PgUp</text>
+</g>
+<g transform="translate(159.4 44.8) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#1c1d1f" stroke="#3a3c40" stroke-width="1.2"/>
+<text y="5" class="kbl-tap" font-size="15" text-anchor="middle">↑</text>
+</g>
+<g transform="translate(102.1 52.2) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#1c1d1f" stroke="#3a3c40" stroke-width="1.2"/>
+<text y="5" class="kbl-tap" font-size="11" text-anchor="middle">Home</text>
+</g>
+<g transform="translate(250.2 225.8) rotate(15.23)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#121212" stroke="#232323" stroke-width="1.2"/>
+<text y="-4" class="kbl-dim" font-size="11" text-anchor="middle">Space</text>
+<text y="14" class="kbl-dim" font-size="7.5" text-anchor="middle">SHIFT</text>
+</g>
+<g transform="translate(102.1 106.6) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#1c1d1f" stroke="#3a3c40" stroke-width="1.2"/>
+<text y="5" class="kbl-tap" font-size="15" text-anchor="middle">←</text>
+</g>
+<g transform="translate(159.4 153.6) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#121212" stroke="#232323" stroke-width="1.2"/>
+<text y="5" class="kbl-dim" font-size="15" text-anchor="middle">C</text>
+</g>
+<g transform="translate(216.6 106.6) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#1c1d1f" stroke="#3a3c40" stroke-width="1.2"/>
+<text y="5" class="kbl-tap" font-size="15" text-anchor="middle">→</text>
+</g>
+<g transform="translate(216.6 52.2) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#1c1d1f" stroke="#3a3c40" stroke-width="1.2"/>
+<text y="5" class="kbl-tap" font-size="11" text-anchor="middle">End</text>
+</g>
+<g transform="translate(273.9 169.0) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#121212" stroke="#232323" stroke-width="1.2"/>
+<text y="5" class="kbl-dim" font-size="15" text-anchor="middle">B</text>
+</g>
+<g transform="translate(216.6 161.0) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#1c1d1f" stroke="#3a3c40" stroke-width="1.2"/>
+<text y="-4" class="kbl-tap" font-size="8.5" text-anchor="middle">Ctrl+→</text>
+<text y="14" class="kbl-hold" font-size="7.5" text-anchor="middle">END</text>
+</g>
+<g transform="translate(44.8 121.6) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#121212" stroke="#232323" stroke-width="1.2"/>
+<text y="-4" class="kbl-dim" font-size="15" text-anchor="middle">A</text>
+<text y="14" class="kbl-dim" font-size="7.5" text-anchor="middle">NUM / SYM</text>
+</g>
+<g transform="translate(315.0 237.4) rotate(30.20)">
+<rect x="-26.4" y="-42.4" width="52.8" height="84.8" rx="7.0" fill="#121212" stroke="#232323" stroke-width="1.2"/>
+<text y="-4" class="kbl-dim" font-size="11" text-anchor="middle">Enter</text>
+<text y="14" class="kbl-dim" font-size="7.5" text-anchor="middle">CTRL</text>
+</g>
+<g transform="translate(187.4 217.4) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#121212" stroke="#232323" stroke-width="1.2"/>
+<text y="5" class="kbl-dim" font-size="11" text-anchor="middle">Alt</text>
+</g>
+<g transform="translate(44.8 67.2) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#121212" stroke="#232323" stroke-width="1.2"/>
+<text y="-4" class="kbl-dim" font-size="15" text-anchor="middle">Q</text>
+<text y="14" class="kbl-dim" font-size="7.5" text-anchor="middle">BLUETOOTH</text>
+</g>
+<g transform="translate(273.9 114.6) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#1c1d1f" stroke="#3a3c40" stroke-width="1.2"/>
+<text y="5" class="kbl-tap" font-size="11" text-anchor="middle">PgDn</text>
+</g>
+<g transform="translate(44.8 176.0) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#1c1d1f" stroke="#a6ff6a" stroke-width="2.2"/>
+<text y="-4" class="kbl-tap" font-size="15" text-anchor="middle">Z</text>
+<text y="14" class="kbl-hold" font-size="7.5" text-anchor="middle">ARROWS</text>
+<text y="-17" class="kbl-act" font-size="7" text-anchor="middle">HOLD</text>
+</g>
+<g transform="translate(102.1 161.0) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#1c1d1f" stroke="#3a3c40" stroke-width="1.2"/>
+<text y="-4" class="kbl-tap" font-size="8.5" text-anchor="middle">Ctrl+←</text>
+<text y="14" class="kbl-hold" font-size="7.5" text-anchor="middle">HOME</text>
+</g>
+<g transform="translate(679.4 99.2) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#121212" stroke="#232323" stroke-width="1.2"/>
+<text y="-4" class="kbl-dim" font-size="15" text-anchor="middle">E</text>
+<text y="14" class="kbl-dim" font-size="7.5" text-anchor="middle">HAND SWAP</text>
+</g>
+<g transform="translate(564.9 60.2) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#121212" stroke="#232323" stroke-width="1.2"/>
+<text y="5" class="kbl-dim" font-size="15" text-anchor="middle">J</text>
+</g>
+<g transform="translate(679.4 44.8) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#121212" stroke="#232323" stroke-width="1.2"/>
+<text y="5" class="kbl-dim" font-size="15" text-anchor="middle">U</text>
+</g>
+<g transform="translate(736.7 52.2) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#121212" stroke="#232323" stroke-width="1.2"/>
+<text y="5" class="kbl-dim" font-size="15" text-anchor="middle">Y</text>
+</g>
+<g transform="translate(588.6 225.8) rotate(-15.23)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#121212" stroke="#232323" stroke-width="1.2"/>
+<text y="-4" class="kbl-dim" font-size="11" text-anchor="middle">Space</text>
+<text y="14" class="kbl-dim" font-size="7.5" text-anchor="middle">SHIFT</text>
+</g>
+<g transform="translate(736.7 106.6) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#121212" stroke="#232323" stroke-width="1.2"/>
+<text y="5" class="kbl-dim" font-size="15" text-anchor="middle">I</text>
+</g>
+<g transform="translate(679.4 153.6) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#121212" stroke="#232323" stroke-width="1.2"/>
+<text y="5" class="kbl-dim" font-size="15" text-anchor="middle">,</text>
+</g>
+<g transform="translate(622.2 106.6) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#121212" stroke="#232323" stroke-width="1.2"/>
+<text y="-4" class="kbl-dim" font-size="15" text-anchor="middle">N</text>
+<text y="14" class="kbl-dim" font-size="7.5" text-anchor="middle">HAND SWAP</text>
+</g>
+<g transform="translate(622.2 52.2) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#121212" stroke="#232323" stroke-width="1.2"/>
+<text y="5" class="kbl-dim" font-size="15" text-anchor="middle">L</text>
+</g>
+<g transform="translate(564.9 169.0) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#121212" stroke="#232323" stroke-width="1.2"/>
+<text y="5" class="kbl-dim" font-size="15" text-anchor="middle">K</text>
+</g>
+<g transform="translate(622.2 161.0) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#121212" stroke="#232323" stroke-width="1.2"/>
+<text y="5" class="kbl-dim" font-size="15" text-anchor="middle">M</text>
+</g>
+<g transform="translate(794.0 121.6) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#121212" stroke="#232323" stroke-width="1.2"/>
+<text y="5" class="kbl-dim" font-size="15" text-anchor="middle">O</text>
+</g>
+<g transform="translate(523.8 237.4) rotate(-30.20)">
+<rect x="-26.4" y="-42.4" width="52.8" height="84.8" rx="7.0" fill="#121212" stroke="#232323" stroke-width="1.2"/>
+<text y="-4" class="kbl-dim" font-size="11" text-anchor="middle">Enter</text>
+<text y="14" class="kbl-dim" font-size="7.5" text-anchor="middle">CTRL</text>
+</g>
+<g transform="translate(651.4 217.4) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#121212" stroke="#232323" stroke-width="1.2"/>
+<text y="-4" class="kbl-dim" font-size="11" text-anchor="middle">Alt</text>
+<text y="14" class="kbl-dim" font-size="7.5" text-anchor="middle">REPEAT</text>
+</g>
+<g transform="translate(794.0 67.2) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#121212" stroke="#232323" stroke-width="1.2"/>
+<text y="5" class="kbl-dim" font-size="15" text-anchor="middle">;</text>
+</g>
+<g transform="translate(564.9 114.6) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#121212" stroke="#232323" stroke-width="1.2"/>
+<text y="5" class="kbl-dim" font-size="15" text-anchor="middle">H</text>
+</g>
+<g transform="translate(794.0 176.0) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#121212" stroke="#232323" stroke-width="1.2"/>
+<text y="5" class="kbl-dim" font-size="15" text-anchor="middle">/</text>
+</g>
+<g transform="translate(736.7 161.0) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#121212" stroke="#232323" stroke-width="1.2"/>
+<text y="5" class="kbl-dim" font-size="15" text-anchor="middle">.</text>
+</g>
+</svg></figure>
+<figure class="kb-layer-fig"><figcaption><span>Gaming</span>Press A, S and T together. QWERTY one column in, so WASD sits under the fingers. Hold the outlined key for numbers.</figcaption><svg class="kb-layer-svg" viewBox="0 0 839 295" role="img" aria-label="Gaming layer: Q W E R, A S D F, Z X C V with Shift and Ctrl on the pinky column and T, G, Space on the thumbs" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(159.4 99.2) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#1c1d1f" stroke="#3a3c40" stroke-width="1.2"/>
+<text y="5" class="kbl-tap" font-size="15" text-anchor="middle">S</text>
+</g>
+<g transform="translate(273.9 60.2) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#1c1d1f" stroke="#3a3c40" stroke-width="1.2"/>
+<text y="5" class="kbl-tap" font-size="15" text-anchor="middle">R</text>
+</g>
+<g transform="translate(159.4 44.8) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#1c1d1f" stroke="#3a3c40" stroke-width="1.2"/>
+<text y="5" class="kbl-tap" font-size="15" text-anchor="middle">W</text>
+</g>
+<g transform="translate(102.1 52.2) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#1c1d1f" stroke="#3a3c40" stroke-width="1.2"/>
+<text y="5" class="kbl-tap" font-size="15" text-anchor="middle">Q</text>
+</g>
+<g transform="translate(250.2 225.8) rotate(15.23)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#1c1d1f" stroke="#3a3c40" stroke-width="1.2"/>
+<text y="5" class="kbl-tap" font-size="15" text-anchor="middle">G</text>
+</g>
+<g transform="translate(102.1 106.6) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#1c1d1f" stroke="#3a3c40" stroke-width="1.2"/>
+<text y="5" class="kbl-tap" font-size="15" text-anchor="middle">A</text>
+</g>
+<g transform="translate(159.4 153.6) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#1c1d1f" stroke="#3a3c40" stroke-width="1.2"/>
+<text y="5" class="kbl-tap" font-size="15" text-anchor="middle">X</text>
+</g>
+<g transform="translate(216.6 106.6) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#1c1d1f" stroke="#3a3c40" stroke-width="1.2"/>
+<text y="5" class="kbl-tap" font-size="15" text-anchor="middle">D</text>
+</g>
+<g transform="translate(216.6 52.2) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#1c1d1f" stroke="#3a3c40" stroke-width="1.2"/>
+<text y="5" class="kbl-tap" font-size="15" text-anchor="middle">E</text>
+</g>
+<g transform="translate(273.9 169.0) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#1c1d1f" stroke="#3a3c40" stroke-width="1.2"/>
+<text y="5" class="kbl-tap" font-size="15" text-anchor="middle">V</text>
+</g>
+<g transform="translate(216.6 161.0) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#1c1d1f" stroke="#3a3c40" stroke-width="1.2"/>
+<text y="5" class="kbl-tap" font-size="15" text-anchor="middle">C</text>
+</g>
+<g transform="translate(44.8 121.6) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#1c1d1f" stroke="#3a3c40" stroke-width="1.2"/>
+<text y="5" class="kbl-tap" font-size="11" text-anchor="middle">Shift</text>
+</g>
+<g transform="translate(315.0 237.4) rotate(30.20)">
+<rect x="-26.4" y="-42.4" width="52.8" height="84.8" rx="7.0" fill="#1c1d1f" stroke="#3a3c40" stroke-width="1.2"/>
+<text y="5" class="kbl-tap" font-size="11" text-anchor="middle">Space</text>
+</g>
+<g transform="translate(187.4 217.4) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#1c1d1f" stroke="#3a3c40" stroke-width="1.2"/>
+<text y="5" class="kbl-tap" font-size="15" text-anchor="middle">T</text>
+</g>
+<g transform="translate(44.8 67.2) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#1c1d1f" stroke="#a6ff6a" stroke-width="2.2"/>
+<text y="5" class="kbl-tap" font-size="8.5" text-anchor="middle">Gaming Num</text>
+<text y="-17" class="kbl-act" font-size="7" text-anchor="middle">HOLD</text>
+</g>
+<g transform="translate(273.9 114.6) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#1c1d1f" stroke="#3a3c40" stroke-width="1.2"/>
+<text y="5" class="kbl-tap" font-size="15" text-anchor="middle">F</text>
+</g>
+<g transform="translate(44.8 176.0) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#1c1d1f" stroke="#3a3c40" stroke-width="1.2"/>
+<text y="5" class="kbl-tap" font-size="11" text-anchor="middle">Ctrl</text>
+</g>
+<g transform="translate(102.1 161.0) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#1c1d1f" stroke="#3a3c40" stroke-width="1.2"/>
+<text y="5" class="kbl-tap" font-size="15" text-anchor="middle">Z</text>
+</g>
+<g transform="translate(679.4 99.2) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#121212" stroke="#232323" stroke-width="1.2"/>
+<text y="-4" class="kbl-dim" font-size="15" text-anchor="middle">E</text>
+<text y="14" class="kbl-dim" font-size="7.5" text-anchor="middle">HAND SWAP</text>
+</g>
+<g transform="translate(564.9 60.2) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#121212" stroke="#232323" stroke-width="1.2"/>
+<text y="5" class="kbl-dim" font-size="15" text-anchor="middle">J</text>
+</g>
+<g transform="translate(679.4 44.8) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#121212" stroke="#232323" stroke-width="1.2"/>
+<text y="5" class="kbl-dim" font-size="15" text-anchor="middle">U</text>
+</g>
+<g transform="translate(736.7 52.2) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#121212" stroke="#232323" stroke-width="1.2"/>
+<text y="5" class="kbl-dim" font-size="15" text-anchor="middle">Y</text>
+</g>
+<g transform="translate(588.6 225.8) rotate(-15.23)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#121212" stroke="#232323" stroke-width="1.2"/>
+<text y="-4" class="kbl-dim" font-size="11" text-anchor="middle">Space</text>
+<text y="14" class="kbl-dim" font-size="7.5" text-anchor="middle">SHIFT</text>
+</g>
+<g transform="translate(736.7 106.6) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#121212" stroke="#232323" stroke-width="1.2"/>
+<text y="5" class="kbl-dim" font-size="15" text-anchor="middle">I</text>
+</g>
+<g transform="translate(679.4 153.6) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#121212" stroke="#232323" stroke-width="1.2"/>
+<text y="5" class="kbl-dim" font-size="15" text-anchor="middle">,</text>
+</g>
+<g transform="translate(622.2 106.6) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#121212" stroke="#232323" stroke-width="1.2"/>
+<text y="-4" class="kbl-dim" font-size="15" text-anchor="middle">N</text>
+<text y="14" class="kbl-dim" font-size="7.5" text-anchor="middle">HAND SWAP</text>
+</g>
+<g transform="translate(622.2 52.2) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#121212" stroke="#232323" stroke-width="1.2"/>
+<text y="5" class="kbl-dim" font-size="15" text-anchor="middle">L</text>
+</g>
+<g transform="translate(564.9 169.0) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#121212" stroke="#232323" stroke-width="1.2"/>
+<text y="5" class="kbl-dim" font-size="15" text-anchor="middle">K</text>
+</g>
+<g transform="translate(622.2 161.0) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#121212" stroke="#232323" stroke-width="1.2"/>
+<text y="5" class="kbl-dim" font-size="15" text-anchor="middle">M</text>
+</g>
+<g transform="translate(794.0 121.6) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#121212" stroke="#232323" stroke-width="1.2"/>
+<text y="5" class="kbl-dim" font-size="15" text-anchor="middle">O</text>
+</g>
+<g transform="translate(523.8 237.4) rotate(-30.20)">
+<rect x="-26.4" y="-42.4" width="52.8" height="84.8" rx="7.0" fill="#121212" stroke="#232323" stroke-width="1.2"/>
+<text y="-4" class="kbl-dim" font-size="11" text-anchor="middle">Enter</text>
+<text y="14" class="kbl-dim" font-size="7.5" text-anchor="middle">CTRL</text>
+</g>
+<g transform="translate(651.4 217.4) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#121212" stroke="#232323" stroke-width="1.2"/>
+<text y="-4" class="kbl-dim" font-size="11" text-anchor="middle">Alt</text>
+<text y="14" class="kbl-dim" font-size="7.5" text-anchor="middle">REPEAT</text>
+</g>
+<g transform="translate(794.0 67.2) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#121212" stroke="#232323" stroke-width="1.2"/>
+<text y="5" class="kbl-dim" font-size="15" text-anchor="middle">;</text>
+</g>
+<g transform="translate(564.9 114.6) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#121212" stroke="#232323" stroke-width="1.2"/>
+<text y="5" class="kbl-dim" font-size="15" text-anchor="middle">H</text>
+</g>
+<g transform="translate(794.0 176.0) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#121212" stroke="#232323" stroke-width="1.2"/>
+<text y="5" class="kbl-dim" font-size="15" text-anchor="middle">/</text>
+</g>
+<g transform="translate(736.7 161.0) rotate(-0.00)">
+<rect x="-28.0" y="-26.4" width="56.0" height="52.8" rx="7.0" fill="#121212" stroke="#232323" stroke-width="1.2"/>
+<text y="5" class="kbl-dim" font-size="15" text-anchor="middle">.</text>
+</g>
+</svg></figure>
+        </div></div>
         <div class="cs-step-body">
           <p class="cs-step-num">Layout</p>
           <h3>Designing the layout</h3>
