@@ -2677,3 +2677,8 @@ body:has(nav:not(.is-hidden)) .jump { top: 60px; }
 
 /* square cover art on the PsyPhi archive */
 .psyphi-gallery--square .psyphi-media { aspect-ratio: 1 / 1; }
+
+/* phone screen captures: match the recording's own shape (448 x 1080) */
+.proj-media--phone { aspect-ratio: 448 / 1080; max-height: none; width: min(100%, calc(82vh * 448 / 1080)); justify-self: center; border-radius: 18px; }
+@media (min-width: 1001px) { .proj--portrait:has(.proj-media--phone) { grid-template-columns: minmax(0, 0.6fr) minmax(0, 1fr); } }
+@media (max-width: 1000px) { .proj-media--phone { width: min(100%, 320px); justify-self: start; } }

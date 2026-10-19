@@ -474,11 +474,10 @@
             configuration work lives.
           </p>
           <p>
-            Each half runs a Nice!Nano v2. The TPS43 is soldered straight to the right Nano's pads on a
-            six wire ribbon and talks over I2C. I moved to a fork of the Azoteq driver that ties the
-            trackpad into ZMK's sleep states, because the original kept the pad awake and drained the
-            right half's battery. A small custom input processor adds laptop style tap and tap to
-            drag.
+            Each half runs a Nice!Nano v2. The TPS43 is soldered straight to the right Nano's pads and
+            talks over I2C. I moved to a fork of the Azoteq driver that ties the trackpad into ZMK's 
+            sleep states, because the original kept the pad awake and drained the right half's battery. 
+            A small custom input processor adds laptop style tap and tap to drag.
           </p>
         </div>
       </div>
@@ -953,15 +952,15 @@
           </p>
           <p>
             The letters start from Colemak, then I moved a few of them. Before moving any letter I
-            checked why Colemak put it there, so a change would not undo something it was doing well.
+            checked why Colemak put it there, so a change would not undo something that was optimized.
             The moves put the most important hotkeys back where QWERTY has them. Z, X, C and V sit
             exactly where every program expects undo, cut, copy and paste, and S is back under the ring
             finger for save.
           </p>
           <p>
-            Common edits are home row combos. <strong>S and R together is Backspace</strong>, R and T
-            is Delete, and S and T is Tab, so fixing a typo never means reaching. The S and R backspace
-            is one of the best ideas in the whole layout.
+            Common edits are home row combos. <strong>S and R together is Backspace</strong>, <strong>R and T
+            is Delete</strong>, and <strong>S and T is Tab</strong>, so fixing a typo never means reaching. The S and R backspace
+            is one of my favorite optimizations in the whole layout.
           </p>
           <p>
             Holding R or T mirrors the right half onto the left hand, so with the right hand on the
@@ -1029,9 +1028,12 @@
         </p>
       </div>
     </div>
-    <div class="cs-body" style="margin-top:1.5rem">
-      <span class="cs-todo">Add a screenshot or short clip of the overlay running, and a link to the project if it is public.</span>
-    </div>
+    <figure class="cs-tile" data-expand data-caption="The NullKeys overlay following the keyboard live" style="margin-top:2.5rem">
+      <div class="cs-tile-media" style="aspect-ratio:980/440">
+        <video muted loop playsinline preload="none" data-autoplay data-src="keyboard-media/null_keys_godot_clip.mp4" poster="keyboard-media/null_keys_godot.png" aria-label="The NullKeys overlay showing pressed keys, the active Arrows layer and what each key does"></video>
+      </div>
+      <figcaption>Holding Z switches the overlay to the Arrows layer, straight from the firmware</figcaption>
+    </figure>
   </div>
 </section>
 
@@ -1048,12 +1050,11 @@
         <h3>A trackpad, not a trackball or nub</h3>
         <p>
           A trackball is more precise and needs no calibration, a pointing stick takes almost no
-          space. I went with a capacitive pad because it supports gestures and scroll without
-          adding a mechanical part that collects dust and eventually seizes.
+          space. I went with a capacitive pad because it supports gestures, scrolling and zoom.
         </p>
         <p class="cs-tradeoff">
           Capacitive sensing costs power, needs tuning, and is worse than a ball for fine
-          selection work. <span class="cs-todo">Confirm this reasoning is actually yours, and add whatever the real deciding factor was.</span>
+          selection work.
         </p>
       </div>
 
@@ -1106,7 +1107,8 @@
         </p>
         <p class="cs-tradeoff">
           Layer lines, weaker screw bosses, and a finish that reads as prototype rather than
-          product. <span class="cs-todo">Did you do any post-processing? Sanding, filler, paint, heat-set inserts? Worth saying either way.</span>
+          product. Now that the design is refined, one of my next steps is a resin print to bring the
+          build quality up to match it.
         </p>
       </div>
 
@@ -1137,18 +1139,10 @@
       </p>
     </div>
 
-    <div class="cs-gallery cs-gallery--3">
+    <div class="cs-gallery" style="grid-template-columns:minmax(0,1fr);max-width:540px">
       <figure class="cs-tile" data-expand>
         <div class="cs-tile-media"><img src="keyboard-media/photos/IMG_3292.jpg" alt="First underside with a full printed TPU foot" loading="lazy"></div>
         <figcaption>The TPU foot that slid</figcaption>
-      </figure>
-      <figure class="cs-tile" data-expand>
-        <div class="cs-tile-media"><div class="cs-media-placeholder">Rejected mount</div></div>
-        <figcaption>Caption</figcaption>
-      </figure>
-      <figure class="cs-tile" data-expand>
-        <div class="cs-tile-media"><div class="cs-media-placeholder">Wiring rework</div></div>
-        <figcaption>Caption</figcaption>
       </figure>
     </div>
   </div>
@@ -1162,24 +1156,32 @@
     <div class="section-rule"></div>
     <div class="cs-body">
       <p>
-        It is the keyboard I use every day to build games, which is the only test that was ever
-        going to matter.
+        NullKeys is my daily driver. Going back to a normal keyboard makes me miss it immediately.
       </p>
-      <span class="cs-todo">Close this out honestly. What is measurably better, what is still worse than a normal keyboard, and what would you change if you started again? A case study that ends with "and it was perfect" is the least believable ending available.</span>
+      <p>
+        It still has rough edges. A few rare hotkeys are awkward, mostly the ones built on the Win
+        key. Win needs a tap dance, so a combo like Win+Shift+S takes a bit of hand contortion. Games
+        usually need a few controls remapped, depending on the game. The exposed Choc switches and
+        caps are a little fragile, so a case is a must before it goes in a backpack.
+      </p>
+      <p>
+        The biggest open question is the trackpad. Its battery drain has me considering swapping it
+        for an AZ1UBALL trackball module. Next on the list are that decision and a resin printed case.
+      </p>
     </div>
 
     <div class="cs-stats">
       <div class="cs-stat">
-        <p class="cs-stat-value">TODO</p>
-        <p class="cs-stat-label">Time to get back to full typing speed</p>
+        <p class="cs-stat-value">1 month</p>
+        <p class="cs-stat-label">Back to full typing speed. I am now much faster than I ever was on a normal keyboard</p>
       </div>
       <div class="cs-stat">
         <p class="cs-stat-value">5</p>
         <p class="cs-stat-label">Case versions printed so far</p>
       </div>
       <div class="cs-stat">
-        <p class="cs-stat-value">TODO</p>
-        <p class="cs-stat-label">Battery life per charge</p>
+        <p class="cs-stat-value">2 to 4 weeks</p>
+        <p class="cs-stat-label">Per charge for the left half on a 110 mAh cell. The trackpad half drains faster</p>
       </div>
     </div>
   </div>
@@ -1244,11 +1246,11 @@
       </div>
       <div class="cs-spec-row">
         <div class="cs-spec-key">Switches</div>
-        <div class="cs-spec-val">Kailh Choc low profile, black low profile keycaps <span class="cs-todo">Switch weight and keycap profile</span></div>
+        <div class="cs-spec-val">White Kailh Choc low profile switches, black low profile keycaps</div>
       </div>
       <div class="cs-spec-row">
         <div class="cs-spec-key">Case</div>
-        <div class="cs-spec-val">Self-designed, FDM printed on an Anycubic Kobra Neo <span class="cs-todo">Material and layer height</span></div>
+        <div class="cs-spec-val">Self-designed, printed in PLA at 0.1 mm layers on an Anycubic Kobra Neo</div>
       </div>
       <div class="cs-spec-row">
         <div class="cs-spec-key">Hardware</div>
@@ -1260,14 +1262,14 @@
       </div>
       <div class="cs-spec-row">
         <div class="cs-spec-key">Files</div>
-        <div class="cs-spec-val"><a href="https://github.com/BrendanTipney/zmk-config" target="_blank" rel="noopener">github.com/BrendanTipney/zmk-config</a> <span class="cs-todo">Link the STLs too, if you publish them</span></div>
+        <div class="cs-spec-val"><a href="https://github.com/BrendanTipney/zmk-config" target="_blank" rel="noopener">github.com/BrendanTipney/zmk-config</a> and <a href="https://www.thingiverse.com/thing:7424328" target="_blank" rel="noopener">printable files on Thingiverse</a></div>
       </div>
     </div>
 
     <div class="btn-row" style="justify-content:flex-start; margin-top:2.5rem;">
       <!-- TODO: real URLs -->
       <a href="https://github.com/BrendanTipney/zmk-config" class="btn btn-secondary" target="_blank" rel="noopener">ZMK Config</a>
-      <a href="#" class="btn btn-secondary">Printed Parts</a>
+      <a href="https://www.thingiverse.com/thing:7424328" class="btn btn-secondary" target="_blank" rel="noopener">Printed Parts</a>
     </div>
   </div>
 </section>
