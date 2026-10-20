@@ -263,40 +263,6 @@
     });
   }
 
-  /* ── CUSTOM CURSOR ── */
-  if (finePointer && !reduceMotion) {
-    const dot  = document.createElement('div');
-    const ring = document.createElement('div');
-    dot.className = 'cursor-dot';
-    ring.className = 'cursor-ring';
-    ring.innerHTML = '<span class="cursor-label"></span>';
-    document.body.append(dot, ring);
-    const label = ring.firstChild;
-    let mx = -100, my = -100, rx = -100, ry = -100;
-    window.addEventListener('pointermove', e => {
-      mx = e.clientX; my = e.clientY;
-      dot.style.transform = 'translate(' + mx + 'px,' + my + 'px)';
-      doc.classList.add('cursor-live');
-    }, { passive: true });
-    document.addEventListener('pointerleave', () => doc.classList.remove('cursor-live'));
-    (function loop() {
-      rx += (mx - rx) * 0.18; ry += (my - ry) * 0.18;
-      ring.style.transform = 'translate(' + rx.toFixed(1) + 'px,' + ry.toFixed(1) + 'px)';
-      requestAnimationFrame(loop);
-    })();
-    document.addEventListener('pointerover', e => {
-      const t = e.target.closest('[data-cursor], a, button, [data-expand], [data-youtube-inline]');
-      if (!t) { ring.classList.remove('is-hover', 'is-label'); label.textContent = ''; return; }
-      const text = t.dataset.cursor ||
-        (t.matches('[data-expand], [data-youtube-inline]') ? (t.querySelector('video, iframe, [data-youtube]') || t.dataset.youtube || t.dataset.youtubeInline ? 'Play' : 'View') : '');
-      ring.classList.add('is-hover');
-      ring.classList.toggle('is-label', !!text);
-      label.textContent = text;
-    });
-    window.addEventListener('pointerdown', () => ring.classList.add('is-down'));
-    window.addEventListener('pointerup',   () => ring.classList.remove('is-down'));
-  }
-
   /* ── HOME : scrollspy for lanes ── */
   const laneLinks = $$('.nav-links a[data-lane]');
   const lanes = laneLinks.map(a => document.getElementById(a.dataset.lane)).filter(Boolean);

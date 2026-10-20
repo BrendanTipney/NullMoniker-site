@@ -1551,63 +1551,7 @@ nav.is-hidden { transform: translateY(-100%); }
 .page-xr .scroll-progress, .page-games .scroll-progress,
 .page-hw .scroll-progress, .page-vis .scroll-progress { background: var(--accent); }
 
-/* ── CURSOR ── */
-.fine-pointer.cursor-live body, .fine-pointer.cursor-live a, .fine-pointer.cursor-live button,
-.fine-pointer.cursor-live [data-expand] { cursor: none; }
-.cursor-dot, .cursor-ring {
-  position: fixed;
-  top: 0; left: 0;
-  z-index: 400;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-.cursor-live .cursor-dot, .cursor-live .cursor-ring { opacity: 1; }
-.cursor-dot {
-  width: 6px; height: 6px;
-  margin: -3px 0 0 -3px;
-  border-radius: 50%;
-  background: #fff;
-  mix-blend-mode: difference;
-}
-.cursor-ring {
-  width: 0; height: 0;
-}
-.cursor-ring::before {
-  content: '';
-  position: absolute;
-  width: 34px; height: 34px;
-  left: -17px; top: -17px;
-  border: 1px solid rgba(255,255,255,0.5);
-  border-radius: 50%;
-  transition: width 0.35s var(--ease-out), height 0.35s var(--ease-out), left 0.35s var(--ease-out),
-              top 0.35s var(--ease-out), border-color 0.3s, background 0.3s;
-}
-.cursor-ring.is-hover::before {
-  width: 56px; height: 56px; left: -28px; top: -28px;
-  border-color: var(--live-accent);
-}
-.cursor-ring.is-label::before {
-  width: 78px; height: 78px; left: -39px; top: -39px;
-  background: var(--live-accent);
-  border-color: var(--live-accent);
-}
-.cursor-ring.is-down::before { width: 24px; height: 24px; left: -12px; top: -12px; }
-.cursor-label {
-  position: absolute;
-  left: 0; top: 0;
-  transform: translate(-50%, -50%);
-  font-family: 'Rajdhani', sans-serif;
-  font-weight: 700;
-  font-size: 0.72rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: #000;
-  white-space: nowrap;
-  opacity: 0;
-  transition: opacity 0.2s;
-}
-.cursor-ring.is-label .cursor-label { opacity: 1; }
+
 .page-xr, .page-games, .page-hw, .page-vis { --live-accent: var(--accent); }
 
 /* ── REVEAL ── */
@@ -2682,3 +2626,10 @@ body:has(nav:not(.is-hidden)) .jump { top: 60px; }
 .proj-media--phone { aspect-ratio: 448 / 1080; max-height: none; width: min(100%, calc(82vh * 448 / 1080)); justify-self: center; border-radius: 18px; }
 @media (min-width: 1001px) { .proj--portrait:has(.proj-media--phone) { grid-template-columns: minmax(0, 0.6fr) minmax(0, 1fr); } }
 @media (max-width: 1000px) { .proj-media--phone { width: min(100%, 320px); justify-self: start; } }
+
+/* feature rows keep their lead media on top, whatever their position in the list */
+.proj--feature > .proj-media { order: 0 !important; }
+/* phone rows: the wide column always goes to the text, whichever side the phone sits on */
+@media (min-width: 1001px) {
+  .proj--portrait:nth-child(even):has(.proj-media--phone) { grid-template-columns: minmax(0, 1fr) minmax(0, 0.6fr); }
+}

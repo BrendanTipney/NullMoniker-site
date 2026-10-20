@@ -93,9 +93,7 @@
 <section id="cs-hero">
   <div class="section-inner">
     <p class="cs-deck">
-      A split keyboard with 36 keys and a trackpad in the right half, built around one idea: every
-      letter and every hotkey within reach of one hand, so the other can stay on the mouse. The first
-      build took six months of spare time in fall 2023, and I have been refining the design ever since.
+      A 36 key split keyboard with a trackpad in the right half. Every letter and hotkey is in reach of one hand, so the other can stay on the mouse. I built the first version over six months of spare time in fall 2023 and have been refining it since.
     </p>
 
     <div class="cs-meta-strip">
@@ -127,25 +125,16 @@
     <div class="section-rule"></div>
     <div class="cs-body">
       <p>
-        I love the puzzle of control interfaces, and the standard keyboard is a poor answer to it. Its
-        layout is stuck in time. I wanted to challenge myself to come up with the best layout I could,
-        in the smallest footprint possible.
+        I love the puzzle of control interfaces, and the standard keyboard layout is stuck in time. I wanted to see how good a layout I could make in the smallest footprint possible.
       </p>
       <p>
-        The biggest slowdown on a computer is the trip between mouse and keyboard. Most ergonomic
-        keyboards try to solve that by keeping you on the keyboard. That works for coding. It falls
-        apart in CAD, video editing, and any workflow that jumps between programs, where the mouse is
-        doing half the work.
+        The biggest slowdown on a computer is the trip between mouse and keyboard. Most ergonomic keyboards solve it by keeping you on the keyboard. That works for coding, but not for CAD, video editing or anything that jumps between programs.
       </p>
       <p>
-        In that kind of work you are rarely typing a whole word. You type the first few letters of a
-        command, or a hotkey. So I flipped the goal: <strong>keep one hand on the mouse, and put the
-        whole keyboard under the other one.</strong>
+        In that kind of work you rarely type a whole word, just the first few letters of a command or a hotkey. So my goal was to keep one hand on the mouse and put <strong>the whole keyboard under the other.</strong>
       </p>
       <p>
-        That set the requirements. Every key has to be pressable without shifting the hand. Common
-        tasks live on the home row. Every letter can be typed with one hand. And every hotkey has to
-        work from that same hand, whether it is Shift plus a key or Ctrl plus Shift plus a key.
+        That set the requirements: every key reachable without moving the hand, common tasks on the home row, and every letter and hotkey typeable with one hand, including Shift and Ctrl+Shift combinations.
       </p>
     </div>
   </div>
@@ -155,64 +144,33 @@
 <section class="cs-section">
   <div class="section-inner">
     <p class="section-label">02 : Constraints</p>
-    <h2 class="section-title">What the design had to survive</h2>
+    <h2 class="section-title">What it had to handle</h2>
     <div class="section-rule"></div>
-    <div class="cs-body">
-      <p>
-        Constraints came from three places: my hands, the manufacturing process available to me, and
-        the firmware. Naming them up front is what turned this from a parts order into a design
-        problem.
-      </p>
-    </div>
+    
 
     <div class="cs-constraints">
       <div class="cs-constraint">
         <p class="cs-constraint-num">01</p>
         <h3>36 keys, no more</h3>
         <p>
-          Five columns and three thumb keys per half. I broke the outer columns off the Corne PCB. Everything a full keyboard does has to be reached
-          through layers instead of surface area, which makes keymap design the real interface work.
+          Five columns and three thumb keys per half, with the outer columns broken off the Corne PCB.
+          Everything else has to live on layers.
         </p>
       </div>
       <div class="cs-constraint">
         <p class="cs-constraint-num">02</p>
         <h3>Tenting that holds</h3>
         <p>
-          The real physical problem was tenting, and keeping the halves steady once tented. The legs
-          fold flat into the printed base, swing out to set the angle, and have to stop the half from
-          rocking while I type on it.
+          The legs fold flat into the base, swing out to set the angle, and have to stop the half
+          rocking while I type.
         </p>
       </div>
       <div class="cs-constraint">
         <p class="cs-constraint-num">03</p>
-        <h3>Wireless power budget</h3>
-        <p>
-          ZMK runs the halves over BLE, so every added component is a draw on a small cell. A
-          trackpad polling continuously is a very different battery story from one that sleeps.
-        </p>
-      </div>
-      <div class="cs-constraint">
-        <p class="cs-constraint-num">04</p>
         <h3>Room for a trackpad</h3>
         <p>
-          The TPS43 had to fit into the right half without taking a key position, wire straight to the
-          controller, and sleep with the keyboard so it does not drain the battery.
-        </p>
-      </div>
-      <div class="cs-constraint">
-        <p class="cs-constraint-num">05</p>
-        <h3>Serviceable, not sealed</h3>
-        <p>
-          Hand-soldered wiring in a printed shell fails eventually. The case had to open without
-          destroying itself and the electronics had to come out as a unit.
-        </p>
-      </div>
-      <div class="cs-constraint">
-        <p class="cs-constraint-num">06</p>
-        <h3>Usable while learning it</h3>
-        <p>
-          A layout I could not type on would get abandoned inside a week. The migration path
-          mattered as much as the end state.
+          The TPS43 had to fit in the right half without taking a key, and sleep with the keyboard so
+          it doesn't drain a small battery.
         </p>
       </div>
     </div>
@@ -225,12 +183,7 @@
     <p class="section-label">03 : Prior Art</p>
     <h2 class="section-title">What I ruled out, and why</h2>
     <div class="section-rule"></div>
-    <div class="cs-body">
-      <p>
-        Split ergonomic keyboards are a well-explored space. Ruling out the existing answers was
-        faster than designing from nothing, and it forced me to name what I actually wanted.
-      </p>
-    </div>
+    
 
     <div class="cs-compare">
       <div class="cs-compare-row">
@@ -243,24 +196,13 @@
       <div class="cs-compare-row">
         <div class="cs-compare-key">Keyboard plus trackball</div>
         <div class="cs-compare-val">
-          A separate pointing device solves precision but keeps the round trip. It moves the problem
-          a few centimetres closer instead of removing it.
+          Better precision, but my hand still has to leave the keys to use it.
         </div>
       </div>
       <div class="cs-compare-row">
         <div class="cs-compare-key">Larger split, 60 keys plus</div>
         <div class="cs-compare-val">
-          More keys means less layer discipline, but every extra column moves keys away from the home
-          row and grows the footprint, which works against the whole point. Cutting keys turned out
-          to be the constraint worth keeping.
-        </div>
-      </div>
-      <div class="cs-compare-row is-chosen">
-        <div class="cs-compare-key">Corne plus TPS43</div>
-        <div class="cs-compare-val">
-          A proven Corne skeleton, cut down to 36 keys, with an open firmware target, extended with a trackpad set into
-          the right half. Known-good foundation, and the novel part is where the design effort
-          actually goes.
+          Fewer layers, but every extra column moves keys away from the home row and makes the board bigger.
         </div>
       </div>
     </div>
@@ -273,12 +215,7 @@
     <p class="section-label">04 : Process</p>
     <h2 class="section-title">Iterations</h2>
     <div class="section-rule"></div>
-    <div class="cs-body">
-      <p>
-        Each revision existed to answer one question. The point of printing quickly is that a wrong
-        answer costs an evening instead of a month.
-      </p>
-    </div>
+    
 
     <div class="cs-steps">
 
@@ -291,10 +228,7 @@
           <p class="cs-step-num">September 2023</p>
           <h3>A first test case, all 42 keys</h3>
           <p>
-            Iteration one was a case I printed as a test, still holding every key of the full Corne.
-            It needed printed supports for the component leads under the PCB, plus standoffs and
-            retaining C rings to hold it together. Living with it for a few days convinced me I could
-            go even smaller.
+            My first case was a test print that held every key of the full Corne. It needed supports for the component leads under the PCB, plus standoffs and retaining C rings to hold it together. A few days of use convinced me I could go smaller.
           </p>
         </div>
       </div>
@@ -308,9 +242,7 @@
           <p class="cs-step-num">Four days later</p>
           <h3>Cutting to 36</h3>
           <p>
-            The outer columns came off the PCB, the three keys on the left of the
-            photo, and the next case was modelled in Fusion 360 around what was left: a base with
-            standoffs for the PCB and a separate tray underneath.
+            I broke the outer columns off the PCB (the three keys on the left of the photo) and modelled the next case in Fusion 360 around what was left.
           </p>
         </div>
       </div>
@@ -324,13 +256,10 @@
           <p class="cs-step-num">October 2023</p>
           <h3>Tenting and support</h3>
           <p>
-            The constraint that really shaped the case. Two legs sit flush in recesses on the
-            underside and swing out to tent the half. The case stays thin enough to hold in one hand
-            with everything folded away.
+            Two legs sit flush in the underside and swing out to tent each half. Folded away, the case is thin enough to hold in one hand.
           </p>
           <p>
-            The first underside used a printed TPU foot across the whole base. It did not give
-            enough grip, so it was replaced with rubber feet at the corners.
+            The first underside had a printed TPU foot across the whole base. It didn't grip, so rubber feet at the corners replaced it.
           </p>
         </div>
       </div>
@@ -344,14 +273,10 @@
           <p class="cs-step-num">Today</p>
           <h3>Adding the trackpad</h3>
           <p>
-            On the right half the TPS43 sits at the inner top corner, where the left half has its
-            controller window, under a walnut veneer that sits flush with the edges of its holder. It
-            took about three mounts to get right, and it is still a work in progress.
+            The TPS43 sits in the inner top corner of the right half, under a walnut veneer. It took about three mounts to get right and is still a work in progress.
           </p>
           <p>
-            I wanted the trackpad to be removable at first. After a few attempts at stripping a six
-            pin ribbon cable I gave up and soldered it straight to the pads on the trackpad. Since
-            then the work has been on tracking performance and battery drain.
+            Since then I've been working on tracking performance and battery drain.
           </p>
         </div>
       </div>
@@ -468,16 +393,9 @@
         <div class="cs-step-body">
           <p class="cs-step-num">Firmware</p>
           <h3>Electronics and firmware</h3>
+          
           <p>
-            Switches, diodes, controller, and the trackpad on its own bus. ZMK handles the split link
-            and the keymap; getting a pointing device to behave alongside it is where the
-            configuration work lives.
-          </p>
-          <p>
-            Each half runs a Nice!Nano v2. The TPS43 is soldered straight to the right Nano's pads and
-            talks over I2C. I moved to a fork of the Azoteq driver that ties the trackpad into ZMK's 
-            sleep states, because the original kept the pad awake and drained the right half's battery. 
-            A small custom input processor adds laptop style tap and tap to drag.
+            Each half runs a nice!nano v2. The TPS43 is soldered to the right one's pads and talks over I2C. A fork of the Azoteq driver lets the trackpad sleep with the keyboard, and a small input processor I wrote adds laptop style tap and drag.
           </p>
         </div>
       </div>
@@ -946,16 +864,10 @@
           <p class="cs-step-num">Layout</p>
           <h3>Designing the layout</h3>
           <p>
-            36 keys means every symbol, number, and modifier lives on a layer. This is interface
-            design with the same rules as any other: frequency drives placement, and anything you
-            have to think about is in the wrong spot.
+            With 36 keys, every symbol, number and modifier lives on a layer.
           </p>
           <p>
-            The letters start from Colemak, then I moved a few of them. Before moving any letter I
-            checked why Colemak put it there, so a change would not undo something that was optimized.
-            The moves put the most important hotkeys back where QWERTY has them. Z, X, C and V sit
-            exactly where every program expects undo, cut, copy and paste, and S is back under the ring
-            finger for save.
+            The letters start from Colemak, with a few moved. Before moving one I checked why Colemak put it there, so I wouldn't undo something it was doing well. The moves put key hotkeys back where QWERTY has them: Z, X, C and V for undo, cut, copy and paste, and S for save.
           </p>
           <p>
             Common edits are home row combos. <strong>S and R together is Backspace</strong>, <strong>R and T
@@ -963,15 +875,10 @@
             is one of my favorite optimizations in the whole layout.
           </p>
           <p>
-            Holding R or T mirrors the right half onto the left hand, so with the right hand on the
-            mouse the left can still type any letter. The thumbs carry Shift, Ctrl, Alt and Win, which
-            covers every modifier combination from the same hand.
+            Holding R or T mirrors the right half onto the left, so the left hand can type any letter while the right is on the mouse. The thumbs carry Shift, Ctrl, Alt and Win.
           </p>
           <p>
-            Gaming needed its own answer. A home row built for typing puts WASD in the wrong place,
-            so two layers can be switched on for games. Pressing A, S and T together toggles a layer that puts
-            the keys back in their QWERTY spots shifted one column in, with WASD under the fingers and
-            Shift and Ctrl under the pinky. Holding Q on that layer brings up the numbers.
+            Gaming needed its own layers, since a typing home row puts WASD in the wrong place. Pressing A, S and T together switches to QWERTY shifted one column in, with Shift and Ctrl under the pinky. Holding Q on that layer brings up the numbers.
           </p>
         </div>
       </div>
@@ -988,16 +895,10 @@
     <div class="section-rule"></div>
     <div class="cs-body">
       <p>
-        Fourteen layers and two dozen combos are a lot to hold in your head. The NullKeys overlay is a
-        desktop app I built in Godot that sits on top of everything and shows what the keyboard is
-        doing as I use it: which keys are pressed, which layers are active, and what every key does
-        right now. Hover a key and it explains that key on every layer, plus every combo it belongs to.
+        Fourteen layers and two dozen combos are a lot to hold in your head. So I built the NullKeys overlay, a Godot app that sits on top of everything and shows which keys are pressed, which layers are active and what every key does right now. Hovering a key shows what it does on every layer and which combos use it.
       </p>
       <p>
-        The hard part is that a computer only ever receives keycodes. Layers, holds and combos never
-        reach it, and holding A for the Num / Sym layer sends nothing at all. So instead of guessing
-        from keystrokes, a small ZMK module streams the physical key positions and the layer state
-        straight from the firmware.
+        A computer only receives keycodes, so it never sees layers, holds or combos. Holding A for the Num / Sym layer sends nothing at all. Instead, a small ZMK module streams the key positions and layer state straight from the firmware.
       </p>
     </div>
 
@@ -1041,7 +942,7 @@
 <section class="cs-section">
   <div class="section-inner">
     <p class="section-label">06 : Decisions</p>
-    <h2 class="section-title">The calls worth defending</h2>
+    <h2 class="section-title">Decisions</h2>
     <div class="section-rule"></div>
 
     <div class="cs-decisions">
@@ -1049,8 +950,7 @@
       <div class="cs-decision">
         <h3>A trackpad, not a trackball or nub</h3>
         <p>
-          A trackball is more precise and needs no calibration, a pointing stick takes almost no
-          space. I went with a capacitive pad because it supports gestures, scrolling and zoom.
+          A trackball is more precise and a pointing stick takes almost no space. I went with a capacitive pad for gestures, scrolling and zoom.
         </p>
         <p class="cs-tradeoff">
           Capacitive sensing costs power, needs tuning, and is worse than a ball for fine
@@ -1061,54 +961,38 @@
       <div class="cs-decision">
         <h3>Modifiers that share keys with typing</h3>
         <p>
-          Getting every modifier and the F keys onto 36 keys took the most fiddling of anything on
-          the board. The first thumb key is a tap dance: hold it and it is Alt, tap it twice and it
-          becomes a sticky Win key. Alt has to stay holdable for things like Alt+Tab, so Win could
-          not simply take its place.
+          Fitting every modifier and the F keys onto 36 keys took more fiddling than anything else. The first thumb key is a tap dance: hold for Alt, tap twice for a sticky Win key. Alt had to stay holdable for things like Alt+Tab.
         </p>
         <p>
           The other two thumbs carry <strong>Shift under Space</strong> and <strong>Ctrl under
-          Enter</strong>. Getting those mod taps to live together, so fast typing never fires a
-          modifier and a held modifier never types a space, took a lot of tuning. The F keys sit on
-          their own layer, reached by holding A and the Ctrl and Enter thumb together.
+          Enter</strong>. Tuning those so fast typing never fires a modifier, and a held modifier never types a space, took a lot of work. The F keys are on their own layer, reached by holding A and the Ctrl/Enter thumb.
         </p>
       </div>
 
       <div class="cs-decision">
         <h3>Magnets</h3>
         <p>
-          Three magnets are mounted in the case. The two halves snap together into one block, and
-          the same magnets attach the keyboard to accessories, like a pocket mount that clips into
-          a pocket so the halves can hang off my pants for portable use. They also stick to any
-          metal surface for storage.
+          Three magnets in the case snap the halves together and attach them to accessories, like a pocket mount that lets the halves hang off my pants for portable use. They also stick to any metal surface for storage.
         </p>
       </div>
 
       <div class="cs-decision">
         <h3>Building on the Corne rather than designing a layout from scratch</h3>
         <p>
-          A custom matrix would have let me tune every key position to my own hand. Starting from an
-          established Corne skeleton meant the switch plate, the firmware target, and a decade of
-          other people's keymaps were already solved, so the design effort could go entirely into
-          the part nobody had solved for me.
+          A custom PCB would have let me place every key for my own hand. Starting from the Corne meant the PCB, switch plate and firmware support were already solved, so I could spend my time on the case, trackpad and layout.
         </p>
         <p class="cs-tradeoff">
-          I inherited someone else's column stagger, which is a compromise for an average hand
-          rather than mine.
+          The column stagger is built for an average hand, not mine.
         </p>
       </div>
 
       <div class="cs-decision">
         <h3>Printed in place of machined or laser cut</h3>
         <p>
-          FDM in the room beats a better process three weeks away. Being able to test a mount in the
-          evening and print the revision the same night is what made five iterations affordable at
-          all.
+          Printing at home meant I could test a part in the evening and print the next version that night. That made five case versions practical.
         </p>
         <p class="cs-tradeoff">
-          Layer lines, weaker screw bosses, and a finish that reads as prototype rather than
-          product. Now that the design is refined, one of my next steps is a resin print to bring the
-          build quality up to match it.
+          Layer lines, weaker screw bosses and a prototype finish. Now that the design is refined, a resin print is one of my next steps.
         </p>
       </div>
 
@@ -1124,18 +1008,13 @@
     <div class="section-rule"></div>
     <div class="cs-body">
       <p>
-        <strong>The TPU foot.</strong> The first underside was a single printed TPU foot. I expected
-        the soft print to grip a desk, and it slid instead. Rubber feet at the corners replaced it.
+        <strong>The TPU foot.</strong> I expected a printed TPU foot to grip the desk. It slid, so rubber feet replaced it.
       </p>
       <p>
-        <strong>A removable trackpad.</strong> The plan was a trackpad that could unplug from the
-        case. Stripping a six pin ribbon cable cleanly enough to connect kept failing, so I soldered
-        it straight to the trackpad's pads and dropped the connector.
+        <strong>A removable trackpad.</strong> I wanted the trackpad to unplug from the case, but after a few failed attempts at stripping a six pin ribbon cable I soldered it straight to the pads.
       </p>
       <p>
-        <strong>Battery drain on the right half.</strong> The original trackpad driver never let the
-        pad sleep, so the right half emptied faster than the left. Moving to a driver fork that
-        follows ZMK's sleep states fixed the worst of it, and tuning continues.
+        <strong>Battery drain on the right half.</strong> The original driver never let the pad sleep, so the right half emptied first. A driver fork that sleeps with the keyboard fixed the worst of it.
       </p>
     </div>
 
@@ -1156,24 +1035,20 @@
     <div class="section-rule"></div>
     <div class="cs-body">
       <p>
-        NullKeys is my daily driver. Going back to a normal keyboard makes me miss it immediately.
+        NullKeys is my daily driver, and going back to a normal keyboard makes me miss it immediately.
       </p>
       <p>
-        It still has rough edges. A few rare hotkeys are awkward, mostly the ones built on the Win
-        key. Win needs a tap dance, so a combo like Win+Shift+S takes a bit of hand contortion. Games
-        usually need a few controls remapped, depending on the game. The exposed Choc switches and
-        caps are a little fragile, so a case is a must before it goes in a backpack.
+        It still has rough edges. Win needs a tap dance, so a combo like Win+Shift+S takes some hand contortion. Most games need a few controls remapped. The exposed Choc switches are a little fragile, so it needs a case in a backpack.
       </p>
       <p>
-        The biggest open question is the trackpad. Its battery drain has me considering swapping it
-        for an AZ1UBALL trackball module. Next on the list are that decision and a resin printed case.
+        The trackpad's battery drain has me considering an AZ1UBALL trackball module instead. That decision and a resin printed case are next.
       </p>
     </div>
 
     <div class="cs-stats">
       <div class="cs-stat">
         <p class="cs-stat-value">1 month</p>
-        <p class="cs-stat-label">Back to full typing speed. I am now much faster than I ever was on a normal keyboard</p>
+        <p class="cs-stat-label">To get back to full typing speed. Now I'm much faster than I ever was on a normal keyboard</p>
       </div>
       <div class="cs-stat">
         <p class="cs-stat-value">5</p>
@@ -1193,11 +1068,7 @@
     <p class="section-label">09 : Object</p>
     <h2 class="section-title">The finished build</h2>
     <div class="section-rule"></div>
-    <div class="cs-body">
-      <p>
-        The current build, and the details that took the longest to get right.
-      </p>
-    </div>
+    
 
     <div class="cs-gallery cs-gallery--2">
       <figure class="cs-tile" data-expand>

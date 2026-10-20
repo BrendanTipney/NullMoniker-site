@@ -53,7 +53,7 @@
       <div><p class="k">Role</p><p class="v">Technical Designer, after two years as Product Specialist</p></div>
       <div><p class="k">Studio</p><p class="v">Arcturus, remote, 2021 to 2024</p></div>
       <div><p class="k">Platforms</p><p class="v">Quest 3, Vision Pro, Looking Glass, Tilt Five, web AR</p></div>
-      <div><p class="k">Tools</p><p class="v">Unity, C#, Shader Graph, 8th Wall, HoloSuite</p></div>
+      <div><p class="k">Tools</p><p class="v">Unity, C#, Shader Graph, Houdini, 8th Wall, HoloSuite</p></div>
     </div>
   </div>
 </header>
@@ -65,6 +65,7 @@
   <a href="#ar-shopping">AR Shopping</a>
   <a href="#demos">Demos</a>
   <a href="#holosuite">HoloSuite</a>
+  <a href="#houdini">Houdini Workflow</a>
   <a href="#before">Before Arcturus</a>
 </div></div>
 
@@ -190,8 +191,15 @@
           placed and tracked in the shopper's own room, so you see a real person moving in the outfit instead of
           a flat product photo.
         </p>
+        <p>
+          I also designed the storefront it lives in. On desktop the volumetric model stands right on the
+          product page, and shoppers can drag to turn them around before taking the outfit into AR.
+        </p>
         <div class="work-card-tags">
-          <span class="tag">Web AR</span><span class="tag">Prototype</span><span class="tag">E-commerce</span>
+          <span class="tag">Web AR</span><span class="tag">Web Design</span><span class="tag">Prototype</span><span class="tag">E-commerce</span>
+        </div>
+        <div class="proj-media" style="aspect-ratio: 1440 / 732; margin-top: 0.5rem;" data-tilt data-expand data-full="xr-media/shopping-web.mp4" data-caption="Volumetric storefront prototype" data-cursor="Play">
+          <video muted loop playsinline preload="none" data-autoplay data-src="xr-media/shopping-web-loop.mp4" poster="xr-media/shopping-web.jpg"></video>
         </div>
       </div>
     </article>
@@ -213,6 +221,14 @@
             <button type="button" class="btn btn-accent" data-expand data-full="clips/AR_DemoReel.mp4" data-caption="XR and AR demo reel">Watch the full reel <span class="arrow">▶</span></button>
           </div>
         </div>
+      </div>
+      <div class="gallery" style="grid-template-columns: 1fr;">
+        <figure>
+          <div class="proj-media" style="aspect-ratio: 1600 / 812;" data-tilt data-expand data-caption="Tilt Five demo">
+            <video muted loop playsinline preload="none" data-autoplay data-src="xr-media/tilt5-demo.mp4" poster="xr-media/tilt5-demo.jpg"></video>
+          </div>
+          <figcaption>Tilt Five: volumetric captures on a tabletop AR board, and the Unity scene behind them</figcaption>
+        </figure>
       </div>
       <div class="gallery">
         <figure>
@@ -238,6 +254,9 @@
 
     <!-- HOLOSUITE -->
     <article class="proj proj--feature" id="holosuite">
+      <div class="proj-media" data-tilt data-expand data-caption="HoloSuite, and work built with its Unity plugin">
+        <video muted loop playsinline preload="none" data-autoplay data-src="xr-media/holosuite-overview.mp4" poster="xr-media/holosuite-overview.jpg"></video>
+      </div>
       <div class="proj-feature-head">
         <div class="proj-body">
           <p class="proj-kicker">Creator tools : HoloSuite and the Unity HoloSuite Player</p>
@@ -249,9 +268,7 @@
             docs and tutorials, ran onboarding and training, and worked the booth at AWE.
           </p>
           <p>
-            Later I helped develop HoloSuite and the Unity HoloSuite Player plugin, with a focus on fast,
-            intuitive UI and controls. Hearing exactly where creators get stuck, then getting to fix it, is my
-            favorite loop in this work.
+            Later I helped develop HoloSuite and the Unity HoloSuite Player plugin, mostly on making the UI and controls quicker and easier to use. The best part was hearing exactly where creators got stuck and then getting to fix it myself.
           </p>
         </div>
         <div class="proj-body">
@@ -264,6 +281,25 @@
           <div class="work-card-tags">
             <span class="tag">Tools UX</span><span class="tag">Unity Plugin</span><span class="tag">Documentation</span><span class="tag">Training</span>
           </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- HOUDINI -->
+    <article class="proj" id="houdini">
+      <div class="proj-media" style="aspect-ratio: 16 / 9;" data-tilt data-expand data-full="xr-media/houdini-blend.mp4" data-caption="Houdini blending workflow" data-cursor="Play">
+        <video muted loop playsinline preload="none" data-autoplay data-src="xr-media/houdini-blend-loop.mp4" poster="xr-media/houdini-blend.jpg"></video>
+      </div>
+      <div class="proj-body">
+        <p class="proj-kicker">Pipeline : Houdini to Unity</p>
+        <h2 class="proj-title" data-scramble="hover">Blending Volumetric Clips</h2>
+        <p>
+          A workflow I designed in Houdini for blending one volumetric capture into another. Topo Transfer fits
+          the mesh of one clip onto the next so the two can blend cleanly, and the result goes back out for
+          playback in Unity.
+        </p>
+        <div class="work-card-tags">
+          <span class="tag">Houdini</span><span class="tag">Volumetric Video</span><span class="tag">Pipeline</span><span class="tag">Tech Art</span>
         </div>
       </div>
     </article>
