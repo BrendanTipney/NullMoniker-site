@@ -60,6 +60,9 @@
     const final = el.dataset.text || el.textContent;
     el.dataset.text = final;
     el.dataset.scrambling = '1';
+    // Scrambled glyphs have different widths, which can change where a heading wraps.
+    // Hold its current height for the duration so nothing below it jumps.
+    el.style.height = el.offsetHeight + 'px';
     const len = final.length;
     const start = performance.now();
     const dur = Math.min(900, 280 + len * 38);
@@ -74,7 +77,7 @@
       }
       el.textContent = out;
       if (t < 1) requestAnimationFrame(step);
-      else { el.textContent = final; delete el.dataset.scrambling; }
+      else { el.textContent = final; el.style.height = ''; delete el.dataset.scrambling; }
     }
     requestAnimationFrame(step);
   }
