@@ -2674,20 +2674,9 @@ nav.is-solid { background: #000; }
 .bench-card { border: 1px solid var(--border); margin: -0.5px; }
 
 /* ══ Calmer pass ══
-   One signal color everywhere instead of a color per section, no film grain,
-   no giant outline numbers, and project kickers read as plain metadata. */
-:root {
-  --signal: #ff7a45;
-  --c-xr: var(--signal);
-  --c-games: var(--signal);
-  --c-hw: var(--signal);
-  --c-vis: var(--signal);
-}
-body::after { display: none; }
-
-/* section page heroes show the shader in its own colors, no per-section tint */
-.lane-page-hero .tint { display: none; }
-.lane-page-hero #shaderCanvas { filter: blur(14px); opacity: 0.7; }
+   No giant outline numbers, and project kickers read as plain metadata.
+   Each section keeps its own color. */
+:root { --signal: #ff7a45; }
 
 /* solid accent instead of rainbow gradients */
 .clients-quote span { background-image: linear-gradient(var(--signal), var(--signal)); }
@@ -2702,7 +2691,8 @@ body::after { display: none; }
   border-bottom: 2px solid var(--border-hi);
   transition: color 0.2s, border-color 0.2s;
 }
-.footer-cta-big:hover { color: var(--signal); border-color: var(--signal); background: none; }
+.footer-cta-big:hover { color: var(--accent-cta, var(--signal)); border-color: var(--accent-cta, var(--signal)); background: none; }
+.page-xr, .page-games, .page-hw, .page-vis { --accent-cta: var(--accent); }
 .footer-cta-label { text-transform: none; letter-spacing: 0.02em; font-size: 1rem; color: var(--muted); font-family: 'IBM Plex Sans', sans-serif; }
 
 /* leftovers from the numbered layout */

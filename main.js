@@ -198,7 +198,7 @@
       .catch(() => {});
   }
 
-  /* ── HERO : title replays its scramble on click, content drifts with the mouse ── */
+  /* ── HERO : content drifts with the mouse ── */
   const heroContent = $('.hero-content');
   if (heroContent && finePointer && !reduceMotion) {
     window.addEventListener('pointermove', e => {

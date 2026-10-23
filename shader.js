@@ -23,6 +23,7 @@
     uniform vec3  iResolution;
     uniform float iTime;
     uniform vec4  iMouse;
+    uniform vec2  uLook;   // visitor input (mouse or phone tilt), roughly -1..1
 
     //Transforms
     float RotX = 1.5;
@@ -214,6 +215,11 @@
 
         vec3 ro = vec3(0.0, 0.0, -6.0 + float(InfPre + InfPost));
         vec3 rd = normalize(vec3(uv.x, uv.y, 1));
+        // look around: the camera turns a little toward the input and slides through
+        // the repeating space, so near and far layers move at different speeds
+        ro.xy += uLook * vec2(0.45, -0.3);
+        rd.xz *= rotate(-uLook.x * 0.14);
+        rd.yz *= rotate(uLook.y * 0.09);
 
         vec3 d = RayMarch(ro, rd);
 
@@ -313,6 +319,7 @@
   const uResolution = gl.getUniformLocation(prog, 'iResolution');
   const uTime       = gl.getUniformLocation(prog, 'iTime');
   const uMouse      = gl.getUniformLocation(prog, 'iMouse');
+  const uLook       = gl.getUniformLocation(prog, 'uLook');
 
   // Performance. This is a raymarching shader (up to 50 steps x 20 fractal steps per pixel),
   // and the canvas is heavily blurred in CSS, so rendering it at a fraction of screen
@@ -371,6 +378,52 @@
     io.observe(hero);
   }
 
+  // Live input, the way a VJ rig follows a controller. The mouse (or tilting a phone)
+  // turns the camera and bends the fractal, and moving fast pushes the clock forward,
+  // then it all settles back when the input goes quiet.
+  let inX = 0, inY = 0;        // where the input is, -1..1
+  let lookX = 0, lookY = 0;    // smoothed copy fed to the shader
+  let energy = 0;              // recent input speed, decays every frame
+  function feed(x, y) {
+    x = Math.max(-1, Math.min(1, x));
+    y = Math.max(-1, Math.min(1, y));
+    energy = Math.min(1.2, energy + Math.hypot(x - inX, y - inY) * 0.9);
+    inX = x; inY = y;
+  }
+  window.addEventListener('pointermove', (e) => {
+    if (e.pointerType === 'touch') return;
+    feed(e.clientX / innerWidth * 2 - 1, e.clientY / innerHeight * 2 - 1);
+  }, { passive: true });
+  document.addEventListener('mouseout', (e) => { if (!e.relatedTarget) { inX = 0; inY = 0; } });
+  // Phones: tilt where the browser allows it without a permission prompt (Android).
+  // iOS gates motion behind a dialog, so there a finger on the hero steers instead.
+  let tiltLive = false, baseB = null, baseG = null;
+  if (coarse && 'DeviceOrientationEvent' in window && typeof DeviceOrientationEvent.requestPermission !== 'function') {
+    window.addEventListener('deviceorientation', (e) => {
+      if (e.beta == null || e.gamma == null) return;
+      const ang = (screen.orientation && screen.orientation.angle) || window.orientation || 0;
+      let gx = e.gamma, gy = e.beta;
+      if (ang === 90) { gx = e.beta; gy = -e.gamma; }
+      else if (ang === -90 || ang === 270) { gx = -e.beta; gy = e.gamma; }
+      // the resting angle is however the phone is held, and it slowly re-centres
+      if (baseB === null) { baseB = gy; baseG = gx; }
+      baseB += (gy - baseB) * 0.01;
+      baseG += (gx - baseG) * 0.01;
+      tiltLive = true;
+      feed((gx - baseG) / 22, (gy - baseB) / 22);
+    }, { passive: true });
+  }
+  if (coarse && hero) {
+    const touch = (e) => {
+      if (tiltLive || !e.touches[0]) return;
+      const r = hero.getBoundingClientRect();
+      feed((e.touches[0].clientX - r.left) / r.width * 2 - 1, (e.touches[0].clientY - r.top) / r.height * 2 - 1);
+    };
+    hero.addEventListener('touchstart', touch, { passive: true });
+    hero.addEventListener('touchmove', touch, { passive: true });
+    hero.addEventListener('touchend', () => { if (!tiltLive) { inX = 0; inY = 0; } }, { passive: true });
+  }
+
   // iTime accumulates with a scroll-driven rate so wheel motion scrubs the clock.
   let shaderTime = 0;
   let lastFrameTime = performance.now();
@@ -403,17 +456,24 @@
       resize();
       updateScroll();
 
-      // iTime = baseRate + scroll-velocity scrub. Sign of scrollFlow scrubs forward/back.
-      const rate = 1.0 + scrollFlow * 18.0;
+      lookX += (inX - lookX) * 0.05;
+      lookY += (inY - lookY) * 0.05;
+      energy *= 0.95;
+
+      // iTime = baseRate + scroll-velocity scrub + a push from fast input.
+      const rate = 1.0 + scrollFlow * 18.0 + energy * 2.5;
       shaderTime += dt * rate;
 
-      // iMouse: x ≈ canvas center with slight scrub from velocity, y driven by scroll progress.
-      const mx = refW() * (0.5 + scrollFlow * 1.5);
-      const my = refH() * scrollNorm;
+      // iMouse: x ≈ canvas center, nudged by velocity and the visitor's input; y follows
+      // scroll progress. These offsets go through the fractal folds, so small values
+      // reshape the whole structure.
+      const mx = refW() * (0.5 + scrollFlow * 1.5 + lookX * 0.06);
+      const my = refH() * (scrollNorm + lookY * 0.04);
 
       gl.uniform3f(uResolution, canvas.width, canvas.height, canvas.width / canvas.height);
       gl.uniform1f(uTime, shaderTime);
       gl.uniform4f(uMouse, mx, my, 0.0, 0.0);
+      gl.uniform2f(uLook, lookX, lookY);
       gl.drawArrays(gl.TRIANGLES, 0, 3);
     }
     requestAnimationFrame(frame);
