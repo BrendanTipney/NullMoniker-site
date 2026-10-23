@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap');
 
 :root {
   --bg:       #000;
@@ -17,7 +17,7 @@ html { scroll-behavior: smooth; }
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: 'Inter', sans-serif;
+  font-family: 'IBM Plex Sans', sans-serif;
   font-size: 16px;
   line-height: 1.6;
   overflow-x: hidden;
@@ -2152,7 +2152,7 @@ body:has(nav:not(.is-hidden)) .jump { top: 60px; }
   text-transform: uppercase;
 }
 .media-placeholder b { font-size: 0.85rem; color: var(--muted); font-weight: 700; }
-.media-placeholder small { font-size: 0.68rem; color: var(--muted-2); letter-spacing: 0.12em; text-transform: none; font-family: 'Inter', sans-serif; }
+.media-placeholder small { font-size: 0.68rem; color: var(--muted-2); letter-spacing: 0.12em; text-transform: none; font-family: 'IBM Plex Sans', sans-serif; }
 
 .proj-kicker {
   font-family: 'Rajdhani', sans-serif;
@@ -2633,3 +2633,88 @@ body:has(nav:not(.is-hidden)) .jump { top: 60px; }
 @media (min-width: 1001px) {
   .proj--portrait:nth-child(even):has(.proj-media--phone) { grid-template-columns: minmax(0, 1fr) minmax(0, 0.6fr); }
 }
+
+
+/* ══ Quieter pass ══
+   Solid panels instead of frosted glass, no glowing status dots or halos,
+   no accent strips along card edges, and lists instead of card grids. */
+nav { backdrop-filter: none; -webkit-backdrop-filter: none; background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0)); }
+nav.is-solid { background: #000; }
+.jump { backdrop-filter: none; -webkit-backdrop-filter: none; background: #000; }
+.lane-meta { backdrop-filter: none; -webkit-backdrop-filter: none; background: var(--border); border-color: var(--border); }
+.lane-meta > div { background: #0b0b0b; }
+.proj-media .play { backdrop-filter: none; background: rgba(0,0,0,0.6); }
+#videoOverlay { backdrop-filter: none; -webkit-backdrop-filter: none; background: rgba(0,0,0,0.95); }
+@media (max-width: 960px) { .nav-links.open { background: #000; } }
+
+.lane-media-tag::before { display: none; }
+.lane-media-tag { gap: 0; }
+.clients-timeline li:hover::before { box-shadow: none; }
+.psyphi-page.page-vis .psyphi-hero-title { text-shadow: none; }
+
+.index-tile::after { display: none; }
+.clients-quote { border-left: 0; padding-left: 0; }
+
+.plain-steps {
+  list-style: none;
+  max-width: 780px;
+  margin: 1.5rem 0;
+  padding: 0;
+}
+.plain-steps li {
+  padding: 0.55rem 0;
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 0.98rem;
+}
+.plain-steps li strong { color: var(--text); font-weight: 600; }
+#clients .plain-steps { margin: 0 0 3.5rem; }
+/* workbench: no grey fill showing through where the last row isn't full */
+.bench { background: none; border: 0; gap: 1px; }
+.bench-card { border: 1px solid var(--border); margin: -0.5px; }
+
+/* ══ Calmer pass ══
+   One signal color everywhere instead of a color per section, no film grain,
+   no giant outline numbers, and project kickers read as plain metadata. */
+:root {
+  --signal: #ff7a45;
+  --c-xr: var(--signal);
+  --c-games: var(--signal);
+  --c-hw: var(--signal);
+  --c-vis: var(--signal);
+}
+body::after { display: none; }
+
+/* section page heroes show the shader in its own colors, no per-section tint */
+.lane-page-hero .tint { display: none; }
+.lane-page-hero #shaderCanvas { filter: blur(14px); opacity: 0.7; }
+
+/* solid accent instead of rainbow gradients */
+.clients-quote span { background-image: linear-gradient(var(--signal), var(--signal)); }
+.footer-cta-big {
+  font-size: clamp(1.4rem, 4.6vw, 3.6rem);
+  color: var(--text);
+  -webkit-text-stroke: 0;
+  background: none;
+  text-transform: none;
+  letter-spacing: 0.01em;
+  word-break: break-word;
+  border-bottom: 2px solid var(--border-hi);
+  transition: color 0.2s, border-color 0.2s;
+}
+.footer-cta-big:hover { color: var(--signal); border-color: var(--signal); background: none; }
+.footer-cta-label { text-transform: none; letter-spacing: 0.02em; font-size: 1rem; color: var(--muted); font-family: 'IBM Plex Sans', sans-serif; }
+
+/* leftovers from the numbered layout */
+.lane-bignum, .index-num, .nav-num, .lane-kicker { display: none; }
+
+/* kickers: quiet metadata, not shouty labels */
+.proj-kicker {
+  text-transform: none;
+  letter-spacing: 0.02em;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 500;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.feature-card .n { text-transform: none; letter-spacing: 0.02em; font-family: 'IBM Plex Sans', sans-serif; color: var(--muted); }

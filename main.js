@@ -53,48 +53,6 @@
   }, { passive: true });
   onScroll();
 
-  /* ── TEXT SCRAMBLE ── */
-  const GLYPHS = '!<>-_\\/[]{}=+*^?#01NULL';
-  function scramble(el) {
-    if (reduceMotion || el.dataset.scrambling) return;
-    const final = el.dataset.text || el.textContent;
-    el.dataset.text = final;
-    el.dataset.scrambling = '1';
-    // Scrambled glyphs have different widths, which can change where a heading wraps.
-    // Hold its current height for the duration so nothing below it jumps.
-    el.style.height = el.offsetHeight + 'px';
-    const len = final.length;
-    const start = performance.now();
-    const dur = Math.min(900, 280 + len * 38);
-    function step(now) {
-      const t = Math.min(1, (now - start) / dur);
-      let out = '';
-      for (let i = 0; i < len; i++) {
-        const ch = final[i];
-        const settle = (i / len) * 0.7 + 0.3;
-        if (ch === ' ' || t >= settle) out += ch;
-        else out += GLYPHS[(Math.random() * GLYPHS.length) | 0];
-      }
-      el.textContent = out;
-      if (t < 1) requestAnimationFrame(step);
-      else { el.textContent = final; el.style.height = ''; delete el.dataset.scrambling; }
-    }
-    requestAnimationFrame(step);
-  }
-  $$('[data-scramble]').forEach(el => {
-    el.setAttribute('aria-label', el.textContent.trim());
-    if (el.dataset.scramble !== 'hover') scramble(el);
-    if (finePointer) {
-      const host = el.closest('a, .lane, .proj, button') || el;
-      host.addEventListener('mouseenter', () => scramble(el));
-    }
-  });
-  if (finePointer) {
-    $$('.nav-links a:not(.nav-cta) .nav-text').forEach(el => {
-      el.closest('a').addEventListener('mouseenter', () => scramble(el));
-    });
-  }
-
   /* ── REVEAL ON SCROLL ── */
   const autoReveal = [
     '.section-label', '.section-title', '.section-rule', '.lane', '.proj', '.feature-card',
@@ -118,33 +76,10 @@
         if (e.isIntersecting) {
           e.target.classList.add('is-in');
           rio.unobserve(e.target);
-          e.target.querySelectorAll('[data-scramble="view"]').forEach(scramble);
         }
       });
     }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
     $$('[data-reveal]').forEach(el => rio.observe(el));
-  }
-
-  /* ── COUNT UP ── */
-  function countUp(el) {
-    const target = parseFloat(el.dataset.count);
-    const suffix = el.dataset.suffix || '';
-    const prefix = el.dataset.prefix || '';
-    if (reduceMotion) { el.textContent = prefix + target + suffix; return; }
-    const start = performance.now();
-    const dur = 1400;
-    (function tick(now) {
-      const t = Math.min(1, (now - start) / dur);
-      const eased = 1 - Math.pow(1 - t, 4);
-      el.textContent = prefix + Math.round(target * eased) + suffix;
-      if (t < 1) requestAnimationFrame(tick);
-    })(start);
-  }
-  if ('IntersectionObserver' in window) {
-    const cio = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) { countUp(e.target); cio.unobserve(e.target); } });
-    }, { threshold: 0.6 });
-    $$('[data-count]').forEach(el => cio.observe(el));
   }
 
   /* ── TRY-SRC MEDIA : drop a file in and it appears, otherwise keep the placeholder ── */
@@ -218,18 +153,6 @@
     }, { once: true });
   });
 
-  /* ── SPOTLIGHT : a soft light that follows the cursor across cards ── */
-  if (finePointer && !reduceMotion) {
-    $$('.lane, .proj, .link-item, .index-tile, .feature-card, .bench-card, .stat, .next-lane, .about-aside, .client-step').forEach(el => {
-      el.classList.add('has-spot');
-      el.addEventListener('pointermove', e => {
-        const r = el.getBoundingClientRect();
-        el.style.setProperty('--mx', (e.clientX - r.left) + 'px');
-        el.style.setProperty('--my', (e.clientY - r.top) + 'px');
-      });
-    });
-  }
-
   /* ── TILT : media panels lean toward the cursor ── */
   if (finePointer && !reduceMotion) {
     $$('[data-tilt]').forEach(el => {
@@ -250,19 +173,6 @@
         el.style.setProperty('--rx', '0deg');
         el.style.setProperty('--ry', '0deg');
       });
-    });
-  }
-
-  /* ── MAGNETIC BUTTONS ── */
-  if (finePointer && !reduceMotion) {
-    $$('.btn, .magnetic').forEach(el => {
-      el.addEventListener('pointermove', e => {
-        const r = el.getBoundingClientRect();
-        const x = e.clientX - (r.left + r.width / 2);
-        const y = e.clientY - (r.top + r.height / 2);
-        el.style.transform = 'translate(' + (x * 0.22).toFixed(1) + 'px,' + (y * 0.3).toFixed(1) + 'px)';
-      });
-      el.addEventListener('pointerleave', () => { el.style.transform = ''; });
     });
   }
 
